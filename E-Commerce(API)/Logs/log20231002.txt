@@ -1,0 +1,1541 @@
+2023-10-02 15:10:05.076 -03:00 [INF] Inicialização da WEB API...
+2023-10-02 15:10:05.198 -03:00 [INF] User profile is available. Using 'C:\Users\Cleartech\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-02 15:10:05.300 -03:00 [INF] Now listening on: https://localhost:7296
+2023-10-02 15:10:05.300 -03:00 [INF] Now listening on: http://localhost:5090
+2023-10-02 15:10:05.303 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-02 15:10:05.303 -03:00 [INF] Hosting environment: Development
+2023-10-02 15:10:05.303 -03:00 [INF] Content root path: C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\
+2023-10-02 15:10:05.703 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/index.html - -
+2023-10-02 15:10:05.995 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/index.html - - - 200 - text/html;charset=utf-8 294.5425ms
+2023-10-02 15:10:06.004 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_vs/browserLink - -
+2023-10-02 15:10:06.004 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - -
+2023-10-02 15:10:06.009 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 5.3986ms
+2023-10-02 15:10:06.032 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 28.0226ms
+2023-10-02 15:10:06.124 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - -
+2023-10-02 15:10:06.251 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 127.6295ms
+2023-10-02 15:10:30.103 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7296/Produto/? - -
+2023-10-02 15:10:30.313 -03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: 'System.DateTime', Current time: 'System.DateTime'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2023-10-02 15:10:30.320 -03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: 'System.DateTime', Current time: 'System.DateTime'.
+2023-10-02 15:10:30.330 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.ProdutoController.PesquisarProduto (E-Commerce(API))'
+2023-10-02 15:10:30.370 -03:00 [INF] Route matched with {action = "PesquisarProduto", controller = "Produto"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult PesquisarProduto(E_Commerce_API_.Data.DTOs.ProdutoDto.FiltroProdutoDto) on controller E_Commerce_API_.Controllers.ProdutoController (E-Commerce(API)).
+2023-10-02 15:10:30.977 -03:00 [INF] Foi requisitado uma pesquisa de produtos.
+2023-10-02 15:10:30.978 -03:00 [INF] Iniciada a pesquisa de produtos com os filtros informados: {"Nome":null,"Peso":null,"Altura":null,"Largura":null,"Comprimento":null,"Valor":null,"Estoque":null,"CentroDeDistribuicaoId":null,"CategoriaId":null,"SubcategoriaId":null,"Status":"Todos","Ordem":"Crescente","Registros":30,"Pagina":1,"$type":"FiltroProdutoDto"}
+2023-10-02 15:10:30.986 -03:00 [INF] Criação da querie para pesquisa de produtos.
+2023-10-02 15:10:32.312 -03:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT * FROM `E-COMMERCE(API)`.PRODUTOS WHERE 1=1 ORDER BY PRODUTOS.NOME LIMIT 0, 30
+2023-10-02 15:10:32.617 -03:00 [INF] Executed DbCommand (20ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:10:32.661 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+WHERE `s`.`Id` = @__get_Item_0
+2023-10-02 15:10:32.680 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:10:32.697 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:10:32.699 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+WHERE `s`.`Id` = @__get_Item_0
+2023-10-02 15:10:32.700 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:10:32.703 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:10:32.704 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+WHERE `s`.`Id` = @__get_Item_0
+2023-10-02 15:10:32.705 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:10:32.705 -03:00 [INF] Foram encontrados 4 produtos a partir da querie: SELECT * FROM `E-COMMERCE(API)`.PRODUTOS WHERE 1=1 ORDER BY PRODUTOS.NOME LIMIT 0, 30
+2023-10-02 15:10:32.707 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[E_Commerce_API_.Data.DTOs.ProdutoDto.ReadProdutoDto, E-Commerce(API), Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-02 15:10:32.786 -03:00 [INF] Executed action E_Commerce_API_.Controllers.ProdutoController.PesquisarProduto (E-Commerce(API)) in 2412.2257ms
+2023-10-02 15:10:32.786 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.ProdutoController.PesquisarProduto (E-Commerce(API))'
+2023-10-02 15:10:32.791 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7296/Produto/? - - - 200 1595 application/json;+charset=utf-8 2687.6230ms
+2023-10-02 15:10:58.163 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7296/Subcategoria/? - -
+2023-10-02 15:10:58.164 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.SubcategoriaController.PesquisarSubcategorias (E-Commerce(API))'
+2023-10-02 15:10:58.166 -03:00 [INF] Route matched with {action = "PesquisarSubcategorias", controller = "Subcategoria"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult PesquisarSubcategorias(E_Commerce_API_.Data.DTOs.SubcategoriaDto.FiltroSubcategoriaDto) on controller E_Commerce_API_.Controllers.SubcategoriaController (E-Commerce(API)).
+2023-10-02 15:10:58.169 -03:00 [INF] Foi requisitado uma pesquisa de subcategorias.
+2023-10-02 15:10:58.170 -03:00 [INF] Iniciada a pesquisa de subcategorias com os filtros informados: {"Nome":null,"Ordem":"Crescente","Status":"Todos","Registros":10,"Pagina":1,"$type":"FiltroSubcategoriaDto"}
+2023-10-02 15:10:58.170 -03:00 [INF] Criação da querie para pesquisa de subcategorias.
+2023-10-02 15:10:58.180 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT * FROM `E-COMMERCE(API)`.SUBCATEGORIAS WHERE 1=1 ORDER BY NOME LIMIT 0, 10
+2023-10-02 15:10:58.197 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:10:58.201 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:10:58.203 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:10:58.205 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:10:58.205 -03:00 [INF] Foram encontrados 10 subcategorias a partir da querie: SELECT * FROM `E-COMMERCE(API)`.SUBCATEGORIAS WHERE 1=1 ORDER BY NOME LIMIT 0, 10
+2023-10-02 15:10:58.206 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[E_Commerce_API_.Data.DTOs.SubcategoriaDto.ReadSubcategoriaDto, E-Commerce(API), Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-02 15:10:58.209 -03:00 [INF] Executed action E_Commerce_API_.Controllers.SubcategoriaController.PesquisarSubcategorias (E-Commerce(API)) in 43.6276ms
+2023-10-02 15:10:58.210 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.SubcategoriaController.PesquisarSubcategorias (E-Commerce(API))'
+2023-10-02 15:10:58.210 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7296/Subcategoria/? - - - 200 1678 application/json;+charset=utf-8 47.3478ms
+2023-10-02 15:11:13.458 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7296/Subcategoria/?registros=50 - -
+2023-10-02 15:11:13.462 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.SubcategoriaController.PesquisarSubcategorias (E-Commerce(API))'
+2023-10-02 15:11:13.462 -03:00 [INF] Route matched with {action = "PesquisarSubcategorias", controller = "Subcategoria"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult PesquisarSubcategorias(E_Commerce_API_.Data.DTOs.SubcategoriaDto.FiltroSubcategoriaDto) on controller E_Commerce_API_.Controllers.SubcategoriaController (E-Commerce(API)).
+2023-10-02 15:11:13.472 -03:00 [INF] Foi requisitado uma pesquisa de subcategorias.
+2023-10-02 15:11:13.472 -03:00 [INF] Iniciada a pesquisa de subcategorias com os filtros informados: {"Nome":null,"Ordem":"Crescente","Status":"Todos","Registros":50,"Pagina":1,"$type":"FiltroSubcategoriaDto"}
+2023-10-02 15:11:13.473 -03:00 [INF] Criação da querie para pesquisa de subcategorias.
+2023-10-02 15:11:13.564 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT * FROM `E-COMMERCE(API)`.SUBCATEGORIAS WHERE 1=1 ORDER BY NOME LIMIT 0, 50
+2023-10-02 15:11:13.568 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:11:13.570 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:11:13.572 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:11:13.574 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:11:13.575 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:11:13.579 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:11:13.581 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:11:13.583 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:11:13.583 -03:00 [INF] Foram encontrados 36 subcategorias a partir da querie: SELECT * FROM `E-COMMERCE(API)`.SUBCATEGORIAS WHERE 1=1 ORDER BY NOME LIMIT 0, 50
+2023-10-02 15:11:13.583 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[E_Commerce_API_.Data.DTOs.SubcategoriaDto.ReadSubcategoriaDto, E-Commerce(API), Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-02 15:11:13.583 -03:00 [INF] Executed action E_Commerce_API_.Controllers.SubcategoriaController.PesquisarSubcategorias (E-Commerce(API)) in 121.1085ms
+2023-10-02 15:11:13.583 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.SubcategoriaController.PesquisarSubcategorias (E-Commerce(API))'
+2023-10-02 15:11:13.584 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7296/Subcategoria/?registros=50 - - - 200 5997 application/json;+charset=utf-8 126.0126ms
+2023-10-02 15:12:18.309 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/Produto application/json 329
+2023-10-02 15:12:18.310 -03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: 'System.DateTime', Current time: 'System.DateTime'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2023-10-02 15:12:18.310 -03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: 'System.DateTime', Current time: 'System.DateTime'.
+2023-10-02 15:12:18.326 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin|lojista)
+2023-10-02 15:12:18.334 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-10-02 15:12:18.334 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/Produto application/json 329 - 401 0 - 25.0104ms
+2023-10-02 15:12:40.392 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/Produto application/json 329
+2023-10-02 15:12:40.427 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.ProdutoController.CadastrarProduto (E-Commerce(API))'
+2023-10-02 15:12:40.429 -03:00 [INF] Route matched with {action = "CadastrarProduto", controller = "Produto"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CadastrarProduto(E_Commerce_API_.Data.DTOs.ProdutoDto.CreateProdutoDto) on controller E_Commerce_API_.Controllers.ProdutoController (E-Commerce(API)).
+2023-10-02 15:12:40.522 -03:00 [INF] Executed action E_Commerce_API_.Controllers.ProdutoController.CadastrarProduto (E-Commerce(API)) in 92.3359ms
+2023-10-02 15:12:40.522 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.ProdutoController.CadastrarProduto (E-Commerce(API))'
+2023-10-02 15:12:40.523 -03:00 [ERR] Erro: {"TraceId":"2bc1e2fe-17e4-4aca-a552-c824fcd36434","Error":{"Logref":"BadRequest","Message":"O campo Descricao contém caracteres não permitidos.","$type":"ErrorDetailsDto"},"Data":"02/10/2023","$type":"ErrorResponseDto"}
+2023-10-02 15:12:40.534 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/Produto application/json 329 - 400 - application/json 142.7444ms
+2023-10-02 15:12:49.310 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/Produto application/json 328
+2023-10-02 15:12:49.311 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.ProdutoController.CadastrarProduto (E-Commerce(API))'
+2023-10-02 15:12:49.312 -03:00 [INF] Route matched with {action = "CadastrarProduto", controller = "Produto"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CadastrarProduto(E_Commerce_API_.Data.DTOs.ProdutoDto.CreateProdutoDto) on controller E_Commerce_API_.Controllers.ProdutoController (E-Commerce(API)).
+2023-10-02 15:12:49.316 -03:00 [INF] Foi requisitado um cadastro de produto pelo usuário: 'db82dc95-bb75-47ba-84a6-8547ddb7c948'.
+2023-10-02 15:12:49.317 -03:00 [INF] Iniciada adição de um novo produto.
+2023-10-02 15:12:49.323 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+2023-10-02 15:12:49.328 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+2023-10-02 15:12:49.330 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+2023-10-02 15:12:49.337 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 15:12:49.342 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+2023-10-02 15:12:49.446 -03:00 [INF] Executed DbCommand (19ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Double), @p2='?' (DbType = Guid), @p3='?' (DbType = Double), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?' (Size = 512), @p7='?' (DbType = Double), @p8='?' (Size = 128), @p9='?' (DbType = Double), @p10='?' (DbType = Int32), @p11='?' (DbType = Boolean), @p12='?' (DbType = Guid), @p13='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `Produtos` (`Id`, `Altura`, `CentroDeDistribuicaoId`, `Comprimento`, `DataEHoraCriacao`, `DataEHoraModificacao`, `Descricao`, `Largura`, `Nome`, `Peso`, `QuantidadeEmEstoque`, `Status`, `SubcategoriaId`, `Valor`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13);
+2023-10-02 15:12:49.456 -03:00 [INF] Produto com Id '"e3d6d4b4-4880-4063-ae63-e50fdb722f8b"' incluído no banco de dados.
+2023-10-02 15:12:49.456 -03:00 [INF] Produto cadastrado com sucesso.
+2023-10-02 15:12:49.485 -03:00 [INF] Criado os links de acesso: [{"Href":"https://localhost:7296/Produto/e3d6d4b4-4880-4063-ae63-e50fdb722f8b","Rel":"self","Method":"GET","Arguments":null,"$type":"LinkDto"},{"Href":"https://localhost:7296/Produto/e3d6d4b4-4880-4063-ae63-e50fdb722f8b","Rel":"self","Method":"PUT","Arguments":["nome","descricao","peso","altura","largura","comprimento","valor","quantidadeEmEstoque","status","subcategoriaId","centroDeDistribuicaoId"],"$type":"LinkDto"},{"Href":"https://localhost:7296/Produto/e3d6d4b4-4880-4063-ae63-e50fdb722f8b","Rel":"self","Method":"DELETE","Arguments":null,"$type":"LinkDto"}].
+2023-10-02 15:12:49.487 -03:00 [INF] Executing CreatedAtActionResult, writing value of type 'E_Commerce_API_.Data.DTOs.Error.ResponseDto`1[[E_Commerce_API_.Data.DTOs.ProdutoDto.ReadProdutoDto, E-Commerce(API), Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-02 15:12:49.492 -03:00 [INF] Executed action E_Commerce_API_.Controllers.ProdutoController.CadastrarProduto (E-Commerce(API)) in 180.8147ms
+2023-10-02 15:12:49.492 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.ProdutoController.CadastrarProduto (E-Commerce(API))'
+2023-10-02 15:12:49.493 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/Produto application/json 328 - 201 881 application/json;+charset=utf-8 182.2170ms
+2023-10-02 15:13:12.780 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/Produto application/json 336
+2023-10-02 15:13:12.781 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.ProdutoController.CadastrarProduto (E-Commerce(API))'
+2023-10-02 15:13:12.781 -03:00 [INF] Route matched with {action = "CadastrarProduto", controller = "Produto"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CadastrarProduto(E_Commerce_API_.Data.DTOs.ProdutoDto.CreateProdutoDto) on controller E_Commerce_API_.Controllers.ProdutoController (E-Commerce(API)).
+2023-10-02 15:13:12.782 -03:00 [INF] Foi requisitado um cadastro de produto pelo usuário: 'db82dc95-bb75-47ba-84a6-8547ddb7c948'.
+2023-10-02 15:13:12.782 -03:00 [INF] Iniciada adição de um novo produto.
+2023-10-02 15:13:12.785 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+2023-10-02 15:13:12.787 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+2023-10-02 15:13:12.788 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+2023-10-02 15:13:12.789 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 15:13:12.790 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+2023-10-02 15:13:12.798 -03:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Double), @p2='?' (DbType = Guid), @p3='?' (DbType = Double), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?' (Size = 512), @p7='?' (DbType = Double), @p8='?' (Size = 128), @p9='?' (DbType = Double), @p10='?' (DbType = Int32), @p11='?' (DbType = Boolean), @p12='?' (DbType = Guid), @p13='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `Produtos` (`Id`, `Altura`, `CentroDeDistribuicaoId`, `Comprimento`, `DataEHoraCriacao`, `DataEHoraModificacao`, `Descricao`, `Largura`, `Nome`, `Peso`, `QuantidadeEmEstoque`, `Status`, `SubcategoriaId`, `Valor`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13);
+2023-10-02 15:13:12.798 -03:00 [INF] Produto com Id '"efe452b4-885e-4dd8-a695-be4ce5d99d61"' incluído no banco de dados.
+2023-10-02 15:13:12.798 -03:00 [INF] Produto cadastrado com sucesso.
+2023-10-02 15:13:12.798 -03:00 [INF] Criado os links de acesso: [{"Href":"https://localhost:7296/Produto/efe452b4-885e-4dd8-a695-be4ce5d99d61","Rel":"self","Method":"GET","Arguments":null,"$type":"LinkDto"},{"Href":"https://localhost:7296/Produto/efe452b4-885e-4dd8-a695-be4ce5d99d61","Rel":"self","Method":"PUT","Arguments":["nome","descricao","peso","altura","largura","comprimento","valor","quantidadeEmEstoque","status","subcategoriaId","centroDeDistribuicaoId"],"$type":"LinkDto"},{"Href":"https://localhost:7296/Produto/efe452b4-885e-4dd8-a695-be4ce5d99d61","Rel":"self","Method":"DELETE","Arguments":null,"$type":"LinkDto"}].
+2023-10-02 15:13:12.799 -03:00 [INF] Executing CreatedAtActionResult, writing value of type 'E_Commerce_API_.Data.DTOs.Error.ResponseDto`1[[E_Commerce_API_.Data.DTOs.ProdutoDto.ReadProdutoDto, E-Commerce(API), Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-02 15:13:12.799 -03:00 [INF] Executed action E_Commerce_API_.Controllers.ProdutoController.CadastrarProduto (E-Commerce(API)) in 18.2398ms
+2023-10-02 15:13:12.799 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.ProdutoController.CadastrarProduto (E-Commerce(API))'
+2023-10-02 15:13:12.799 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/Produto application/json 336 - 201 889 application/json;+charset=utf-8 18.8767ms
+2023-10-02 15:13:20.375 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7296/Produto/? - -
+2023-10-02 15:13:20.375 -03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: 'System.DateTime', Current time: 'System.DateTime'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2023-10-02 15:13:20.375 -03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: 'System.DateTime', Current time: 'System.DateTime'.
+2023-10-02 15:13:20.375 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.ProdutoController.PesquisarProduto (E-Commerce(API))'
+2023-10-02 15:13:20.375 -03:00 [INF] Route matched with {action = "PesquisarProduto", controller = "Produto"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult PesquisarProduto(E_Commerce_API_.Data.DTOs.ProdutoDto.FiltroProdutoDto) on controller E_Commerce_API_.Controllers.ProdutoController (E-Commerce(API)).
+2023-10-02 15:13:20.376 -03:00 [INF] Foi requisitado uma pesquisa de produtos.
+2023-10-02 15:13:20.377 -03:00 [INF] Iniciada a pesquisa de produtos com os filtros informados: {"Nome":null,"Peso":null,"Altura":null,"Largura":null,"Comprimento":null,"Valor":null,"Estoque":null,"CentroDeDistribuicaoId":null,"CategoriaId":null,"SubcategoriaId":null,"Status":"Todos","Ordem":"Crescente","Registros":30,"Pagina":1,"$type":"FiltroProdutoDto"}
+2023-10-02 15:13:20.377 -03:00 [INF] Criação da querie para pesquisa de produtos.
+2023-10-02 15:13:20.379 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT * FROM `E-COMMERCE(API)`.PRODUTOS WHERE 1=1 ORDER BY PRODUTOS.NOME LIMIT 0, 30
+2023-10-02 15:13:20.381 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:13:20.383 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+WHERE `s`.`Id` = @__get_Item_0
+2023-10-02 15:13:20.387 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:13:20.389 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:13:20.391 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+WHERE `s`.`Id` = @__get_Item_0
+2023-10-02 15:13:20.393 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:13:20.395 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:13:20.397 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+WHERE `s`.`Id` = @__get_Item_0
+2023-10-02 15:13:20.398 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:13:20.400 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+WHERE `s`.`Id` = @__get_Item_0
+2023-10-02 15:13:20.403 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:13:20.404 -03:00 [INF] Foram encontrados 6 produtos a partir da querie: SELECT * FROM `E-COMMERCE(API)`.PRODUTOS WHERE 1=1 ORDER BY PRODUTOS.NOME LIMIT 0, 30
+2023-10-02 15:13:20.404 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[E_Commerce_API_.Data.DTOs.ProdutoDto.ReadProdutoDto, E-Commerce(API), Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-02 15:13:20.405 -03:00 [INF] Executed action E_Commerce_API_.Controllers.ProdutoController.PesquisarProduto (E-Commerce(API)) in 29.1956ms
+2023-10-02 15:13:20.405 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.ProdutoController.PesquisarProduto (E-Commerce(API))'
+2023-10-02 15:13:20.405 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7296/Produto/? - - - 200 2365 application/json;+charset=utf-8 30.2923ms
+2023-10-02 15:14:19.565 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/CarrinhoDeCompras application/json 154
+2023-10-02 15:14:19.566 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.CriarCarrinho (E-Commerce(API))'
+2023-10-02 15:14:19.571 -03:00 [INF] Route matched with {action = "CriarCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CriarCarrinho(E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.CreateCarrinhoDeComprasDto) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-02 15:14:19.584 -03:00 [INF] Iniciada pesquisa do produto "be4bc549-f748-40ab-9cbf-bdc506df2aa0".
+2023-10-02 15:14:19.586 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 15:14:19.595 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:14:19.597 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+WHERE `s`.`Id` = @__get_Item_0
+2023-10-02 15:14:19.599 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:14:20.530 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = UInt32), @p7='?' (Size = 4000), @p8='?' (DbType = Guid), @p9='?' (DbType = Guid), @p10='?' (DbType = UInt32), @p11='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `CarrinhosDeCompras` (`Id`, `Bairro`, `CEP`, `Cidade`, `Complemento`, `Logradouro`, `Numero`, `UF`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+INSERT INTO `ProdutosNoCarrinho` (`CarrinhoDeComprasId`, `ProdutoId`, `Quantidade`, `ValorNoCarrinho`)
+VALUES (@p8, @p9, @p10, @p11);
+2023-10-02 15:14:20.571 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-02 15:14:20.579 -03:00 [INF] Executing CreatedAtActionResult, writing value of type 'E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.ReadCarrinhoDeComprasDto'.
+2023-10-02 15:14:20.585 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.CriarCarrinho (E-Commerce(API)) in 1014.8174ms
+2023-10-02 15:14:20.586 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.CriarCarrinho (E-Commerce(API))'
+2023-10-02 15:14:20.586 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/CarrinhoDeCompras application/json 154 - 201 341 application/json;+charset=utf-8 1021.5724ms
+2023-10-02 15:15:00.670 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 application/json 84
+2023-10-02 15:15:00.671 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.AdicionarProdutosAoCarrinho (E-Commerce(API))'
+2023-10-02 15:15:00.672 -03:00 [INF] Route matched with {action = "AdicionarProdutosAoCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AdicionarProdutosAoCarrinho(System.Guid, E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.AddProdutosAoCarrinhoDto) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-02 15:15:00.687 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carrinhoDeComprasId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`Logradouro`, `c`.`Numero`, `c`.`UF`
+FROM `CarrinhosDeCompras` AS `c`
+WHERE `c`.`Id` = @__carrinhoDeComprasId_0
+LIMIT 1
+2023-10-02 15:15:00.696 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__get_Item_0
+2023-10-02 15:15:00.697 -03:00 [INF] Iniciada pesquisa do produto "45f99c7f-8840-41c9-9980-3427d3a8492f".
+2023-10-02 15:15:00.698 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 15:15:00.700 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:15:00.701 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+WHERE `s`.`Id` = @__get_Item_0
+2023-10-02 15:15:00.702 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:15:00.702 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.AdicionarProdutosAoCarrinho (E-Commerce(API)) in 30.4955ms
+2023-10-02 15:15:00.702 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.AdicionarProdutosAoCarrinho (E-Commerce(API))'
+2023-10-02 15:15:00.703 -03:00 [ERR] Erro: {"TraceId":"6e1d56aa-e539-417b-bc3c-8b8ee15d0742","Error":{"Logref":"BadRequest","Message":"Não existe estoque para o produto informado.","$type":"ErrorDetailsDto"},"Data":"02/10/2023","$type":"ErrorResponseDto"}
+2023-10-02 15:15:00.703 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 application/json 84 - 400 - application/json 32.4005ms
+2023-10-02 15:15:16.418 -03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7296/Produto/45f99c7f-8840-41c9-9980-3427d3a8492f application/json 348
+2023-10-02 15:15:16.419 -03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: 'System.DateTime', Current time: 'System.DateTime'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2023-10-02 15:15:16.419 -03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: 'System.DateTime', Current time: 'System.DateTime'.
+2023-10-02 15:15:16.420 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin|lojista)
+2023-10-02 15:15:16.420 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-10-02 15:15:16.420 -03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7296/Produto/45f99c7f-8840-41c9-9980-3427d3a8492f application/json 348 - 401 0 - 1.9430ms
+2023-10-02 15:15:28.010 -03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7296/Produto/45f99c7f-8840-41c9-9980-3427d3a8492f application/json 348
+2023-10-02 15:15:28.011 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.ProdutoController.EditarProduto (E-Commerce(API))'
+2023-10-02 15:15:28.014 -03:00 [INF] Route matched with {action = "EditarProduto", controller = "Produto"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult EditarProduto(System.Guid, E_Commerce_API_.Data.DTOs.ProdutoDto.UpdateProdutoDto) on controller E_Commerce_API_.Controllers.ProdutoController (E-Commerce(API)).
+2023-10-02 15:15:28.029 -03:00 [INF] Foi requisitado uma edição de produto pelo usuário: 'db82dc95-bb75-47ba-84a6-8547ddb7c948'.
+2023-10-02 15:15:28.029 -03:00 [INF] Iniciada edição do produto '"45f99c7f-8840-41c9-9980-3427d3a8492f"'.
+2023-10-02 15:15:28.031 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 15:15:28.032 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+2023-10-02 15:15:28.033 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+2023-10-02 15:15:28.034 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 15:15:28.035 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+2023-10-02 15:15:28.048 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p13='?' (DbType = Guid), @p0='?' (DbType = Double), @p1='?' (DbType = Guid), @p2='?' (DbType = Double), @p3='?' (DbType = DateTime), @p4='?' (DbType = DateTime), @p5='?' (Size = 512), @p6='?' (DbType = Double), @p7='?' (Size = 128), @p8='?' (DbType = Double), @p9='?' (DbType = Int32), @p10='?' (DbType = Boolean), @p11='?' (DbType = Guid), @p12='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Produtos` SET `Altura` = @p0, `CentroDeDistribuicaoId` = @p1, `Comprimento` = @p2, `DataEHoraCriacao` = @p3, `DataEHoraModificacao` = @p4, `Descricao` = @p5, `Largura` = @p6, `Nome` = @p7, `Peso` = @p8, `QuantidadeEmEstoque` = @p9, `Status` = @p10, `SubcategoriaId` = @p11, `Valor` = @p12
+WHERE `Id` = @p13;
+SELECT ROW_COUNT();
+2023-10-02 15:15:28.049 -03:00 [INF] Produto atualizado no banco de dados.
+2023-10-02 15:15:28.049 -03:00 [INF] Produto editado com sucesso.
+2023-10-02 15:15:28.058 -03:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2023-10-02 15:15:28.059 -03:00 [INF] Executed action E_Commerce_API_.Controllers.ProdutoController.EditarProduto (E-Commerce(API)) in 44.7956ms
+2023-10-02 15:15:28.059 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.ProdutoController.EditarProduto (E-Commerce(API))'
+2023-10-02 15:15:28.059 -03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7296/Produto/45f99c7f-8840-41c9-9980-3427d3a8492f application/json 348 - 204 - - 49.1747ms
+2023-10-02 15:15:32.401 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 application/json 84
+2023-10-02 15:15:32.401 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.AdicionarProdutosAoCarrinho (E-Commerce(API))'
+2023-10-02 15:15:32.401 -03:00 [INF] Route matched with {action = "AdicionarProdutosAoCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AdicionarProdutosAoCarrinho(System.Guid, E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.AddProdutosAoCarrinhoDto) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-02 15:15:32.406 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoDeComprasId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`Logradouro`, `c`.`Numero`, `c`.`UF`
+FROM `CarrinhosDeCompras` AS `c`
+WHERE `c`.`Id` = @__carrinhoDeComprasId_0
+LIMIT 1
+2023-10-02 15:15:32.407 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__get_Item_0
+2023-10-02 15:15:32.408 -03:00 [INF] Iniciada pesquisa do produto "45f99c7f-8840-41c9-9980-3427d3a8492f".
+2023-10-02 15:15:32.409 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 15:15:32.411 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:15:32.413 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+WHERE `s`.`Id` = @__get_Item_0
+2023-10-02 15:15:32.416 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:15:32.422 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = UInt32), @p3='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `ProdutosNoCarrinho` (`CarrinhoDeComprasId`, `ProdutoId`, `Quantidade`, `ValorNoCarrinho`)
+VALUES (@p0, @p1, @p2, @p3);
+2023-10-02 15:15:32.424 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-02 15:15:32.427 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.ReadCarrinhoDeComprasDto'.
+2023-10-02 15:15:32.427 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.AdicionarProdutosAoCarrinho (E-Commerce(API)) in 25.7731ms
+2023-10-02 15:15:32.427 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.AdicionarProdutosAoCarrinho (E-Commerce(API))'
+2023-10-02 15:15:32.427 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 application/json 84 - 200 450 application/json;+charset=utf-8 26.3368ms
+2023-10-02 15:15:56.322 -03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7296/CarrinhoDeCompras/89427cc4-4543-42e1-ae97-d05ddb579372 application/json 84
+2023-10-02 15:15:56.323 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.AlterarQuantidadeDeProdutosNoCarrinho (E-Commerce(API))'
+2023-10-02 15:15:56.323 -03:00 [INF] Route matched with {action = "AlterarQuantidadeDeProdutosNoCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AlterarQuantidadeDeProdutosNoCarrinho(System.Guid, E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.UpdateCarrinhoDeComprasDto) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-02 15:15:56.329 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoDeComprasId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`Logradouro`, `c`.`Numero`, `c`.`UF`
+FROM `CarrinhosDeCompras` AS `c`
+WHERE `c`.`Id` = @__carrinhoDeComprasId_0
+LIMIT 1
+2023-10-02 15:15:56.329 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.AlterarQuantidadeDeProdutosNoCarrinho (E-Commerce(API)) in 5.7451ms
+2023-10-02 15:15:56.329 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.AlterarQuantidadeDeProdutosNoCarrinho (E-Commerce(API))'
+2023-10-02 15:15:56.330 -03:00 [ERR] Erro: {"TraceId":"9c948897-13f3-4dd8-884d-a38ab79b630e","Error":{"Logref":"NotFound","Message":"O Id de Carrinho de Compras informado não existe.","$type":"ErrorDetailsDto"},"Data":"02/10/2023","$type":"ErrorResponseDto"}
+2023-10-02 15:15:56.330 -03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7296/CarrinhoDeCompras/89427cc4-4543-42e1-ae97-d05ddb579372 application/json 84 - 404 - application/json 7.5301ms
+2023-10-02 15:16:07.506 -03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 application/json 84
+2023-10-02 15:16:07.507 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.AlterarQuantidadeDeProdutosNoCarrinho (E-Commerce(API))'
+2023-10-02 15:16:07.507 -03:00 [INF] Route matched with {action = "AlterarQuantidadeDeProdutosNoCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AlterarQuantidadeDeProdutosNoCarrinho(System.Guid, E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.UpdateCarrinhoDeComprasDto) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-02 15:16:07.508 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoDeComprasId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`Logradouro`, `c`.`Numero`, `c`.`UF`
+FROM `CarrinhosDeCompras` AS `c`
+WHERE `c`.`Id` = @__carrinhoDeComprasId_0
+LIMIT 1
+2023-10-02 15:16:07.509 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-02 15:16:07.509 -03:00 [INF] Iniciada pesquisa do produto "45f99c7f-8840-41c9-9980-3427d3a8492f".
+2023-10-02 15:16:07.510 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 15:16:07.513 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:16:07.515 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+WHERE `s`.`Id` = @__get_Item_0
+2023-10-02 15:16:07.516 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:16:07.520 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p0='?' (DbType = UInt32), @p1='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `ProdutosNoCarrinho` SET `Quantidade` = @p0, `ValorNoCarrinho` = @p1
+WHERE `CarrinhoDeComprasId` = @p2 AND `ProdutoId` = @p3;
+SELECT ROW_COUNT();
+2023-10-02 15:16:07.521 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-02 15:16:07.522 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__get_Item_0
+2023-10-02 15:16:07.522 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.ReadCarrinhoDeComprasDto'.
+2023-10-02 15:16:07.522 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.AlterarQuantidadeDeProdutosNoCarrinho (E-Commerce(API)) in 15.6659ms
+2023-10-02 15:16:07.522 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.AlterarQuantidadeDeProdutosNoCarrinho (E-Commerce(API))'
+2023-10-02 15:16:07.522 -03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 application/json 84 - 200 450 application/json;+charset=utf-8 16.0196ms
+2023-10-02 15:16:25.421 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 - -
+2023-10-02 15:16:25.422 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API))'
+2023-10-02 15:16:25.423 -03:00 [INF] Route matched with {action = "GetCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCarrinho(System.Guid) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-02 15:16:25.427 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoDeComprasId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`Logradouro`, `c`.`Numero`, `c`.`UF`
+FROM `CarrinhosDeCompras` AS `c`
+WHERE `c`.`Id` = @__carrinhoDeComprasId_0
+LIMIT 1
+2023-10-02 15:16:25.429 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-02 15:16:25.437 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-02 15:16:25.440 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-02 15:16:25.442 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__get_Item_0
+2023-10-02 15:16:25.442 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.ReadCarrinhoDeComprasDto'.
+2023-10-02 15:16:25.442 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API)) in 19.7062ms
+2023-10-02 15:16:25.442 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API))'
+2023-10-02 15:16:25.443 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 - - - 200 450 application/json;+charset=utf-8 21.3466ms
+2023-10-02 15:16:38.394 -03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 application/json 83
+2023-10-02 15:16:38.394 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.AlterarQuantidadeDeProdutosNoCarrinho (E-Commerce(API))'
+2023-10-02 15:16:38.395 -03:00 [INF] Route matched with {action = "AlterarQuantidadeDeProdutosNoCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AlterarQuantidadeDeProdutosNoCarrinho(System.Guid, E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.UpdateCarrinhoDeComprasDto) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-02 15:16:38.399 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carrinhoDeComprasId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`Logradouro`, `c`.`Numero`, `c`.`UF`
+FROM `CarrinhosDeCompras` AS `c`
+WHERE `c`.`Id` = @__carrinhoDeComprasId_0
+LIMIT 1
+2023-10-02 15:16:38.400 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-02 15:16:38.414 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+DELETE FROM `ProdutosNoCarrinho`
+WHERE `CarrinhoDeComprasId` = @p0 AND `ProdutoId` = @p1;
+SELECT ROW_COUNT();
+2023-10-02 15:16:38.420 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-02 15:16:38.422 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-02 15:16:38.423 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__get_Item_0
+2023-10-02 15:16:38.423 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.ReadCarrinhoDeComprasDto'.
+2023-10-02 15:16:38.423 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.AlterarQuantidadeDeProdutosNoCarrinho (E-Commerce(API)) in 27.877ms
+2023-10-02 15:16:38.423 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.AlterarQuantidadeDeProdutosNoCarrinho (E-Commerce(API))'
+2023-10-02 15:16:38.423 -03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 application/json 83 - 200 341 application/json;+charset=utf-8 29.3060ms
+2023-10-02 15:16:49.310 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 application/json 84
+2023-10-02 15:16:49.310 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.AdicionarProdutosAoCarrinho (E-Commerce(API))'
+2023-10-02 15:16:49.310 -03:00 [INF] Route matched with {action = "AdicionarProdutosAoCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AdicionarProdutosAoCarrinho(System.Guid, E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.AddProdutosAoCarrinhoDto) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-02 15:16:49.315 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carrinhoDeComprasId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`Logradouro`, `c`.`Numero`, `c`.`UF`
+FROM `CarrinhosDeCompras` AS `c`
+WHERE `c`.`Id` = @__carrinhoDeComprasId_0
+LIMIT 1
+2023-10-02 15:16:49.317 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__get_Item_0
+2023-10-02 15:16:49.317 -03:00 [INF] Iniciada pesquisa do produto "45f99c7f-8840-41c9-9980-3427d3a8492f".
+2023-10-02 15:16:49.318 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 15:16:49.319 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:16:49.320 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+WHERE `s`.`Id` = @__get_Item_0
+2023-10-02 15:16:49.321 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:16:49.331 -03:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = UInt32), @p3='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `ProdutosNoCarrinho` (`CarrinhoDeComprasId`, `ProdutoId`, `Quantidade`, `ValorNoCarrinho`)
+VALUES (@p0, @p1, @p2, @p3);
+2023-10-02 15:16:49.332 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-02 15:16:49.333 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.ReadCarrinhoDeComprasDto'.
+2023-10-02 15:16:49.333 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.AdicionarProdutosAoCarrinho (E-Commerce(API)) in 22.7932ms
+2023-10-02 15:16:49.333 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.AdicionarProdutosAoCarrinho (E-Commerce(API))'
+2023-10-02 15:16:49.333 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 application/json 84 - 200 450 application/json;+charset=utf-8 23.3804ms
+2023-10-02 15:16:58.954 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 - -
+2023-10-02 15:16:58.955 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API))'
+2023-10-02 15:16:58.955 -03:00 [INF] Route matched with {action = "GetCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCarrinho(System.Guid) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-02 15:16:58.957 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carrinhoDeComprasId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`Logradouro`, `c`.`Numero`, `c`.`UF`
+FROM `CarrinhosDeCompras` AS `c`
+WHERE `c`.`Id` = @__carrinhoDeComprasId_0
+LIMIT 1
+2023-10-02 15:16:58.958 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-02 15:16:58.959 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-02 15:16:58.960 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-02 15:16:58.961 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__get_Item_0
+2023-10-02 15:16:58.962 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.ReadCarrinhoDeComprasDto'.
+2023-10-02 15:16:58.962 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API)) in 6.9735ms
+2023-10-02 15:16:58.962 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API))'
+2023-10-02 15:16:58.962 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 - - - 200 450 application/json;+charset=utf-8 7.3728ms
+2023-10-02 15:17:17.274 -03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7296/Produto/45f99c7f-8840-41c9-9980-3427d3a8492f application/json 348
+2023-10-02 15:17:17.274 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.ProdutoController.EditarProduto (E-Commerce(API))'
+2023-10-02 15:17:17.274 -03:00 [INF] Route matched with {action = "EditarProduto", controller = "Produto"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult EditarProduto(System.Guid, E_Commerce_API_.Data.DTOs.ProdutoDto.UpdateProdutoDto) on controller E_Commerce_API_.Controllers.ProdutoController (E-Commerce(API)).
+2023-10-02 15:17:17.275 -03:00 [INF] Foi requisitado uma edição de produto pelo usuário: 'db82dc95-bb75-47ba-84a6-8547ddb7c948'.
+2023-10-02 15:17:17.275 -03:00 [INF] Iniciada edição do produto '"45f99c7f-8840-41c9-9980-3427d3a8492f"'.
+2023-10-02 15:17:17.277 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 15:17:17.278 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+2023-10-02 15:17:17.279 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+2023-10-02 15:17:17.283 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 15:17:17.283 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+2023-10-02 15:17:17.291 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p13='?' (DbType = Guid), @p0='?' (DbType = Double), @p1='?' (DbType = Guid), @p2='?' (DbType = Double), @p3='?' (DbType = DateTime), @p4='?' (DbType = DateTime), @p5='?' (Size = 512), @p6='?' (DbType = Double), @p7='?' (Size = 128), @p8='?' (DbType = Double), @p9='?' (DbType = Int32), @p10='?' (DbType = Boolean), @p11='?' (DbType = Guid), @p12='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Produtos` SET `Altura` = @p0, `CentroDeDistribuicaoId` = @p1, `Comprimento` = @p2, `DataEHoraCriacao` = @p3, `DataEHoraModificacao` = @p4, `Descricao` = @p5, `Largura` = @p6, `Nome` = @p7, `Peso` = @p8, `QuantidadeEmEstoque` = @p9, `Status` = @p10, `SubcategoriaId` = @p11, `Valor` = @p12
+WHERE `Id` = @p13;
+SELECT ROW_COUNT();
+2023-10-02 15:17:17.291 -03:00 [INF] Produto atualizado no banco de dados.
+2023-10-02 15:17:17.291 -03:00 [INF] Produto editado com sucesso.
+2023-10-02 15:17:17.291 -03:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2023-10-02 15:17:17.291 -03:00 [INF] Executed action E_Commerce_API_.Controllers.ProdutoController.EditarProduto (E-Commerce(API)) in 17.0495ms
+2023-10-02 15:17:17.291 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.ProdutoController.EditarProduto (E-Commerce(API))'
+2023-10-02 15:17:17.292 -03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7296/Produto/45f99c7f-8840-41c9-9980-3427d3a8492f application/json 348 - 204 - - 17.8554ms
+2023-10-02 15:17:43.274 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 application/json 83
+2023-10-02 15:17:43.274 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.AdicionarProdutosAoCarrinho (E-Commerce(API))'
+2023-10-02 15:17:43.274 -03:00 [INF] Route matched with {action = "AdicionarProdutosAoCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AdicionarProdutosAoCarrinho(System.Guid, E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.AddProdutosAoCarrinhoDto) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-02 15:17:43.278 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carrinhoDeComprasId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`Logradouro`, `c`.`Numero`, `c`.`UF`
+FROM `CarrinhosDeCompras` AS `c`
+WHERE `c`.`Id` = @__carrinhoDeComprasId_0
+LIMIT 1
+2023-10-02 15:17:43.280 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__get_Item_0
+2023-10-02 15:17:43.281 -03:00 [INF] Iniciada pesquisa do produto "efe452b4-885e-4dd8-a695-be4ce5d99d61".
+2023-10-02 15:17:43.283 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 15:17:43.285 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:17:43.286 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+WHERE `s`.`Id` = @__get_Item_0
+2023-10-02 15:17:43.288 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:17:43.292 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = UInt32), @p3='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `ProdutosNoCarrinho` (`CarrinhoDeComprasId`, `ProdutoId`, `Quantidade`, `ValorNoCarrinho`)
+VALUES (@p0, @p1, @p2, @p3);
+2023-10-02 15:17:43.294 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-02 15:17:43.300 -03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p0='?' (DbType = UInt32), @p1='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `ProdutosNoCarrinho` SET `Quantidade` = @p0, `ValorNoCarrinho` = @p1
+WHERE `CarrinhoDeComprasId` = @p2 AND `ProdutoId` = @p3;
+SELECT ROW_COUNT();
+2023-10-02 15:17:43.301 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.ReadCarrinhoDeComprasDto'.
+2023-10-02 15:17:43.301 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.AdicionarProdutosAoCarrinho (E-Commerce(API)) in 26.9287ms
+2023-10-02 15:17:43.301 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.AdicionarProdutosAoCarrinho (E-Commerce(API))'
+2023-10-02 15:17:43.301 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 application/json 83 - 200 615 application/json;+charset=utf-8 27.4510ms
+2023-10-02 15:18:14.513 -03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7296/Produto/45f99c7f-8840-41c9-9980-3427d3a8492f application/json 348
+2023-10-02 15:18:14.513 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.ProdutoController.EditarProduto (E-Commerce(API))'
+2023-10-02 15:18:14.513 -03:00 [INF] Route matched with {action = "EditarProduto", controller = "Produto"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult EditarProduto(System.Guid, E_Commerce_API_.Data.DTOs.ProdutoDto.UpdateProdutoDto) on controller E_Commerce_API_.Controllers.ProdutoController (E-Commerce(API)).
+2023-10-02 15:18:14.514 -03:00 [INF] Foi requisitado uma edição de produto pelo usuário: 'db82dc95-bb75-47ba-84a6-8547ddb7c948'.
+2023-10-02 15:18:14.514 -03:00 [INF] Iniciada edição do produto '"45f99c7f-8840-41c9-9980-3427d3a8492f"'.
+2023-10-02 15:18:14.515 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 15:18:14.516 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+2023-10-02 15:18:14.519 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+2023-10-02 15:18:14.520 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 15:18:14.521 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+2023-10-02 15:18:14.526 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p13='?' (DbType = Guid), @p0='?' (DbType = Double), @p1='?' (DbType = Guid), @p2='?' (DbType = Double), @p3='?' (DbType = DateTime), @p4='?' (DbType = DateTime), @p5='?' (Size = 512), @p6='?' (DbType = Double), @p7='?' (Size = 128), @p8='?' (DbType = Double), @p9='?' (DbType = Int32), @p10='?' (DbType = Boolean), @p11='?' (DbType = Guid), @p12='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Produtos` SET `Altura` = @p0, `CentroDeDistribuicaoId` = @p1, `Comprimento` = @p2, `DataEHoraCriacao` = @p3, `DataEHoraModificacao` = @p4, `Descricao` = @p5, `Largura` = @p6, `Nome` = @p7, `Peso` = @p8, `QuantidadeEmEstoque` = @p9, `Status` = @p10, `SubcategoriaId` = @p11, `Valor` = @p12
+WHERE `Id` = @p13;
+SELECT ROW_COUNT();
+2023-10-02 15:18:14.526 -03:00 [INF] Produto atualizado no banco de dados.
+2023-10-02 15:18:14.526 -03:00 [INF] Produto editado com sucesso.
+2023-10-02 15:18:14.526 -03:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2023-10-02 15:18:14.526 -03:00 [INF] Executed action E_Commerce_API_.Controllers.ProdutoController.EditarProduto (E-Commerce(API)) in 13.4993ms
+2023-10-02 15:18:14.526 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.ProdutoController.EditarProduto (E-Commerce(API))'
+2023-10-02 15:18:14.527 -03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7296/Produto/45f99c7f-8840-41c9-9980-3427d3a8492f application/json 348 - 204 - - 13.9956ms
+2023-10-02 15:18:18.675 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 - -
+2023-10-02 15:18:18.675 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API))'
+2023-10-02 15:18:18.675 -03:00 [INF] Route matched with {action = "GetCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCarrinho(System.Guid) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-02 15:18:18.677 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoDeComprasId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`Logradouro`, `c`.`Numero`, `c`.`UF`
+FROM `CarrinhosDeCompras` AS `c`
+WHERE `c`.`Id` = @__carrinhoDeComprasId_0
+LIMIT 1
+2023-10-02 15:18:18.678 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-02 15:18:18.679 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-02 15:18:18.690 -03:00 [INF] Executed DbCommand (10ms) [Parameters=[@p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p0='?' (DbType = UInt32), @p1='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `ProdutosNoCarrinho` SET `Quantidade` = @p0, `ValorNoCarrinho` = @p1
+WHERE `CarrinhoDeComprasId` = @p2 AND `ProdutoId` = @p3;
+SELECT ROW_COUNT();
+2023-10-02 15:18:18.691 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-02 15:18:18.693 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-02 15:18:18.694 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__get_Item_0
+2023-10-02 15:18:18.694 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.ReadCarrinhoDeComprasDto'.
+2023-10-02 15:18:18.695 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API)) in 19.1567ms
+2023-10-02 15:18:18.695 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API))'
+2023-10-02 15:18:18.695 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 - - - 200 619 application/json;+charset=utf-8 19.7529ms
+2023-10-02 15:18:27.895 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 - -
+2023-10-02 15:18:27.896 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API))'
+2023-10-02 15:18:27.896 -03:00 [INF] Route matched with {action = "GetCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCarrinho(System.Guid) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-02 15:18:27.898 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoDeComprasId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`Logradouro`, `c`.`Numero`, `c`.`UF`
+FROM `CarrinhosDeCompras` AS `c`
+WHERE `c`.`Id` = @__carrinhoDeComprasId_0
+LIMIT 1
+2023-10-02 15:18:27.899 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-02 15:18:27.903 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-02 15:18:27.905 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-02 15:18:27.907 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-02 15:18:27.909 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__get_Item_0
+2023-10-02 15:18:27.909 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.ReadCarrinhoDeComprasDto'.
+2023-10-02 15:18:27.909 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API)) in 13.4202ms
+2023-10-02 15:18:27.909 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API))'
+2023-10-02 15:18:27.909 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 - - - 200 562 application/json;+charset=utf-8 13.9350ms
+2023-10-02 15:18:36.082 -03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7296/Produto/45f99c7f-8840-41c9-9980-3427d3a8492f application/json 346
+2023-10-02 15:18:36.082 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.ProdutoController.EditarProduto (E-Commerce(API))'
+2023-10-02 15:18:36.082 -03:00 [INF] Route matched with {action = "EditarProduto", controller = "Produto"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult EditarProduto(System.Guid, E_Commerce_API_.Data.DTOs.ProdutoDto.UpdateProdutoDto) on controller E_Commerce_API_.Controllers.ProdutoController (E-Commerce(API)).
+2023-10-02 15:18:36.083 -03:00 [INF] Foi requisitado uma edição de produto pelo usuário: 'db82dc95-bb75-47ba-84a6-8547ddb7c948'.
+2023-10-02 15:18:36.083 -03:00 [INF] Iniciada edição do produto '"45f99c7f-8840-41c9-9980-3427d3a8492f"'.
+2023-10-02 15:18:36.086 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 15:18:36.087 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+2023-10-02 15:18:36.088 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+2023-10-02 15:18:36.090 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 15:18:36.090 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+2023-10-02 15:18:36.096 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p13='?' (DbType = Guid), @p0='?' (DbType = Double), @p1='?' (DbType = Guid), @p2='?' (DbType = Double), @p3='?' (DbType = DateTime), @p4='?' (DbType = DateTime), @p5='?' (Size = 512), @p6='?' (DbType = Double), @p7='?' (Size = 128), @p8='?' (DbType = Double), @p9='?' (DbType = Int32), @p10='?' (DbType = Boolean), @p11='?' (DbType = Guid), @p12='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Produtos` SET `Altura` = @p0, `CentroDeDistribuicaoId` = @p1, `Comprimento` = @p2, `DataEHoraCriacao` = @p3, `DataEHoraModificacao` = @p4, `Descricao` = @p5, `Largura` = @p6, `Nome` = @p7, `Peso` = @p8, `QuantidadeEmEstoque` = @p9, `Status` = @p10, `SubcategoriaId` = @p11, `Valor` = @p12
+WHERE `Id` = @p13;
+SELECT ROW_COUNT();
+2023-10-02 15:18:36.096 -03:00 [INF] Produto atualizado no banco de dados.
+2023-10-02 15:18:36.096 -03:00 [INF] Produto editado com sucesso.
+2023-10-02 15:18:36.096 -03:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2023-10-02 15:18:36.096 -03:00 [INF] Executed action E_Commerce_API_.Controllers.ProdutoController.EditarProduto (E-Commerce(API)) in 14.1636ms
+2023-10-02 15:18:36.096 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.ProdutoController.EditarProduto (E-Commerce(API))'
+2023-10-02 15:18:36.096 -03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7296/Produto/45f99c7f-8840-41c9-9980-3427d3a8492f application/json 346 - 204 - - 14.8281ms
+2023-10-02 15:18:39.810 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 - -
+2023-10-02 15:18:39.810 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API))'
+2023-10-02 15:18:39.810 -03:00 [INF] Route matched with {action = "GetCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCarrinho(System.Guid) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-02 15:18:39.812 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoDeComprasId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`Logradouro`, `c`.`Numero`, `c`.`UF`
+FROM `CarrinhosDeCompras` AS `c`
+WHERE `c`.`Id` = @__carrinhoDeComprasId_0
+LIMIT 1
+2023-10-02 15:18:39.814 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-02 15:18:39.816 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-02 15:18:39.827 -03:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+DELETE FROM `ProdutosNoCarrinho`
+WHERE `CarrinhoDeComprasId` = @p0 AND `ProdutoId` = @p1;
+SELECT ROW_COUNT();
+2023-10-02 15:18:39.828 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-02 15:18:39.829 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-02 15:18:39.830 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__get_Item_0
+2023-10-02 15:18:39.830 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.ReadCarrinhoDeComprasDto'.
+2023-10-02 15:18:39.830 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API)) in 20.6813ms
+2023-10-02 15:18:39.830 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API))'
+2023-10-02 15:18:39.831 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 - - - 200 651 application/json;+charset=utf-8 21.0056ms
+2023-10-02 15:19:05.002 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 - -
+2023-10-02 15:19:05.002 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API))'
+2023-10-02 15:19:05.002 -03:00 [INF] Route matched with {action = "GetCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCarrinho(System.Guid) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-02 15:19:05.006 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoDeComprasId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`Logradouro`, `c`.`Numero`, `c`.`UF`
+FROM `CarrinhosDeCompras` AS `c`
+WHERE `c`.`Id` = @__carrinhoDeComprasId_0
+LIMIT 1
+2023-10-02 15:19:05.008 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-02 15:19:05.010 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-02 15:19:05.012 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-02 15:19:05.015 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__get_Item_0
+2023-10-02 15:19:05.015 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.ReadCarrinhoDeComprasDto'.
+2023-10-02 15:19:05.015 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API)) in 12.9497ms
+2023-10-02 15:19:05.015 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API))'
+2023-10-02 15:19:05.015 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 - - - 200 453 application/json;+charset=utf-8 13.5096ms
+2023-10-02 15:19:33.402 -03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7296/Produto/45f99c7f-8840-41c9-9980-3427d3a8492f application/json 348
+2023-10-02 15:19:33.403 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.ProdutoController.EditarProduto (E-Commerce(API))'
+2023-10-02 15:19:33.403 -03:00 [INF] Route matched with {action = "EditarProduto", controller = "Produto"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult EditarProduto(System.Guid, E_Commerce_API_.Data.DTOs.ProdutoDto.UpdateProdutoDto) on controller E_Commerce_API_.Controllers.ProdutoController (E-Commerce(API)).
+2023-10-02 15:19:33.404 -03:00 [INF] Foi requisitado uma edição de produto pelo usuário: 'db82dc95-bb75-47ba-84a6-8547ddb7c948'.
+2023-10-02 15:19:33.404 -03:00 [INF] Iniciada edição do produto '"45f99c7f-8840-41c9-9980-3427d3a8492f"'.
+2023-10-02 15:19:33.407 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 15:19:33.408 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+2023-10-02 15:19:33.410 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+2023-10-02 15:19:33.411 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 15:19:33.412 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+2023-10-02 15:19:33.418 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p13='?' (DbType = Guid), @p0='?' (DbType = Double), @p1='?' (DbType = Guid), @p2='?' (DbType = Double), @p3='?' (DbType = DateTime), @p4='?' (DbType = DateTime), @p5='?' (Size = 512), @p6='?' (DbType = Double), @p7='?' (Size = 128), @p8='?' (DbType = Double), @p9='?' (DbType = Int32), @p10='?' (DbType = Boolean), @p11='?' (DbType = Guid), @p12='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Produtos` SET `Altura` = @p0, `CentroDeDistribuicaoId` = @p1, `Comprimento` = @p2, `DataEHoraCriacao` = @p3, `DataEHoraModificacao` = @p4, `Descricao` = @p5, `Largura` = @p6, `Nome` = @p7, `Peso` = @p8, `QuantidadeEmEstoque` = @p9, `Status` = @p10, `SubcategoriaId` = @p11, `Valor` = @p12
+WHERE `Id` = @p13;
+SELECT ROW_COUNT();
+2023-10-02 15:19:33.418 -03:00 [INF] Produto atualizado no banco de dados.
+2023-10-02 15:19:33.418 -03:00 [INF] Produto editado com sucesso.
+2023-10-02 15:19:33.418 -03:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2023-10-02 15:19:33.418 -03:00 [INF] Executed action E_Commerce_API_.Controllers.ProdutoController.EditarProduto (E-Commerce(API)) in 14.9123ms
+2023-10-02 15:19:33.418 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.ProdutoController.EditarProduto (E-Commerce(API))'
+2023-10-02 15:19:33.418 -03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7296/Produto/45f99c7f-8840-41c9-9980-3427d3a8492f application/json 348 - 204 - - 15.5254ms
+2023-10-02 15:19:40.779 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 application/json 84
+2023-10-02 15:19:40.779 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.AdicionarProdutosAoCarrinho (E-Commerce(API))'
+2023-10-02 15:19:40.779 -03:00 [INF] Route matched with {action = "AdicionarProdutosAoCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AdicionarProdutosAoCarrinho(System.Guid, E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.AddProdutosAoCarrinhoDto) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-02 15:19:40.781 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoDeComprasId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`Logradouro`, `c`.`Numero`, `c`.`UF`
+FROM `CarrinhosDeCompras` AS `c`
+WHERE `c`.`Id` = @__carrinhoDeComprasId_0
+LIMIT 1
+2023-10-02 15:19:40.782 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__get_Item_0
+2023-10-02 15:19:40.782 -03:00 [INF] Iniciada pesquisa do produto "45f99c7f-8840-41c9-9980-3427d3a8492f".
+2023-10-02 15:19:40.783 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 15:19:40.784 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:19:40.785 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+WHERE `s`.`Id` = @__get_Item_0
+2023-10-02 15:19:40.786 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 15:19:40.797 -03:00 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = UInt32), @p3='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `ProdutosNoCarrinho` (`CarrinhoDeComprasId`, `ProdutoId`, `Quantidade`, `ValorNoCarrinho`)
+VALUES (@p0, @p1, @p2, @p3);
+2023-10-02 15:19:40.798 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-02 15:19:40.798 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.ReadCarrinhoDeComprasDto'.
+2023-10-02 15:19:40.798 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.AdicionarProdutosAoCarrinho (E-Commerce(API)) in 19.181ms
+2023-10-02 15:19:40.798 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.AdicionarProdutosAoCarrinho (E-Commerce(API))'
+2023-10-02 15:19:40.798 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 application/json 84 - 200 562 application/json;+charset=utf-8 19.5840ms
+2023-10-02 15:19:52.316 -03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7296/Produto/45f99c7f-8840-41c9-9980-3427d3a8492f application/json 346
+2023-10-02 15:19:52.316 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.ProdutoController.EditarProduto (E-Commerce(API))'
+2023-10-02 15:19:52.317 -03:00 [INF] Route matched with {action = "EditarProduto", controller = "Produto"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult EditarProduto(System.Guid, E_Commerce_API_.Data.DTOs.ProdutoDto.UpdateProdutoDto) on controller E_Commerce_API_.Controllers.ProdutoController (E-Commerce(API)).
+2023-10-02 15:19:52.318 -03:00 [INF] Foi requisitado uma edição de produto pelo usuário: 'db82dc95-bb75-47ba-84a6-8547ddb7c948'.
+2023-10-02 15:19:52.318 -03:00 [INF] Iniciada edição do produto '"45f99c7f-8840-41c9-9980-3427d3a8492f"'.
+2023-10-02 15:19:52.319 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 15:19:52.321 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+2023-10-02 15:19:52.322 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+2023-10-02 15:19:52.324 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 15:19:52.324 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+2023-10-02 15:19:52.330 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p13='?' (DbType = Guid), @p0='?' (DbType = Double), @p1='?' (DbType = Guid), @p2='?' (DbType = Double), @p3='?' (DbType = DateTime), @p4='?' (DbType = DateTime), @p5='?' (Size = 512), @p6='?' (DbType = Double), @p7='?' (Size = 128), @p8='?' (DbType = Double), @p9='?' (DbType = Int32), @p10='?' (DbType = Boolean), @p11='?' (DbType = Guid), @p12='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Produtos` SET `Altura` = @p0, `CentroDeDistribuicaoId` = @p1, `Comprimento` = @p2, `DataEHoraCriacao` = @p3, `DataEHoraModificacao` = @p4, `Descricao` = @p5, `Largura` = @p6, `Nome` = @p7, `Peso` = @p8, `QuantidadeEmEstoque` = @p9, `Status` = @p10, `SubcategoriaId` = @p11, `Valor` = @p12
+WHERE `Id` = @p13;
+SELECT ROW_COUNT();
+2023-10-02 15:19:52.330 -03:00 [INF] Produto atualizado no banco de dados.
+2023-10-02 15:19:52.330 -03:00 [INF] Produto editado com sucesso.
+2023-10-02 15:19:52.330 -03:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2023-10-02 15:19:52.330 -03:00 [INF] Executed action E_Commerce_API_.Controllers.ProdutoController.EditarProduto (E-Commerce(API)) in 13.6125ms
+2023-10-02 15:19:52.330 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.ProdutoController.EditarProduto (E-Commerce(API))'
+2023-10-02 15:19:52.330 -03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7296/Produto/45f99c7f-8840-41c9-9980-3427d3a8492f application/json 346 - 204 - - 14.3110ms
+2023-10-02 15:19:55.662 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 - -
+2023-10-02 15:19:55.663 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API))'
+2023-10-02 15:19:55.663 -03:00 [INF] Route matched with {action = "GetCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCarrinho(System.Guid) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-02 15:19:55.664 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoDeComprasId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`Logradouro`, `c`.`Numero`, `c`.`UF`
+FROM `CarrinhosDeCompras` AS `c`
+WHERE `c`.`Id` = @__carrinhoDeComprasId_0
+LIMIT 1
+2023-10-02 15:19:55.665 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-02 15:19:55.667 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-02 15:19:55.671 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p0='?' (DbType = UInt32), @p1='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `ProdutosNoCarrinho` SET `Quantidade` = @p0, `ValorNoCarrinho` = @p1
+WHERE `CarrinhoDeComprasId` = @p2 AND `ProdutoId` = @p3;
+SELECT ROW_COUNT();
+2023-10-02 15:19:55.674 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-02 15:19:55.676 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-02 15:19:55.678 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__get_Item_0
+2023-10-02 15:19:55.678 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.ReadCarrinhoDeComprasDto'.
+2023-10-02 15:19:55.678 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API)) in 15.6812ms
+2023-10-02 15:19:55.678 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API))'
+2023-10-02 15:19:55.679 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 - - - 200 689 application/json;+charset=utf-8 16.2183ms
+2023-10-02 15:20:16.939 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 - -
+2023-10-02 15:20:16.940 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API))'
+2023-10-02 15:20:16.940 -03:00 [INF] Route matched with {action = "GetCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCarrinho(System.Guid) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-02 15:20:16.943 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoDeComprasId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`Logradouro`, `c`.`Numero`, `c`.`UF`
+FROM `CarrinhosDeCompras` AS `c`
+WHERE `c`.`Id` = @__carrinhoDeComprasId_0
+LIMIT 1
+2023-10-02 15:20:16.945 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-02 15:20:16.947 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-02 15:20:16.950 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-02 15:20:16.952 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-02 15:20:16.954 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__get_Item_0
+2023-10-02 15:20:16.954 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.ReadCarrinhoDeComprasDto'.
+2023-10-02 15:20:16.954 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API)) in 13.9413ms
+2023-10-02 15:20:16.954 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API))'
+2023-10-02 15:20:16.954 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 - - - 200 561 application/json;+charset=utf-8 15.0191ms
+2023-10-02 16:31:39.760 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/CarrinhoDeCompras application/json 154
+2023-10-02 16:31:39.761 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.CriarCarrinho (E-Commerce(API))'
+2023-10-02 16:31:39.761 -03:00 [INF] Route matched with {action = "CriarCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CriarCarrinho(E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.CreateCarrinhoDeComprasDto) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-02 16:31:39.789 -03:00 [INF] Iniciada pesquisa do produto "be4bc549-f748-40ab-9cbf-bdc506df2aa0".
+2023-10-02 16:31:39.801 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 16:31:39.805 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 16:31:39.809 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+WHERE `s`.`Id` = @__get_Item_0
+2023-10-02 16:31:39.812 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 16:31:41.347 -03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = UInt32), @p7='?' (Size = 4000), @p8='?' (DbType = Guid), @p9='?' (DbType = Guid), @p10='?' (DbType = UInt32), @p11='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `CarrinhosDeCompras` (`Id`, `Bairro`, `CEP`, `Cidade`, `Complemento`, `Logradouro`, `Numero`, `UF`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+INSERT INTO `ProdutosNoCarrinho` (`CarrinhoDeComprasId`, `ProdutoId`, `Quantidade`, `ValorNoCarrinho`)
+VALUES (@p8, @p9, @p10, @p11);
+2023-10-02 16:31:41.353 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-02 16:31:41.354 -03:00 [INF] Executing CreatedAtActionResult, writing value of type 'E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.ReadCarrinhoDeComprasDto'.
+2023-10-02 16:31:41.355 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.CriarCarrinho (E-Commerce(API)) in 1593.5748ms
+2023-10-02 16:31:41.355 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.CriarCarrinho (E-Commerce(API))'
+2023-10-02 16:31:41.355 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/CarrinhoDeCompras application/json 154 - 201 340 application/json;+charset=utf-8 1594.8854ms
+2023-10-02 16:32:07.120 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/CarrinhoDeCompras/68a37d88-a192-4847-a081-d0d27475ab18 application/json 84
+2023-10-02 16:32:07.120 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.AdicionarProdutosAoCarrinho (E-Commerce(API))'
+2023-10-02 16:32:07.120 -03:00 [INF] Route matched with {action = "AdicionarProdutosAoCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AdicionarProdutosAoCarrinho(System.Guid, E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.AddProdutosAoCarrinhoDto) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-02 16:32:07.124 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carrinhoDeComprasId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`Logradouro`, `c`.`Numero`, `c`.`UF`
+FROM `CarrinhosDeCompras` AS `c`
+WHERE `c`.`Id` = @__carrinhoDeComprasId_0
+LIMIT 1
+2023-10-02 16:32:07.128 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__get_Item_0
+2023-10-02 16:32:07.129 -03:00 [INF] Iniciada pesquisa do produto "45f99c7f-8840-41c9-9980-3427d3a8492f".
+2023-10-02 16:32:07.131 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 16:32:07.134 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 16:32:07.136 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+WHERE `s`.`Id` = @__get_Item_0
+2023-10-02 16:32:07.137 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 16:32:07.137 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.AdicionarProdutosAoCarrinho (E-Commerce(API)) in 17.2817ms
+2023-10-02 16:32:07.137 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.AdicionarProdutosAoCarrinho (E-Commerce(API))'
+2023-10-02 16:32:07.137 -03:00 [ERR] Erro: {"TraceId":"2bc8b46b-7ee1-4f4a-97f2-cc3b76a499f6","Error":{"Logref":"BadRequest","Message":"Não existe estoque para o produto informado.","$type":"ErrorDetailsDto"},"Data":"02/10/2023","$type":"ErrorResponseDto"}
+2023-10-02 16:32:07.138 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/CarrinhoDeCompras/68a37d88-a192-4847-a081-d0d27475ab18 application/json 84 - 400 - application/json 18.1463ms
+2023-10-02 16:32:13.903 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7296/Produto/? - -
+2023-10-02 16:32:13.903 -03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: 'System.DateTime', Current time: 'System.DateTime'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2023-10-02 16:32:13.903 -03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: 'System.DateTime', Current time: 'System.DateTime'.
+2023-10-02 16:32:13.903 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.ProdutoController.PesquisarProduto (E-Commerce(API))'
+2023-10-02 16:32:13.903 -03:00 [INF] Route matched with {action = "PesquisarProduto", controller = "Produto"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult PesquisarProduto(E_Commerce_API_.Data.DTOs.ProdutoDto.FiltroProdutoDto) on controller E_Commerce_API_.Controllers.ProdutoController (E-Commerce(API)).
+2023-10-02 16:32:13.904 -03:00 [INF] Foi requisitado uma pesquisa de produtos.
+2023-10-02 16:32:13.904 -03:00 [INF] Iniciada a pesquisa de produtos com os filtros informados: {"Nome":null,"Peso":null,"Altura":null,"Largura":null,"Comprimento":null,"Valor":null,"Estoque":null,"CentroDeDistribuicaoId":null,"CategoriaId":null,"SubcategoriaId":null,"Status":"Todos","Ordem":"Crescente","Registros":30,"Pagina":1,"$type":"FiltroProdutoDto"}
+2023-10-02 16:32:13.904 -03:00 [INF] Criação da querie para pesquisa de produtos.
+2023-10-02 16:32:13.906 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT * FROM `E-COMMERCE(API)`.PRODUTOS WHERE 1=1 ORDER BY PRODUTOS.NOME LIMIT 0, 30
+2023-10-02 16:32:13.908 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 16:32:13.911 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+WHERE `s`.`Id` = @__get_Item_0
+2023-10-02 16:32:13.913 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 16:32:13.914 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 16:32:13.916 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+WHERE `s`.`Id` = @__get_Item_0
+2023-10-02 16:32:13.917 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 16:32:13.919 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 16:32:13.920 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+WHERE `s`.`Id` = @__get_Item_0
+2023-10-02 16:32:13.921 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 16:32:13.922 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+WHERE `s`.`Id` = @__get_Item_0
+2023-10-02 16:32:13.923 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 16:32:13.923 -03:00 [INF] Foram encontrados 6 produtos a partir da querie: SELECT * FROM `E-COMMERCE(API)`.PRODUTOS WHERE 1=1 ORDER BY PRODUTOS.NOME LIMIT 0, 30
+2023-10-02 16:32:13.923 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[E_Commerce_API_.Data.DTOs.ProdutoDto.ReadProdutoDto, E-Commerce(API), Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-02 16:32:13.924 -03:00 [INF] Executed action E_Commerce_API_.Controllers.ProdutoController.PesquisarProduto (E-Commerce(API)) in 20.0995ms
+2023-10-02 16:32:13.924 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.ProdutoController.PesquisarProduto (E-Commerce(API))'
+2023-10-02 16:32:13.924 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7296/Produto/? - - - 200 2366 application/json;+charset=utf-8 20.7072ms
+2023-10-02 16:32:24.057 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/CarrinhoDeCompras/68a37d88-a192-4847-a081-d0d27475ab18 application/json 83
+2023-10-02 16:32:24.057 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.AdicionarProdutosAoCarrinho (E-Commerce(API))'
+2023-10-02 16:32:24.057 -03:00 [INF] Route matched with {action = "AdicionarProdutosAoCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AdicionarProdutosAoCarrinho(System.Guid, E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.AddProdutosAoCarrinhoDto) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-02 16:32:24.060 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoDeComprasId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`Logradouro`, `c`.`Numero`, `c`.`UF`
+FROM `CarrinhosDeCompras` AS `c`
+WHERE `c`.`Id` = @__carrinhoDeComprasId_0
+LIMIT 1
+2023-10-02 16:32:24.062 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__get_Item_0
+2023-10-02 16:32:24.062 -03:00 [INF] Iniciada pesquisa do produto "45f99c7f-8840-41c9-9980-3427d3a8492f".
+2023-10-02 16:32:24.063 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 16:32:24.066 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 16:32:24.068 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+WHERE `s`.`Id` = @__get_Item_0
+2023-10-02 16:32:24.069 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 16:32:24.076 -03:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = UInt32), @p3='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `ProdutosNoCarrinho` (`CarrinhoDeComprasId`, `ProdutoId`, `Quantidade`, `ValorNoCarrinho`)
+VALUES (@p0, @p1, @p2, @p3);
+2023-10-02 16:32:24.077 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-02 16:32:24.077 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.ReadCarrinhoDeComprasDto'.
+2023-10-02 16:32:24.078 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.AdicionarProdutosAoCarrinho (E-Commerce(API)) in 20.5606ms
+2023-10-02 16:32:24.078 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.AdicionarProdutosAoCarrinho (E-Commerce(API))'
+2023-10-02 16:32:24.078 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/CarrinhoDeCompras/68a37d88-a192-4847-a081-d0d27475ab18 application/json 83 - 200 448 application/json;+charset=utf-8 20.9588ms
+2023-10-02 16:33:58.507 -03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7296/Produto/45f99c7f-8840-41c9-9980-3427d3a8492f application/json 348
+2023-10-02 16:33:58.508 -03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: 'System.DateTime', Current time: 'System.DateTime'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2023-10-02 16:33:58.508 -03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: 'System.DateTime', Current time: 'System.DateTime'.
+2023-10-02 16:33:58.508 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin|lojista)
+2023-10-02 16:33:58.508 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-10-02 16:33:58.508 -03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7296/Produto/45f99c7f-8840-41c9-9980-3427d3a8492f application/json 348 - 401 0 - 1.0314ms
+2023-10-02 16:34:12.594 -03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7296/Produto/45f99c7f-8840-41c9-9980-3427d3a8492f application/json 348
+2023-10-02 16:34:12.595 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.ProdutoController.EditarProduto (E-Commerce(API))'
+2023-10-02 16:34:12.595 -03:00 [INF] Route matched with {action = "EditarProduto", controller = "Produto"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult EditarProduto(System.Guid, E_Commerce_API_.Data.DTOs.ProdutoDto.UpdateProdutoDto) on controller E_Commerce_API_.Controllers.ProdutoController (E-Commerce(API)).
+2023-10-02 16:34:12.597 -03:00 [INF] Foi requisitado uma edição de produto pelo usuário: 'db82dc95-bb75-47ba-84a6-8547ddb7c948'.
+2023-10-02 16:34:12.597 -03:00 [INF] Iniciada edição do produto '"45f99c7f-8840-41c9-9980-3427d3a8492f"'.
+2023-10-02 16:34:12.603 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 16:34:12.604 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+2023-10-02 16:34:12.605 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+2023-10-02 16:34:12.607 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 16:34:12.608 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+2023-10-02 16:34:12.616 -03:00 [INF] Executed DbCommand (7ms) [Parameters=[@p13='?' (DbType = Guid), @p0='?' (DbType = Double), @p1='?' (DbType = Guid), @p2='?' (DbType = Double), @p3='?' (DbType = DateTime), @p4='?' (DbType = DateTime), @p5='?' (Size = 512), @p6='?' (DbType = Double), @p7='?' (Size = 128), @p8='?' (DbType = Double), @p9='?' (DbType = Int32), @p10='?' (DbType = Boolean), @p11='?' (DbType = Guid), @p12='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Produtos` SET `Altura` = @p0, `CentroDeDistribuicaoId` = @p1, `Comprimento` = @p2, `DataEHoraCriacao` = @p3, `DataEHoraModificacao` = @p4, `Descricao` = @p5, `Largura` = @p6, `Nome` = @p7, `Peso` = @p8, `QuantidadeEmEstoque` = @p9, `Status` = @p10, `SubcategoriaId` = @p11, `Valor` = @p12
+WHERE `Id` = @p13;
+SELECT ROW_COUNT();
+2023-10-02 16:34:12.616 -03:00 [INF] Produto atualizado no banco de dados.
+2023-10-02 16:34:12.617 -03:00 [INF] Produto editado com sucesso.
+2023-10-02 16:34:12.617 -03:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2023-10-02 16:34:12.617 -03:00 [INF] Executed action E_Commerce_API_.Controllers.ProdutoController.EditarProduto (E-Commerce(API)) in 21.5821ms
+2023-10-02 16:34:12.617 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.ProdutoController.EditarProduto (E-Commerce(API))'
+2023-10-02 16:34:12.617 -03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7296/Produto/45f99c7f-8840-41c9-9980-3427d3a8492f application/json 348 - 204 - - 22.5418ms
+2023-10-02 16:34:30.229 -03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 application/json 84
+2023-10-02 16:34:30.229 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.AlterarQuantidadeDeProdutosNoCarrinho (E-Commerce(API))'
+2023-10-02 16:34:30.229 -03:00 [INF] Route matched with {action = "AlterarQuantidadeDeProdutosNoCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AlterarQuantidadeDeProdutosNoCarrinho(System.Guid, E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.UpdateCarrinhoDeComprasDto) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-02 16:34:30.234 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__carrinhoDeComprasId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`Logradouro`, `c`.`Numero`, `c`.`UF`
+FROM `CarrinhosDeCompras` AS `c`
+WHERE `c`.`Id` = @__carrinhoDeComprasId_0
+LIMIT 1
+2023-10-02 16:34:30.236 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-02 16:34:30.236 -03:00 [INF] Iniciada pesquisa do produto "45f99c7f-8840-41c9-9980-3427d3a8492f".
+2023-10-02 16:34:30.237 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 16:34:30.239 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 16:34:30.241 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+WHERE `s`.`Id` = @__get_Item_0
+2023-10-02 16:34:30.243 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 16:34:30.248 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p0='?' (DbType = UInt32), @p1='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `ProdutosNoCarrinho` SET `Quantidade` = @p0, `ValorNoCarrinho` = @p1
+WHERE `CarrinhoDeComprasId` = @p2 AND `ProdutoId` = @p3;
+SELECT ROW_COUNT();
+2023-10-02 16:34:30.250 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-02 16:34:30.253 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__get_Item_0
+2023-10-02 16:34:30.253 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.ReadCarrinhoDeComprasDto'.
+2023-10-02 16:34:30.254 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.AlterarQuantidadeDeProdutosNoCarrinho (E-Commerce(API)) in 24.5456ms
+2023-10-02 16:34:30.254 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.AlterarQuantidadeDeProdutosNoCarrinho (E-Commerce(API))'
+2023-10-02 16:34:30.254 -03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7296/CarrinhoDeCompras/d8654a41-53f7-4cd6-a00b-b3130fb5de00 application/json 84 - 200 562 application/json;+charset=utf-8 25.0327ms
+2023-10-02 16:34:46.695 -03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7296/CarrinhoDeCompras/68a37d88-a192-4847-a081-d0d27475ab18 application/json 84
+2023-10-02 16:34:46.695 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.AlterarQuantidadeDeProdutosNoCarrinho (E-Commerce(API))'
+2023-10-02 16:34:46.695 -03:00 [INF] Route matched with {action = "AlterarQuantidadeDeProdutosNoCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AlterarQuantidadeDeProdutosNoCarrinho(System.Guid, E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.UpdateCarrinhoDeComprasDto) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-02 16:34:46.698 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carrinhoDeComprasId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`Logradouro`, `c`.`Numero`, `c`.`UF`
+FROM `CarrinhosDeCompras` AS `c`
+WHERE `c`.`Id` = @__carrinhoDeComprasId_0
+LIMIT 1
+2023-10-02 16:34:46.702 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-02 16:34:46.703 -03:00 [INF] Iniciada pesquisa do produto "45f99c7f-8840-41c9-9980-3427d3a8492f".
+2023-10-02 16:34:46.704 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 16:34:46.706 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 16:34:46.708 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+WHERE `s`.`Id` = @__get_Item_0
+2023-10-02 16:34:46.709 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 16:34:46.722 -03:00 [INF] Executed DbCommand (13ms) [Parameters=[@p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p0='?' (DbType = UInt32), @p1='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `ProdutosNoCarrinho` SET `Quantidade` = @p0, `ValorNoCarrinho` = @p1
+WHERE `CarrinhoDeComprasId` = @p2 AND `ProdutoId` = @p3;
+SELECT ROW_COUNT();
+2023-10-02 16:34:46.724 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-02 16:34:46.726 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__get_Item_0
+2023-10-02 16:34:46.726 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.ReadCarrinhoDeComprasDto'.
+2023-10-02 16:34:46.726 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.AlterarQuantidadeDeProdutosNoCarrinho (E-Commerce(API)) in 31.3176ms
+2023-10-02 16:34:46.726 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.AlterarQuantidadeDeProdutosNoCarrinho (E-Commerce(API))'
+2023-10-02 16:34:46.726 -03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7296/CarrinhoDeCompras/68a37d88-a192-4847-a081-d0d27475ab18 application/json 84 - 200 449 application/json;+charset=utf-8 31.7043ms
+2023-10-02 16:35:02.483 -03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7296/Produto/45f99c7f-8840-41c9-9980-3427d3a8492f application/json 348
+2023-10-02 16:35:02.483 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.ProdutoController.EditarProduto (E-Commerce(API))'
+2023-10-02 16:35:02.483 -03:00 [INF] Route matched with {action = "EditarProduto", controller = "Produto"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult EditarProduto(System.Guid, E_Commerce_API_.Data.DTOs.ProdutoDto.UpdateProdutoDto) on controller E_Commerce_API_.Controllers.ProdutoController (E-Commerce(API)).
+2023-10-02 16:35:02.486 -03:00 [INF] Foi requisitado uma edição de produto pelo usuário: 'db82dc95-bb75-47ba-84a6-8547ddb7c948'.
+2023-10-02 16:35:02.486 -03:00 [INF] Iniciada edição do produto '"45f99c7f-8840-41c9-9980-3427d3a8492f"'.
+2023-10-02 16:35:02.488 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 16:35:02.489 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+2023-10-02 16:35:02.491 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+2023-10-02 16:35:02.492 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 16:35:02.493 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+2023-10-02 16:35:02.498 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p13='?' (DbType = Guid), @p0='?' (DbType = Double), @p1='?' (DbType = Guid), @p2='?' (DbType = Double), @p3='?' (DbType = DateTime), @p4='?' (DbType = DateTime), @p5='?' (Size = 512), @p6='?' (DbType = Double), @p7='?' (Size = 128), @p8='?' (DbType = Double), @p9='?' (DbType = Int32), @p10='?' (DbType = Boolean), @p11='?' (DbType = Guid), @p12='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Produtos` SET `Altura` = @p0, `CentroDeDistribuicaoId` = @p1, `Comprimento` = @p2, `DataEHoraCriacao` = @p3, `DataEHoraModificacao` = @p4, `Descricao` = @p5, `Largura` = @p6, `Nome` = @p7, `Peso` = @p8, `QuantidadeEmEstoque` = @p9, `Status` = @p10, `SubcategoriaId` = @p11, `Valor` = @p12
+WHERE `Id` = @p13;
+SELECT ROW_COUNT();
+2023-10-02 16:35:02.498 -03:00 [INF] Produto atualizado no banco de dados.
+2023-10-02 16:35:02.498 -03:00 [INF] Produto editado com sucesso.
+2023-10-02 16:35:02.499 -03:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2023-10-02 16:35:02.499 -03:00 [INF] Executed action E_Commerce_API_.Controllers.ProdutoController.EditarProduto (E-Commerce(API)) in 15.4998ms
+2023-10-02 16:35:02.499 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.ProdutoController.EditarProduto (E-Commerce(API))'
+2023-10-02 16:35:02.499 -03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7296/Produto/45f99c7f-8840-41c9-9980-3427d3a8492f application/json 348 - 204 - - 16.1670ms
+2023-10-02 16:35:14.379 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7296/CarrinhoDeCompras/68a37d88-a192-4847-a081-d0d27475ab18 - -
+2023-10-02 16:35:14.379 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API))'
+2023-10-02 16:35:14.379 -03:00 [INF] Route matched with {action = "GetCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCarrinho(System.Guid) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-02 16:35:14.381 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoDeComprasId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`Logradouro`, `c`.`Numero`, `c`.`UF`
+FROM `CarrinhosDeCompras` AS `c`
+WHERE `c`.`Id` = @__carrinhoDeComprasId_0
+LIMIT 1
+2023-10-02 16:35:14.383 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-02 16:35:14.384 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-02 16:35:14.392 -03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p0='?' (DbType = UInt32), @p1='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `ProdutosNoCarrinho` SET `Quantidade` = @p0, `ValorNoCarrinho` = @p1
+WHERE `CarrinhoDeComprasId` = @p2 AND `ProdutoId` = @p3;
+SELECT ROW_COUNT();
+2023-10-02 16:35:14.394 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-02 16:35:14.395 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__get_Item_0
+2023-10-02 16:35:14.396 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.ReadCarrinhoDeComprasDto'.
+2023-10-02 16:35:14.396 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API)) in 16.5577ms
+2023-10-02 16:35:14.396 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API))'
+2023-10-02 16:35:14.396 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7296/CarrinhoDeCompras/68a37d88-a192-4847-a081-d0d27475ab18 - - - 200 506 application/json;+charset=utf-8 17.0292ms
+2023-10-02 16:35:33.083 -03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7296/Produto/45f99c7f-8840-41c9-9980-3427d3a8492f application/json 349
+2023-10-02 16:35:33.084 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.ProdutoController.EditarProduto (E-Commerce(API))'
+2023-10-02 16:35:33.084 -03:00 [INF] Route matched with {action = "EditarProduto", controller = "Produto"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult EditarProduto(System.Guid, E_Commerce_API_.Data.DTOs.ProdutoDto.UpdateProdutoDto) on controller E_Commerce_API_.Controllers.ProdutoController (E-Commerce(API)).
+2023-10-02 16:35:33.085 -03:00 [INF] Foi requisitado uma edição de produto pelo usuário: 'db82dc95-bb75-47ba-84a6-8547ddb7c948'.
+2023-10-02 16:35:33.085 -03:00 [INF] Iniciada edição do produto '"45f99c7f-8840-41c9-9980-3427d3a8492f"'.
+2023-10-02 16:35:33.088 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 16:35:33.090 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+2023-10-02 16:35:33.091 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+2023-10-02 16:35:33.093 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 16:35:33.094 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+2023-10-02 16:35:33.099 -03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p13='?' (DbType = Guid), @p0='?' (DbType = Double), @p1='?' (DbType = Guid), @p2='?' (DbType = Double), @p3='?' (DbType = DateTime), @p4='?' (DbType = DateTime), @p5='?' (Size = 512), @p6='?' (DbType = Double), @p7='?' (Size = 128), @p8='?' (DbType = Double), @p9='?' (DbType = Int32), @p10='?' (DbType = Boolean), @p11='?' (DbType = Guid), @p12='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Produtos` SET `Altura` = @p0, `CentroDeDistribuicaoId` = @p1, `Comprimento` = @p2, `DataEHoraCriacao` = @p3, `DataEHoraModificacao` = @p4, `Descricao` = @p5, `Largura` = @p6, `Nome` = @p7, `Peso` = @p8, `QuantidadeEmEstoque` = @p9, `Status` = @p10, `SubcategoriaId` = @p11, `Valor` = @p12
+WHERE `Id` = @p13;
+SELECT ROW_COUNT();
+2023-10-02 16:35:33.099 -03:00 [INF] Produto atualizado no banco de dados.
+2023-10-02 16:35:33.099 -03:00 [INF] Produto editado com sucesso.
+2023-10-02 16:35:33.099 -03:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2023-10-02 16:35:33.099 -03:00 [INF] Executed action E_Commerce_API_.Controllers.ProdutoController.EditarProduto (E-Commerce(API)) in 15.6254ms
+2023-10-02 16:35:33.099 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.ProdutoController.EditarProduto (E-Commerce(API))'
+2023-10-02 16:35:33.099 -03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7296/Produto/45f99c7f-8840-41c9-9980-3427d3a8492f application/json 349 - 204 - - 16.2454ms
+2023-10-02 16:35:51.484 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/CarrinhoDeCompras/68a37d88-a192-4847-a081-d0d27475ab18 application/json 83
+2023-10-02 16:35:51.484 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.AdicionarProdutosAoCarrinho (E-Commerce(API))'
+2023-10-02 16:35:51.485 -03:00 [INF] Route matched with {action = "AdicionarProdutosAoCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AdicionarProdutosAoCarrinho(System.Guid, E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.AddProdutosAoCarrinhoDto) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-02 16:35:51.490 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carrinhoDeComprasId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`Logradouro`, `c`.`Numero`, `c`.`UF`
+FROM `CarrinhosDeCompras` AS `c`
+WHERE `c`.`Id` = @__carrinhoDeComprasId_0
+LIMIT 1
+2023-10-02 16:35:51.493 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__get_Item_0
+2023-10-02 16:35:51.494 -03:00 [INF] Iniciada pesquisa do produto "efe452b4-885e-4dd8-a695-be4ce5d99d61".
+2023-10-02 16:35:51.495 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-10-02 16:35:51.498 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 16:35:51.499 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+WHERE `s`.`Id` = @__get_Item_0
+2023-10-02 16:35:51.500 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-10-02 16:35:51.505 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = UInt32), @p3='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `ProdutosNoCarrinho` (`CarrinhoDeComprasId`, `ProdutoId`, `Quantidade`, `ValorNoCarrinho`)
+VALUES (@p0, @p1, @p2, @p3);
+2023-10-02 16:35:51.507 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-02 16:35:51.512 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+DELETE FROM `ProdutosNoCarrinho`
+WHERE `CarrinhoDeComprasId` = @p0 AND `ProdutoId` = @p1;
+SELECT ROW_COUNT();
+2023-10-02 16:35:51.513 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.ReadCarrinhoDeComprasDto'.
+2023-10-02 16:35:51.513 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.AdicionarProdutosAoCarrinho (E-Commerce(API)) in 28.1375ms
+2023-10-02 16:35:51.513 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.AdicionarProdutosAoCarrinho (E-Commerce(API))'
+2023-10-02 16:35:51.513 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/CarrinhoDeCompras/68a37d88-a192-4847-a081-d0d27475ab18 application/json 83 - 200 669 application/json;+charset=utf-8 28.6428ms
+2023-10-02 16:36:15.688 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7296/CarrinhoDeCompras/68a37d88-a192-4847-a081-d0d27475ab18 - -
+2023-10-02 16:36:15.688 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API))'
+2023-10-02 16:36:15.689 -03:00 [INF] Route matched with {action = "GetCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCarrinho(System.Guid) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-02 16:36:15.692 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoDeComprasId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`Logradouro`, `c`.`Numero`, `c`.`UF`
+FROM `CarrinhosDeCompras` AS `c`
+WHERE `c`.`Id` = @__carrinhoDeComprasId_0
+LIMIT 1
+2023-10-02 16:36:15.693 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-02 16:36:15.695 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-02 16:36:15.699 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-02 16:36:15.702 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__get_Item_0
+2023-10-02 16:36:15.703 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.ReadCarrinhoDeComprasDto'.
+2023-10-02 16:36:15.703 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API)) in 14.0911ms
+2023-10-02 16:36:15.703 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API))'
+2023-10-02 16:36:15.703 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7296/CarrinhoDeCompras/68a37d88-a192-4847-a081-d0d27475ab18 - - - 200 452 application/json;+charset=utf-8 15.4605ms

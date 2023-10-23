@@ -1,0 +1,115 @@
+2023-10-09 11:37:55.071 -03:00 [INF] Inicialização da WEB API...
+2023-10-09 11:37:55.223 -03:00 [INF] User profile is available. Using 'C:\Users\Cleartech\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-09 11:37:55.369 -03:00 [INF] Now listening on: https://localhost:7296
+2023-10-09 11:37:55.369 -03:00 [INF] Now listening on: http://localhost:5090
+2023-10-09 11:37:55.373 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-09 11:37:55.373 -03:00 [INF] Hosting environment: Development
+2023-10-09 11:37:55.373 -03:00 [INF] Content root path: C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\
+2023-10-09 11:37:55.638 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/index.html - -
+2023-10-09 11:37:55.993 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/index.html - - - 200 - text/html;charset=utf-8 359.8331ms
+2023-10-09 11:37:56.000 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_vs/browserLink - -
+2023-10-09 11:37:56.000 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - -
+2023-10-09 11:37:56.003 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 2.5109ms
+2023-10-09 11:37:56.025 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 24.6102ms
+2023-10-09 11:37:56.081 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - -
+2023-10-09 11:37:56.254 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 173.5834ms
+2023-10-09 11:38:19.867 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/GeradorDeCupom application/json 114
+2023-10-09 11:38:19.910 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API))'
+2023-10-09 11:38:19.934 -03:00 [INF] Route matched with {action = "GerarCupomDeDesconto", controller = "GeradorDeCupom"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GerarCupomDeDesconto(E_Commerce_API_.Data.DTOs.GeradorDeCupomDto.CreateCupomDeDescontoDto) on controller E_Commerce_API_.Controllers.GeradorDeCupomController (E-Commerce(API)).
+2023-10-09 11:38:22.098 -03:00 [INF] Executed DbCommand (52ms) [Parameters=[@p0='?' (Size = 255), @p1='?' (DbType = Boolean), @p2='?' (DbType = Guid), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `CuponsDeDesconto` (`Cupom`, `Ativo`, `SetorDeDesconto`, `TipoDeDesconto`, `Uso`, `ValorDoDesconto`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2023-10-09 11:38:22.132 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.GeradorDeCupomDto.ReadCupomDeDescontoDto'.
+2023-10-09 11:38:22.172 -03:00 [INF] Executed action E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API)) in 2233.127ms
+2023-10-09 11:38:22.172 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API))'
+2023-10-09 11:38:22.179 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/GeradorDeCupom application/json 114 - 200 97 application/json;+charset=utf-8 2312.4892ms
+2023-10-09 11:44:30.259 -03:00 [INF] Inicialização da WEB API...
+2023-10-09 11:44:31.326 -03:00 [INF] User profile is available. Using 'C:\Users\Cleartech\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-09 11:44:31.716 -03:00 [INF] Now listening on: https://localhost:7296
+2023-10-09 11:44:31.716 -03:00 [INF] Now listening on: http://localhost:5090
+2023-10-09 11:44:31.719 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-09 11:44:31.719 -03:00 [INF] Hosting environment: Development
+2023-10-09 11:44:31.719 -03:00 [INF] Content root path: C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\
+2023-10-09 11:44:31.832 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/index.html - -
+2023-10-09 11:44:32.342 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/index.html - - - 200 - text/html;charset=utf-8 514.3371ms
+2023-10-09 11:44:32.343 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - -
+2023-10-09 11:44:32.343 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_vs/browserLink - -
+2023-10-09 11:44:32.346 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 2.6019ms
+2023-10-09 11:44:32.353 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 10.4404ms
+2023-10-09 11:44:32.625 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - -
+2023-10-09 11:44:32.803 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 177.5562ms
+2023-10-09 11:44:50.921 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7296/GeradorDeCupom - -
+2023-10-09 11:44:51.077 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.GeradorDeCupomController.ListarCupons (E-Commerce(API))'
+2023-10-09 11:44:51.102 -03:00 [INF] Route matched with {action = "ListarCupons", controller = "GeradorDeCupom"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ListarCupons() on controller E_Commerce_API_.Controllers.GeradorDeCupomController (E-Commerce(API)).
+2023-10-09 11:44:54.125 -03:00 [ERR] Failed executing DbCommand (74ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Cupom`, `c`.`SetorDeDesconto`, `c`.`Status`, `c`.`TipoDeDesconto`, `c`.`Uso`, `c`.`ValorDoDesconto`
+FROM `CuponsDeDesconto` AS `c`
+2023-10-09 11:44:54.425 -03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'E_Commerce_API_.Data.ECommerceContext'.
+MySqlConnector.MySqlException (0x80004005): Unknown column 'c.Status' in 'field list'
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 468
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 344
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 278
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+MySqlConnector.MySqlException (0x80004005): Unknown column 'c.Status' in 'field list'
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 468
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 344
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 278
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at E_Commerce_API_.Data.DAO.GeradorDeCupomDAO.GetCuponsDeDesconto() in C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\Data\DAO\GeradorDeCupomDAO.cs:line 33
+   at E_Commerce_API_.Services.GeradorDeCupomService.ListarCupons() in C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\Services\GeradorDeCupomService.cs:line 47
+   at E_Commerce_API_.Controllers.GeradorDeCupomController.ListarCupons() in C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\Controllers\GeradorDeCupomController.cs:line 36
+   at lambda_method2(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at E_Commerce_API_.Middlewares.ErrorMiddleware.InvokeAsync(HttpContext context) in C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\Middlewares\ErrorMiddleware.cs:line 23
+2023-10-09 11:44:54.433 -03:00 [INF] Executed action E_Commerce_API_.Controllers.GeradorDeCupomController.ListarCupons (E-Commerce(API)) in 3324.2954ms
+2023-10-09 11:44:54.434 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.GeradorDeCupomController.ListarCupons (E-Commerce(API))'
+2023-10-09 11:44:54.455 -03:00 [ERR] Ocorreu uma exceção: {"TraceId":"aae8f68d-1fc1-48dd-95af-bd738598d6e3","Error":{"Logref":"InternalServerError","Message":"Unknown column 'c.Status' in 'field list'","$type":"ErrorDetailsDto"},"Data":"09/10/2023","$type":"ErrorResponseDto"}
+2023-10-09 11:44:54.605 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7296/GeradorDeCupom - - - 500 - application/json 3684.0805ms
+2023-10-09 11:45:25.244 -03:00 [INF] Inicialização da WEB API...
+2023-10-09 11:45:25.411 -03:00 [INF] User profile is available. Using 'C:\Users\Cleartech\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-09 11:45:25.530 -03:00 [INF] Now listening on: https://localhost:7296
+2023-10-09 11:45:25.530 -03:00 [INF] Now listening on: http://localhost:5090
+2023-10-09 11:45:25.534 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-09 11:45:25.534 -03:00 [INF] Hosting environment: Development
+2023-10-09 11:45:25.534 -03:00 [INF] Content root path: C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\
+2023-10-09 11:45:25.707 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/index.html - -
+2023-10-09 11:45:25.991 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/index.html - - - 200 - text/html;charset=utf-8 286.6615ms
+2023-10-09 11:45:26.011 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_vs/browserLink - -
+2023-10-09 11:45:26.011 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - -
+2023-10-09 11:45:26.014 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 2.9693ms
+2023-10-09 11:45:26.023 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 12.2306ms
+2023-10-09 11:45:26.360 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - -
+2023-10-09 11:45:26.595 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 234.2532ms

@@ -1,0 +1,25 @@
+2023-10-09 11:57:41.546 -03:00 [INF] Inicialização da WEB API...
+2023-10-09 11:57:42.928 -03:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='e-commerce(api)' AND TABLE_NAME='__EFMigrationsHistory';
+2023-10-09 11:57:42.941 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='e-commerce(api)' AND TABLE_NAME='__EFMigrationsHistory';
+2023-10-09 11:57:42.960 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2023-10-09 11:57:42.978 -03:00 [INF] Applying migration '20231009145704_adicionandoCupomAoCarrinho'.
+2023-10-09 11:57:43.085 -03:00 [INF] Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CarrinhosDeCompras` ADD `Cupom` longtext CHARACTER SET utf8mb4 NULL;
+2023-10-09 11:57:43.101 -03:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CarrinhosDeCompras` ADD `CupomDeDescontoCupom` varchar(255) CHARACTER SET utf8mb4 NOT NULL DEFAULT '';
+2023-10-09 11:57:43.150 -03:00 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_CarrinhosDeCompras_CupomDeDescontoCupom` ON `CarrinhosDeCompras` (`CupomDeDescontoCupom`);
+2023-10-09 11:57:43.191 -03:00 [ERR] Failed executing DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CarrinhosDeCompras` ADD CONSTRAINT `FK_CarrinhosDeCompras_CuponsDeDesconto_CupomDeDescontoCupom` FOREIGN KEY (`CupomDeDescontoCupom`) REFERENCES `CuponsDeDesconto` (`Cupom`) ON DELETE CASCADE;
+2023-10-09 11:59:54.903 -03:00 [INF] Inicialização da WEB API...
+2023-10-09 11:59:56.504 -03:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='e-commerce(api)' AND TABLE_NAME='__EFMigrationsHistory';
+2023-10-09 11:59:56.571 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;

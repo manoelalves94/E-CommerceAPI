@@ -1,0 +1,171 @@
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\appsettings.json
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\E-Commerce(API).exe
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\E-Commerce(API).deps.json
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\E-Commerce(API).runtimeconfig.json
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\E-Commerce(API).dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\E-Commerce(API).pdb
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\E-Commerce(API).csproj.AssemblyReference.cache
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\E-Commerce(API).GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\E-Commerce(API).AssemblyInfoInputs.cache
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\E-Commerce(API).AssemblyInfo.cs
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\E-Commerce(API).csproj.CoreCompileInputs.cache
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\E-Commerce(API).MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\E-Commerce(API).MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\staticwebassets\msbuild.E-Commerce(API).Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\staticwebassets\msbuild.build.E-Commerce(API).props
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.E-Commerce(API).props
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.E-Commerce(API).props
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\scopedcss\bundle\E-Commerce(API).styles.css
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\E-Commerce(API).csproj.CopyComplete
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\E-Commerce(API).dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\refint\E-Commerce(API).dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\E-Commerce(API).pdb
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\E-Commerce(API).genruntimeconfig.cache
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\ref\E-Commerce(API).dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Humanizer.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Castle.Core.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\appsettings.json
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\E-Commerce(API).exe
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\E-Commerce(API).deps.json
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\E-Commerce(API).runtimeconfig.json
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\E-Commerce(API).dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\E-Commerce(API).pdb
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Castle.Core.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Humanizer.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\E-Commerce(API).csproj.AssemblyReference.cache
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\E-Commerce(API).GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\E-Commerce(API).AssemblyInfoInputs.cache
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\E-Commerce(API).AssemblyInfo.cs
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\E-Commerce(API).csproj.CoreCompileInputs.cache
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\E-Commerce(API).MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\E-Commerce(API).MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\staticwebassets\msbuild.E-Commerce(API).Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\staticwebassets\msbuild.build.E-Commerce(API).props
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.E-Commerce(API).props
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.E-Commerce(API).props
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\scopedcss\bundle\E-Commerce(API).styles.css
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\E-Commerce(API).csproj.CopyComplete
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\E-Commerce(API).dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\refint\E-Commerce(API).dll
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\E-Commerce(API).pdb
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\E-Commerce(API).genruntimeconfig.cache
+C:\Users\Cleartech\Documents\Sprints e Projetos Avulsos\Sprint8\E-Commerce(API)\E-Commerce(API)\obj\Debug\net6.0\ref\E-Commerce(API).dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\FluentResults.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Dapper.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\MySql.Data.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\System.IO.Pipelines.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\runtimes\win-x64\native\comerr64.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\runtimes\win-x64\native\gssapi64.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\runtimes\win-x64\native\krb5_64.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\runtimes\win-x64\native\krbcc64.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Serilog.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Serilog.AspNetCore.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Serilog.Sinks.File.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Serilog.Sinks.Async.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll

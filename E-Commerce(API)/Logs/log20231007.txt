@@ -1,0 +1,310 @@
+2023-10-07 18:56:18.106 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7296/CarrinhoDeCompras/f014c085-a3ec-4485-adb9-f42f971e769b - -
+2023-10-07 18:56:18.107 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API))'
+2023-10-07 18:56:18.108 -03:00 [INF] Route matched with {action = "GetCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCarrinho(System.Guid) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-07 18:56:18.153 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carrinhoDeComprasId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`Logradouro`, `c`.`Numero`, `c`.`UF`
+FROM `CarrinhosDeCompras` AS `c`
+WHERE `c`.`Id` = @__carrinhoDeComprasId_0
+LIMIT 1
+2023-10-07 18:56:18.156 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-07 18:56:18.159 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-07 18:56:18.164 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-07 18:56:18.168 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__get_Item_0
+2023-10-07 18:56:18.169 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.ReadCarrinhoDeComprasDto'.
+2023-10-07 18:56:18.169 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API)) in 61.2283ms
+2023-10-07 18:56:18.169 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API))'
+2023-10-07 18:56:18.169 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7296/CarrinhoDeCompras/f014c085-a3ec-4485-adb9-f42f971e769b - - - 200 518 application/json;+charset=utf-8 63.5784ms
+2023-10-07 18:56:49.896 -03:00 [INF] Inicialização da WEB API...
+2023-10-07 18:56:50.154 -03:00 [INF] User profile is available. Using 'C:\Users\Cleartech\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-07 18:56:50.320 -03:00 [INF] Now listening on: https://localhost:7296
+2023-10-07 18:56:50.320 -03:00 [INF] Now listening on: http://localhost:5090
+2023-10-07 18:56:50.325 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-07 18:56:50.325 -03:00 [INF] Hosting environment: Development
+2023-10-07 18:56:50.325 -03:00 [INF] Content root path: C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\
+2023-10-07 18:56:50.835 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/index.html - -
+2023-10-07 18:56:51.311 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - -
+2023-10-07 18:56:51.315 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/index.html - - - 200 - text/html;charset=utf-8 489.3871ms
+2023-10-07 18:56:51.320 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 7.7107ms
+2023-10-07 18:56:51.332 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_vs/browserLink - -
+2023-10-07 18:56:51.362 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 30.0316ms
+2023-10-07 18:56:51.511 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - -
+2023-10-07 18:56:51.755 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 244.4576ms
+2023-10-07 18:56:54.854 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7296/CarrinhoDeCompras/f014c085-a3ec-4485-adb9-f42f971e769b - -
+2023-10-07 18:56:54.909 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API))'
+2023-10-07 18:56:54.956 -03:00 [INF] Route matched with {action = "GetCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCarrinho(System.Guid) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-07 18:56:57.429 -03:00 [INF] Executed DbCommand (103ms) [Parameters=[@__carrinhoDeComprasId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`Logradouro`, `c`.`Numero`, `c`.`UF`
+FROM `CarrinhosDeCompras` AS `c`
+WHERE `c`.`Id` = @__carrinhoDeComprasId_0
+LIMIT 1
+2023-10-07 18:56:57.626 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-07 18:56:57.787 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-07 18:56:57.842 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-07 18:56:57.883 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__get_Item_0
+2023-10-07 18:56:57.896 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.ReadCarrinhoDeComprasDto'.
+2023-10-07 18:56:58.068 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API)) in 3103.2971ms
+2023-10-07 18:56:58.068 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API))'
+2023-10-07 18:56:58.078 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7296/CarrinhoDeCompras/f014c085-a3ec-4485-adb9-f42f971e769b - - - 200 517 application/json;+charset=utf-8 3224.1932ms
+2023-10-07 19:03:26.323 -03:00 [INF] Inicialização da WEB API...
+2023-10-07 19:03:26.536 -03:00 [INF] User profile is available. Using 'C:\Users\Cleartech\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-07 19:03:26.703 -03:00 [INF] Now listening on: https://localhost:7296
+2023-10-07 19:03:26.703 -03:00 [INF] Now listening on: http://localhost:5090
+2023-10-07 19:03:26.709 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-07 19:03:26.710 -03:00 [INF] Hosting environment: Development
+2023-10-07 19:03:26.710 -03:00 [INF] Content root path: C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\
+2023-10-07 19:03:27.279 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/index.html - -
+2023-10-07 19:03:27.568 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/index.html - - - 200 - text/html;charset=utf-8 292.7503ms
+2023-10-07 19:03:27.575 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - -
+2023-10-07 19:03:27.575 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_vs/browserLink - -
+2023-10-07 19:03:27.577 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 2.2129ms
+2023-10-07 19:03:27.592 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 16.9297ms
+2023-10-07 19:03:27.957 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - -
+2023-10-07 19:03:28.095 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 137.6229ms
+2023-10-07 19:03:35.928 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7296/CarrinhoDeCompras/f014c085-a3ec-4485-adb9-f42f971e769b - -
+2023-10-07 19:03:35.969 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API))'
+2023-10-07 19:03:36.002 -03:00 [INF] Route matched with {action = "GetCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCarrinho(System.Guid) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-10-07 19:03:38.323 -03:00 [INF] Executed DbCommand (92ms) [Parameters=[@__carrinhoDeComprasId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`Logradouro`, `c`.`Numero`, `c`.`UF`
+FROM `CarrinhosDeCompras` AS `c`
+WHERE `c`.`Id` = @__carrinhoDeComprasId_0
+LIMIT 1
+2023-10-07 19:03:38.457 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-10-07 19:03:38.566 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-07 19:03:38.609 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+WHERE `p`.`Id` = @__get_Item_0
+2023-10-07 19:03:38.646 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__get_Item_0
+2023-10-07 19:03:38.660 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.ReadCarrinhoDeComprasDto'.
+2023-10-07 19:03:38.805 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API)) in 2794.1758ms
+2023-10-07 19:03:38.806 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.GetCarrinho (E-Commerce(API))'
+2023-10-07 19:03:38.816 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7296/CarrinhoDeCompras/f014c085-a3ec-4485-adb9-f42f971e769b - - - 200 517 application/json;+charset=utf-8 2887.9223ms
+2023-10-07 20:14:51.304 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7296/CentroDeDistribuicao/ application/json 29
+2023-10-07 20:14:51.307 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CentroDeDistribuicaoController.PesquisarCD (E-Commerce(API))'
+2023-10-07 20:14:51.327 -03:00 [INF] Route matched with {action = "PesquisarCD", controller = "CentroDeDistribuicao"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PesquisarCD(E_Commerce_API_.Data.DTOs.CentroDeDistribuicaoDto.FiltroCentroDeDistribuicaoDto) on controller E_Commerce_API_.Controllers.CentroDeDistribuicaoController (E-Commerce(API)).
+2023-10-07 20:14:51.437 -03:00 [INF] Foi requisitado uma pesquisa de centros de distribuição.
+2023-10-07 20:14:51.439 -03:00 [INF] Iniciada a pesquisa de centros de distribuição com os filtros informados: {"Nome":null,"Logradouro":null,"Bairro":null,"Cidade":null,"UF":null,"CEP":null,"Status":"Ativo","Ordem":"Crescente","Registros":30,"Pagina":1,"$type":"FiltroCentroDeDistribuicaoDto"}
+2023-10-07 20:14:51.513 -03:00 [INF] Criação da querie para pesquisa de centros de distribuição.
+2023-10-07 20:14:52.221 -03:00 [INF] Foram encontrados 11 centros de distribuição a partir da querie: SELECT * FROM `E-COMMERCE(API)`.CENTROSDEDISTRIBUICAO WHERE STATUS = TRUE ORDER BY NOME LIMIT 0, 30
+2023-10-07 20:14:52.244 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[E_Commerce_API_.Data.DTOs.CentroDeDistribuicaoDto.ReadCentroDeDistribuicaoDto, E-Commerce(API), Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-07 20:14:52.255 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CentroDeDistribuicaoController.PesquisarCD (E-Commerce(API)) in 927.1544ms
+2023-10-07 20:14:52.255 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CentroDeDistribuicaoController.PesquisarCD (E-Commerce(API))'
+2023-10-07 20:14:52.256 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7296/CentroDeDistribuicao/ application/json 29 - 200 3383 application/json;+charset=utf-8 953.4522ms
+2023-10-07 20:15:02.010 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7296/CentroDeDistribuicao/ application/json 31
+2023-10-07 20:15:02.012 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CentroDeDistribuicaoController.PesquisarCD (E-Commerce(API))'
+2023-10-07 20:15:02.012 -03:00 [INF] Route matched with {action = "PesquisarCD", controller = "CentroDeDistribuicao"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PesquisarCD(E_Commerce_API_.Data.DTOs.CentroDeDistribuicaoDto.FiltroCentroDeDistribuicaoDto) on controller E_Commerce_API_.Controllers.CentroDeDistribuicaoController (E-Commerce(API)).
+2023-10-07 20:15:02.014 -03:00 [INF] Foi requisitado uma pesquisa de centros de distribuição.
+2023-10-07 20:15:02.014 -03:00 [INF] Iniciada a pesquisa de centros de distribuição com os filtros informados: {"Nome":null,"Logradouro":null,"Bairro":null,"Cidade":null,"UF":null,"CEP":null,"Status":"Inativo","Ordem":"Crescente","Registros":30,"Pagina":1,"$type":"FiltroCentroDeDistribuicaoDto"}
+2023-10-07 20:15:02.014 -03:00 [INF] Criação da querie para pesquisa de centros de distribuição.
+2023-10-07 20:15:02.020 -03:00 [INF] Foram encontrados 1 centros de distribuição a partir da querie: SELECT * FROM `E-COMMERCE(API)`.CENTROSDEDISTRIBUICAO WHERE STATUS = FALSE ORDER BY NOME LIMIT 0, 30
+2023-10-07 20:15:02.021 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[E_Commerce_API_.Data.DTOs.CentroDeDistribuicaoDto.ReadCentroDeDistribuicaoDto, E-Commerce(API), Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-07 20:15:02.021 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CentroDeDistribuicaoController.PesquisarCD (E-Commerce(API)) in 9.2956ms
+2023-10-07 20:15:02.021 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CentroDeDistribuicaoController.PesquisarCD (E-Commerce(API))'
+2023-10-07 20:15:02.022 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7296/CentroDeDistribuicao/ application/json 31 - 200 312 application/json;+charset=utf-8 11.5062ms
+2023-10-07 22:03:58.411 -03:00 [INF] Inicialização da WEB API...
+2023-10-07 22:04:30.627 -03:00 [INF] Inicialização da WEB API...
+2023-10-07 22:04:32.400 -03:00 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='e-commerce(api)' AND TABLE_NAME='__EFMigrationsHistory';
+2023-10-07 22:04:32.426 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='e-commerce(api)' AND TABLE_NAME='__EFMigrationsHistory';
+2023-10-07 22:04:32.451 -03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2023-10-07 22:04:32.471 -03:00 [INF] Applying migration '20231008010400_CriandoTabelaCupomDeDesconto'.
+2023-10-07 22:04:32.602 -03:00 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `CuponsDeDesconto` (
+    `Cupom` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+    `TipoDeDesconto` int NOT NULL,
+    `ValorDoDesconto` double NOT NULL,
+    `Uso` int NOT NULL,
+    `Ativo` tinyint(1) NOT NULL,
+    `SetorDeDesconto` char(36) COLLATE ascii_general_ci NOT NULL,
+    CONSTRAINT `PK_CuponsDeDesconto` PRIMARY KEY (`Cupom`)
+) CHARACTER SET=utf8mb4;
+2023-10-07 22:04:32.607 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20231008010400_CriandoTabelaCupomDeDesconto', '7.0.5');
+2023-10-07 22:06:20.656 -03:00 [INF] Inicialização da WEB API...
+2023-10-07 22:06:20.869 -03:00 [INF] User profile is available. Using 'C:\Users\Cleartech\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-07 22:06:21.014 -03:00 [INF] Now listening on: https://localhost:7296
+2023-10-07 22:06:21.014 -03:00 [INF] Now listening on: http://localhost:5090
+2023-10-07 22:06:21.019 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-07 22:06:21.020 -03:00 [INF] Hosting environment: Development
+2023-10-07 22:06:21.020 -03:00 [INF] Content root path: C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\
+2023-10-07 22:06:21.491 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/index.html - -
+2023-10-07 22:06:21.852 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/index.html - - - 200 - text/html;charset=utf-8 363.4909ms
+2023-10-07 22:06:21.860 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - -
+2023-10-07 22:06:21.860 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_vs/browserLink - -
+2023-10-07 22:06:21.863 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 3.6107ms
+2023-10-07 22:06:21.877 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 17.4811ms
+2023-10-07 22:06:22.302 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - -
+2023-10-07 22:06:22.498 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 195.4505ms
+2023-10-07 22:06:25.243 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/GeradorDeCupons application/json 60
+2023-10-07 22:06:25.286 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/GeradorDeCupons application/json 60 - 404 0 - 43.0007ms
+2023-10-07 22:06:45.088 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/GeradorDeCupom application/json 60
+2023-10-07 22:06:45.094 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API))'
+2023-10-07 22:06:45.145 -03:00 [INF] Route matched with {action = "GerarCupomDeDesconto", controller = "GeradorDeCupom"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GerarCupomDeDesconto(E_Commerce_API_.Data.DTOs.GeradorDeCupomDto.CreateCupomDeDescontoDto) on controller E_Commerce_API_.Controllers.GeradorDeCupomController (E-Commerce(API)).
+2023-10-07 22:06:45.985 -03:00 [INF] Executed action E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API)) in 832.4939ms
+2023-10-07 22:06:45.986 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API))'
+2023-10-07 22:06:45.994 -03:00 [ERR] Erro: {"TraceId":"9bac9bd8-af89-412d-9124-c16c5bbab973","Error":{"Logref":"BadRequest","Message":" O campo Cupom é obrigatório.","$type":"ErrorDetailsDto"},"Data":"07/10/2023","$type":"ErrorResponseDto"}
+2023-10-07 22:06:46.047 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/GeradorDeCupom application/json 60 - 400 - application/json 965.4433ms
+2023-10-07 22:07:07.002 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/GeradorDeCupom application/json 83
+2023-10-07 22:07:07.007 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API))'
+2023-10-07 22:07:07.007 -03:00 [INF] Route matched with {action = "GerarCupomDeDesconto", controller = "GeradorDeCupom"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GerarCupomDeDesconto(E_Commerce_API_.Data.DTOs.GeradorDeCupomDto.CreateCupomDeDescontoDto) on controller E_Commerce_API_.Controllers.GeradorDeCupomController (E-Commerce(API)).
+2023-10-07 22:07:07.040 -03:00 [INF] Executed action E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API)) in 32.46ms
+2023-10-07 22:07:07.040 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API))'
+2023-10-07 22:07:07.040 -03:00 [ERR] Erro: {"TraceId":"b8659299-b21a-43f0-900d-26fbb73776ba","Error":{"Logref":"BadRequest","Message":"O Valor Do Desconto deve ser maior que zero.","$type":"ErrorDetailsDto"},"Data":"07/10/2023","$type":"ErrorResponseDto"}
+2023-10-07 22:07:07.041 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/GeradorDeCupom application/json 83 - 400 - application/json 38.6495ms
+2023-10-07 22:07:16.710 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/GeradorDeCupom application/json 93
+2023-10-07 22:07:16.710 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API))'
+2023-10-07 22:07:16.710 -03:00 [INF] Route matched with {action = "GerarCupomDeDesconto", controller = "GeradorDeCupom"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GerarCupomDeDesconto(E_Commerce_API_.Data.DTOs.GeradorDeCupomDto.CreateCupomDeDescontoDto) on controller E_Commerce_API_.Controllers.GeradorDeCupomController (E-Commerce(API)).
+2023-10-07 22:07:16.742 -03:00 [INF] Executed action E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API)) in 32.2218ms
+2023-10-07 22:07:16.742 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API))'
+2023-10-07 22:07:16.743 -03:00 [ERR] Ocorreu uma exceção: {"TraceId":"347f1c2c-62df-4d04-aadc-e756092d3dc5","Error":{"Logref":"InternalServerError","Message":"Missing type map configuration or unsupported mapping.\r\n\r\nMapping types:\r\nCreateCupomDeDescontoDto -> CupomDeDesconto\r\nE_Commerce_API_.Data.DTOs.GeradorDeCupomDto.CreateCupomDeDescontoDto -> E_Commerce_API_.Models.CupomDeDesconto","$type":"ErrorDetailsDto"},"Data":"07/10/2023","$type":"ErrorResponseDto"}
+2023-10-07 22:07:16.744 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/GeradorDeCupom application/json 93 - 500 - application/json 34.2890ms
+2023-10-07 22:08:59.566 -03:00 [INF] Inicialização da WEB API...
+2023-10-07 22:08:59.807 -03:00 [INF] User profile is available. Using 'C:\Users\Cleartech\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-07 22:08:59.987 -03:00 [INF] Now listening on: https://localhost:7296
+2023-10-07 22:08:59.988 -03:00 [INF] Now listening on: http://localhost:5090
+2023-10-07 22:08:59.993 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-07 22:08:59.993 -03:00 [INF] Hosting environment: Development
+2023-10-07 22:08:59.993 -03:00 [INF] Content root path: C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\
+2023-10-07 22:09:00.337 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/index.html - -
+2023-10-07 22:09:00.769 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - -
+2023-10-07 22:09:00.769 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_vs/browserLink - -
+2023-10-07 22:09:00.771 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/index.html - - - 200 - text/html;charset=utf-8 441.3463ms
+2023-10-07 22:09:00.773 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 3.9736ms
+2023-10-07 22:09:00.788 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 19.0226ms
+2023-10-07 22:09:00.948 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - -
+2023-10-07 22:09:01.166 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 217.7774ms
+2023-10-07 22:09:25.424 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/GeradorDeCupom application/json 114
+2023-10-07 22:09:25.477 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API))'
+2023-10-07 22:09:25.518 -03:00 [INF] Route matched with {action = "GerarCupomDeDesconto", controller = "GeradorDeCupom"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GerarCupomDeDesconto(E_Commerce_API_.Data.DTOs.GeradorDeCupomDto.CreateCupomDeDescontoDto) on controller E_Commerce_API_.Controllers.GeradorDeCupomController (E-Commerce(API)).
+2023-10-07 22:09:27.918 -03:00 [INF] Executed DbCommand (91ms) [Parameters=[@p0='?' (Size = 255), @p1='?' (DbType = Boolean), @p2='?' (DbType = Guid), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `CuponsDeDesconto` (`Cupom`, `Ativo`, `SetorDeDesconto`, `TipoDeDesconto`, `Uso`, `ValorDoDesconto`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2023-10-07 22:09:27.965 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.GeradorDeCupomDto.ReadCupomDeDescontoDto'.
+2023-10-07 22:09:28.011 -03:00 [INF] Executed action E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API)) in 2485.2268ms
+2023-10-07 22:09:28.012 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API))'
+2023-10-07 22:09:28.020 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/GeradorDeCupom application/json 114 - 200 137 application/json;+charset=utf-8 2596.8802ms
+2023-10-07 22:11:14.035 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/GeradorDeCupom application/json 178
+2023-10-07 22:11:14.036 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API))'
+2023-10-07 22:11:14.037 -03:00 [INF] Route matched with {action = "GerarCupomDeDesconto", controller = "GeradorDeCupom"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GerarCupomDeDesconto(E_Commerce_API_.Data.DTOs.GeradorDeCupomDto.CreateCupomDeDescontoDto) on controller E_Commerce_API_.Controllers.GeradorDeCupomController (E-Commerce(API)).
+2023-10-07 22:11:14.138 -03:00 [INF] Executed DbCommand (13ms) [Parameters=[@p0='?' (Size = 255), @p1='?' (DbType = Boolean), @p2='?' (DbType = Guid), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `CuponsDeDesconto` (`Cupom`, `Ativo`, `SetorDeDesconto`, `TipoDeDesconto`, `Uso`, `ValorDoDesconto`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2023-10-07 22:11:14.139 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.GeradorDeCupomDto.ReadCupomDeDescontoDto'.
+2023-10-07 22:11:14.139 -03:00 [INF] Executed action E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API)) in 102.4772ms
+2023-10-07 22:11:14.139 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API))'
+2023-10-07 22:11:14.140 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/GeradorDeCupom application/json 178 - 200 142 application/json;+charset=utf-8 104.7387ms
+2023-10-07 22:12:29.693 -03:00 [INF] Inicialização da WEB API...
+2023-10-07 22:12:29.928 -03:00 [INF] User profile is available. Using 'C:\Users\Cleartech\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-07 22:12:30.098 -03:00 [INF] Now listening on: https://localhost:7296
+2023-10-07 22:12:30.098 -03:00 [INF] Now listening on: http://localhost:5090
+2023-10-07 22:12:30.102 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-07 22:12:30.103 -03:00 [INF] Hosting environment: Development
+2023-10-07 22:12:30.103 -03:00 [INF] Content root path: C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\
+2023-10-07 22:12:30.498 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/index.html - -
+2023-10-07 22:12:30.965 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/index.html - - - 200 - text/html;charset=utf-8 472.0903ms
+2023-10-07 22:12:30.973 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_vs/browserLink - -
+2023-10-07 22:12:30.973 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - -
+2023-10-07 22:12:30.977 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 3.5776ms
+2023-10-07 22:12:30.994 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 20.3969ms
+2023-10-07 22:12:31.152 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - -
+2023-10-07 22:12:31.382 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 230.0661ms
+2023-10-07 22:13:00.473 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/index.html - -
+2023-10-07 22:13:00.484 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/index.html - - - 200 - text/html;charset=utf-8 10.9301ms
+2023-10-07 22:13:00.502 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - -
+2023-10-07 22:13:00.503 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 0.6405ms
+2023-10-07 22:13:00.503 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_vs/browserLink - -
+2023-10-07 22:13:00.512 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 9.2950ms
+2023-10-07 22:13:00.676 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - -
+2023-10-07 22:13:00.700 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 23.6756ms
+2023-10-07 22:13:05.431 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/GeradorDeCupom application/json 178
+2023-10-07 22:13:05.485 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API))'
+2023-10-07 22:13:05.533 -03:00 [INF] Route matched with {action = "GerarCupomDeDesconto", controller = "GeradorDeCupom"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GerarCupomDeDesconto(E_Commerce_API_.Data.DTOs.GeradorDeCupomDto.CreateCupomDeDescontoDto) on controller E_Commerce_API_.Controllers.GeradorDeCupomController (E-Commerce(API)).
+2023-10-07 22:13:08.011 -03:00 [INF] Executed DbCommand (79ms) [Parameters=[@p0='?' (Size = 255), @p1='?' (DbType = Boolean), @p2='?' (DbType = Guid), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `CuponsDeDesconto` (`Cupom`, `Ativo`, `SetorDeDesconto`, `TipoDeDesconto`, `Uso`, `ValorDoDesconto`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2023-10-07 22:13:08.050 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.GeradorDeCupomDto.ReadCupomDeDescontoDto'.
+2023-10-07 22:13:08.099 -03:00 [INF] Executed action E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API)) in 2560.5251ms
+2023-10-07 22:13:08.099 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API))'
+2023-10-07 22:13:08.109 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/GeradorDeCupom application/json 178 - 200 142 application/json;+charset=utf-8 2678.2682ms
+2023-10-07 22:14:04.696 -03:00 [INF] Inicialização da WEB API...
+2023-10-07 22:14:04.979 -03:00 [INF] User profile is available. Using 'C:\Users\Cleartech\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-07 22:14:05.234 -03:00 [INF] Now listening on: https://localhost:7296
+2023-10-07 22:14:05.235 -03:00 [INF] Now listening on: http://localhost:5090
+2023-10-07 22:14:05.240 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-07 22:14:05.241 -03:00 [INF] Hosting environment: Development
+2023-10-07 22:14:05.241 -03:00 [INF] Content root path: C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\
+2023-10-07 22:14:05.743 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/index.html - -
+2023-10-07 22:14:06.289 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/index.html - - - 200 - text/html;charset=utf-8 553.5308ms
+2023-10-07 22:14:06.300 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_vs/browserLink - -
+2023-10-07 22:14:06.300 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - -
+2023-10-07 22:14:06.304 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 3.9586ms
+2023-10-07 22:14:06.318 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 18.0451ms
+2023-10-07 22:14:06.517 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/GeradorDeCupom application/json 178
+2023-10-07 22:14:06.517 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - -
+2023-10-07 22:14:06.586 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API))'
+2023-10-07 22:14:06.636 -03:00 [INF] Route matched with {action = "GerarCupomDeDesconto", controller = "GeradorDeCupom"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GerarCupomDeDesconto(E_Commerce_API_.Data.DTOs.GeradorDeCupomDto.CreateCupomDeDescontoDto) on controller E_Commerce_API_.Controllers.GeradorDeCupomController (E-Commerce(API)).
+2023-10-07 22:14:06.766 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 249.1277ms
+2023-10-07 22:14:09.215 -03:00 [INF] Executed DbCommand (72ms) [Parameters=[@p0='?' (Size = 255), @p1='?' (DbType = Boolean), @p2='?' (DbType = Guid), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `CuponsDeDesconto` (`Cupom`, `Ativo`, `SetorDeDesconto`, `TipoDeDesconto`, `Uso`, `ValorDoDesconto`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2023-10-07 22:14:09.255 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.GeradorDeCupomDto.ReadCupomDeDescontoDto'.
+2023-10-07 22:14:09.299 -03:00 [INF] Executed action E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API)) in 2653.3463ms
+2023-10-07 22:14:09.300 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API))'
+2023-10-07 22:14:09.306 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/GeradorDeCupom application/json 178 - 200 142 application/json;+charset=utf-8 2789.3653ms
+2023-10-07 22:17:18.790 -03:00 [INF] Inicialização da WEB API...
+2023-10-07 22:17:19.058 -03:00 [INF] User profile is available. Using 'C:\Users\Cleartech\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-07 22:17:19.218 -03:00 [INF] Now listening on: https://localhost:7296
+2023-10-07 22:17:19.218 -03:00 [INF] Now listening on: http://localhost:5090
+2023-10-07 22:17:19.224 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-07 22:17:19.224 -03:00 [INF] Hosting environment: Development
+2023-10-07 22:17:19.224 -03:00 [INF] Content root path: C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\
+2023-10-07 22:17:19.446 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/index.html - -
+2023-10-07 22:17:19.957 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/index.html - - - 200 - text/html;charset=utf-8 517.9133ms
+2023-10-07 22:17:19.970 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_vs/browserLink - -
+2023-10-07 22:17:19.970 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - -
+2023-10-07 22:17:19.975 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 4.5950ms
+2023-10-07 22:17:19.993 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 23.3802ms
+2023-10-07 22:17:20.180 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - -
+2023-10-07 22:17:20.430 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 249.8803ms

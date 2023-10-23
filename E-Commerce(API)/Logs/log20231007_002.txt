@@ -1,0 +1,131 @@
+2023-10-07 22:17:35.878 -03:00 [INF] Inicialização da WEB API...
+2023-10-07 22:17:37.967 -03:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='e-commerce(api)' AND TABLE_NAME='__EFMigrationsHistory';
+2023-10-07 22:17:37.991 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='e-commerce(api)' AND TABLE_NAME='__EFMigrationsHistory';
+2023-10-07 22:17:38.019 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2023-10-07 22:17:38.047 -03:00 [INF] Applying migration '20231008011721_UpdateCupons'.
+2023-10-07 22:17:38.157 -03:00 [INF] Executed DbCommand (56ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CuponsDeDesconto` MODIFY COLUMN `Uso` longtext CHARACTER SET utf8mb4 NOT NULL;
+2023-10-07 22:17:38.192 -03:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CuponsDeDesconto` MODIFY COLUMN `TipoDeDesconto` longtext CHARACTER SET utf8mb4 NOT NULL;
+2023-10-07 22:17:38.196 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20231008011721_UpdateCupons', '7.0.5');
+2023-10-07 22:18:06.917 -03:00 [INF] Inicialização da WEB API...
+2023-10-07 22:18:07.149 -03:00 [INF] User profile is available. Using 'C:\Users\Cleartech\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-07 22:18:07.300 -03:00 [INF] Now listening on: https://localhost:7296
+2023-10-07 22:18:07.300 -03:00 [INF] Now listening on: http://localhost:5090
+2023-10-07 22:18:07.306 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-07 22:18:07.306 -03:00 [INF] Hosting environment: Development
+2023-10-07 22:18:07.306 -03:00 [INF] Content root path: C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\
+2023-10-07 22:18:07.753 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/index.html - -
+2023-10-07 22:18:08.142 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/index.html - - - 200 - text/html;charset=utf-8 394.5495ms
+2023-10-07 22:18:08.159 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - -
+2023-10-07 22:18:08.159 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_vs/browserLink - -
+2023-10-07 22:18:08.162 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 3.6566ms
+2023-10-07 22:18:08.175 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 16.1393ms
+2023-10-07 22:18:08.344 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - -
+2023-10-07 22:18:08.563 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 219.5252ms
+2023-10-07 22:18:12.602 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/GeradorDeCupom application/json 178
+2023-10-07 22:18:12.664 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API))'
+2023-10-07 22:18:12.703 -03:00 [INF] Route matched with {action = "GerarCupomDeDesconto", controller = "GeradorDeCupom"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GerarCupomDeDesconto(E_Commerce_API_.Data.DTOs.GeradorDeCupomDto.CreateCupomDeDescontoDto) on controller E_Commerce_API_.Controllers.GeradorDeCupomController (E-Commerce(API)).
+2023-10-07 22:18:15.116 -03:00 [INF] Executed DbCommand (90ms) [Parameters=[@p0='?' (Size = 255), @p1='?' (DbType = Boolean), @p2='?' (DbType = Guid), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `CuponsDeDesconto` (`Cupom`, `Ativo`, `SetorDeDesconto`, `TipoDeDesconto`, `Uso`, `ValorDoDesconto`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2023-10-07 22:18:15.174 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.GeradorDeCupomDto.ReadCupomDeDescontoDto'.
+2023-10-07 22:18:15.216 -03:00 [INF] Executed action E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API)) in 2508.191ms
+2023-10-07 22:18:15.216 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API))'
+2023-10-07 22:18:15.227 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/GeradorDeCupom application/json 178 - 200 142 application/json;+charset=utf-8 2625.4193ms
+2023-10-07 22:19:13.268 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/GeradorDeCupom application/json 114
+2023-10-07 22:19:13.268 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API))'
+2023-10-07 22:19:13.269 -03:00 [INF] Route matched with {action = "GerarCupomDeDesconto", controller = "GeradorDeCupom"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GerarCupomDeDesconto(E_Commerce_API_.Data.DTOs.GeradorDeCupomDto.CreateCupomDeDescontoDto) on controller E_Commerce_API_.Controllers.GeradorDeCupomController (E-Commerce(API)).
+2023-10-07 22:19:13.346 -03:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (Size = 255), @p1='?' (DbType = Boolean), @p2='?' (DbType = Guid), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `CuponsDeDesconto` (`Cupom`, `Ativo`, `SetorDeDesconto`, `TipoDeDesconto`, `Uso`, `ValorDoDesconto`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2023-10-07 22:19:13.347 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.GeradorDeCupomDto.ReadCupomDeDescontoDto'.
+2023-10-07 22:19:13.347 -03:00 [INF] Executed action E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API)) in 78.7912ms
+2023-10-07 22:19:13.348 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API))'
+2023-10-07 22:19:13.348 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/GeradorDeCupom application/json 114 - 200 137 application/json;+charset=utf-8 80.0522ms
+2023-10-07 22:19:59.971 -03:00 [INF] Inicialização da WEB API...
+2023-10-07 22:20:00.247 -03:00 [INF] User profile is available. Using 'C:\Users\Cleartech\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-07 22:20:00.394 -03:00 [INF] Now listening on: https://localhost:7296
+2023-10-07 22:20:00.394 -03:00 [INF] Now listening on: http://localhost:5090
+2023-10-07 22:20:00.399 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-07 22:20:00.399 -03:00 [INF] Hosting environment: Development
+2023-10-07 22:20:00.399 -03:00 [INF] Content root path: C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\
+2023-10-07 22:20:00.811 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/index.html - -
+2023-10-07 22:20:01.188 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/index.html - - - 200 - text/html;charset=utf-8 383.9728ms
+2023-10-07 22:20:01.199 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - -
+2023-10-07 22:20:01.199 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_vs/browserLink - -
+2023-10-07 22:20:01.203 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 3.4443ms
+2023-10-07 22:20:01.219 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 19.9805ms
+2023-10-07 22:20:01.400 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - -
+2023-10-07 22:20:01.635 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 235.0058ms
+2023-10-07 22:20:11.031 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/GeradorDeCupom application/json 114
+2023-10-07 22:20:11.079 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API))'
+2023-10-07 22:20:11.120 -03:00 [INF] Route matched with {action = "GerarCupomDeDesconto", controller = "GeradorDeCupom"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GerarCupomDeDesconto(E_Commerce_API_.Data.DTOs.GeradorDeCupomDto.CreateCupomDeDescontoDto) on controller E_Commerce_API_.Controllers.GeradorDeCupomController (E-Commerce(API)).
+2023-10-07 22:20:13.699 -03:00 [INF] Executed DbCommand (119ms) [Parameters=[@p0='?' (Size = 255), @p1='?' (DbType = Boolean), @p2='?' (DbType = Guid), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `CuponsDeDesconto` (`Cupom`, `Ativo`, `SetorDeDesconto`, `TipoDeDesconto`, `Uso`, `ValorDoDesconto`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2023-10-07 22:20:13.757 -03:00 [INF] Executing OkObjectResult, writing value of type 'E_Commerce_API_.Data.DTOs.GeradorDeCupomDto.ReadCupomDeDescontoDto'.
+2023-10-07 22:20:13.815 -03:00 [INF] Executed action E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API)) in 2686.5766ms
+2023-10-07 22:20:13.815 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.GeradorDeCupomController.GerarCupomDeDesconto (E-Commerce(API))'
+2023-10-07 22:20:13.834 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/GeradorDeCupom application/json 114 - 200 154 application/json;+charset=utf-8 2802.7103ms
+2023-10-07 22:29:13.695 -03:00 [INF] Inicialização da WEB API...
+2023-10-07 22:29:13.908 -03:00 [INF] User profile is available. Using 'C:\Users\Cleartech\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-07 22:29:14.061 -03:00 [INF] Now listening on: https://localhost:7296
+2023-10-07 22:29:14.061 -03:00 [INF] Now listening on: http://localhost:5090
+2023-10-07 22:29:14.067 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-07 22:29:14.067 -03:00 [INF] Hosting environment: Development
+2023-10-07 22:29:14.067 -03:00 [INF] Content root path: C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\
+2023-10-07 22:29:14.475 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/index.html - -
+2023-10-07 22:29:14.882 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/index.html - - - 200 - text/html;charset=utf-8 411.1199ms
+2023-10-07 22:29:14.887 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - -
+2023-10-07 22:29:14.887 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_vs/browserLink - -
+2023-10-07 22:29:14.890 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 2.8746ms
+2023-10-07 22:29:14.904 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 16.9729ms
+2023-10-07 22:29:15.097 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - -
+2023-10-07 22:29:15.302 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 204.5122ms
+2023-10-07 22:29:54.889 -03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7296/GeradorDeCupom/10off/false - 0
+2023-10-07 22:29:54.949 -03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7296/GeradorDeCupom/10off/false - 0 - 404 0 - 60.2918ms
+2023-10-07 22:30:05.902 -03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7296/GeradorDeCupom/10OFF/false - 0
+2023-10-07 22:30:05.903 -03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7296/GeradorDeCupom/10OFF/false - 0 - 404 0 - 0.9262ms
+2023-10-07 22:30:31.759 -03:00 [INF] Inicialização da WEB API...
+2023-10-07 22:30:32.077 -03:00 [INF] User profile is available. Using 'C:\Users\Cleartech\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-07 22:30:32.220 -03:00 [INF] Now listening on: https://localhost:7296
+2023-10-07 22:30:32.220 -03:00 [INF] Now listening on: http://localhost:5090
+2023-10-07 22:30:32.224 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-07 22:30:32.224 -03:00 [INF] Hosting environment: Development
+2023-10-07 22:30:32.224 -03:00 [INF] Content root path: C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\
+2023-10-07 22:30:32.559 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/index.html - -
+2023-10-07 22:30:33.109 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - -
+2023-10-07 22:30:33.109 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_vs/browserLink - -
+2023-10-07 22:30:33.110 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/index.html - - - 200 - text/html;charset=utf-8 555.4837ms
+2023-10-07 22:30:33.113 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 3.9742ms
+2023-10-07 22:30:33.123 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 13.6022ms
+2023-10-07 22:30:33.323 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - -
+2023-10-07 22:30:33.525 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 203.2290ms
+2023-10-07 22:30:35.460 -03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7296/GeradorDeCupom/10OFF/false - 0
+2023-10-07 22:30:35.506 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.GeradorDeCupomController.AtivarOuInativarCupom (E-Commerce(API))'
+2023-10-07 22:30:35.541 -03:00 [INF] Route matched with {action = "AtivarOuInativarCupom", controller = "GeradorDeCupom"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AtivarOuInativarCupom(System.String, Boolean) on controller E_Commerce_API_.Controllers.GeradorDeCupomController (E-Commerce(API)).
+2023-10-07 22:30:38.004 -03:00 [INF] Executed DbCommand (86ms) [Parameters=[@__cupom_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Cupom`, `c`.`Ativo`, `c`.`SetorDeDesconto`, `c`.`TipoDeDesconto`, `c`.`Uso`, `c`.`ValorDoDesconto`
+FROM `CuponsDeDesconto` AS `c`
+WHERE `c`.`Cupom` = @__cupom_0
+LIMIT 1
+2023-10-07 22:30:38.226 -03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p5='?' (Size = 255), @p0='?' (DbType = Boolean), @p1='?' (DbType = Guid), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `CuponsDeDesconto` SET `Ativo` = @p0, `SetorDeDesconto` = @p1, `TipoDeDesconto` = @p2, `Uso` = @p3, `ValorDoDesconto` = @p4
+WHERE `Cupom` = @p5;
+SELECT ROW_COUNT();
+2023-10-07 22:30:38.241 -03:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2023-10-07 22:30:38.248 -03:00 [INF] Executed action E_Commerce_API_.Controllers.GeradorDeCupomController.AtivarOuInativarCupom (E-Commerce(API)) in 2700.4028ms
+2023-10-07 22:30:38.249 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.GeradorDeCupomController.AtivarOuInativarCupom (E-Commerce(API))'
+2023-10-07 22:30:38.257 -03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7296/GeradorDeCupom/10OFF/false - 0 - 204 - - 2797.6441ms

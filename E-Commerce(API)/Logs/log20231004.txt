@@ -1,0 +1,22 @@
+2023-10-04 14:59:59.630 -03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:7296/Categoria/3b92d839-8b3b-49be-afd0-c2e9e928ed31 - -
+2023-10-04 14:59:59.686 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CategoriaController.RemoverCategoria (E-Commerce(API))'
+2023-10-04 14:59:59.706 -03:00 [INF] Route matched with {action = "RemoverCategoria", controller = "Categoria"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult RemoverCategoria(System.Guid) on controller E_Commerce_API_.Controllers.CategoriaController (E-Commerce(API)).
+2023-10-04 14:59:59.766 -03:00 [INF] Foi requisitado uma remoção de categoria pelo usuário: 'db82dc95-bb75-47ba-84a6-8547ddb7c948'.
+2023-10-04 14:59:59.768 -03:00 [INF] Iniciada remoção da categoria "3b92d839-8b3b-49be-afd0-c2e9e928ed31".
+2023-10-04 14:59:59.800 -03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+2023-10-04 14:59:59.807 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CategoriaController.RemoverCategoria (E-Commerce(API)) in 100.4187ms
+2023-10-04 14:59:59.807 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CategoriaController.RemoverCategoria (E-Commerce(API))'
+2023-10-04 14:59:59.808 -03:00 [ERR] Erro: {"TraceId":"eea86382-f369-4525-8484-b233e70c7c51","Error":{"Logref":"NotFound","Message":"Id de categoria informada para remoção não existe.","$type":"ErrorDetailsDto"},"Data":"04/10/2023","$type":"ErrorResponseDto"}
+2023-10-04 14:59:59.809 -03:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:7296/Categoria/3b92d839-8b3b-49be-afd0-c2e9e928ed31 - - - 404 - application/json 183.6033ms
+2023-10-04 15:00:24.243 -03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:7296/Categoria/3b92d839-8b3b-49be-afd0-c2e9e928ed31 - -
+2023-10-04 15:00:24.244 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin|lojista)
+2023-10-04 15:00:24.246 -03:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2023-10-04 15:00:24.246 -03:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:7296/Categoria/3b92d839-8b3b-49be-afd0-c2e9e928ed31 - - - 403 0 - 3.0422ms
+2023-10-04 15:01:03.318 -03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:7296/Categoria/3b92d839-8b3b-49be-afd0-c2e9e928ed31 - -
+2023-10-04 15:01:03.318 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin|lojista)
+2023-10-04 15:01:03.319 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-10-04 15:01:03.319 -03:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:7296/Categoria/3b92d839-8b3b-49be-afd0-c2e9e928ed31 - - - 401 0 - 0.5301ms

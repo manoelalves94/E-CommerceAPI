@@ -1,0 +1,25 @@
+2023-10-09 12:00:06.536 -03:00 [INF] Inicialização da WEB API...
+2023-10-09 12:00:07.992 -03:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='e-commerce(api)' AND TABLE_NAME='__EFMigrationsHistory';
+2023-10-09 12:00:08.006 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='e-commerce(api)' AND TABLE_NAME='__EFMigrationsHistory';
+2023-10-09 12:00:08.020 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2023-10-09 12:00:08.032 -03:00 [INF] No migrations were applied. The database is already up to date.
+2023-10-09 12:01:43.166 -03:00 [INF] Inicialização da WEB API...
+2023-10-09 12:01:43.313 -03:00 [INF] User profile is available. Using 'C:\Users\Cleartech\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-09 12:01:43.436 -03:00 [INF] Now listening on: https://localhost:7296
+2023-10-09 12:01:43.436 -03:00 [INF] Now listening on: http://localhost:5090
+2023-10-09 12:01:43.439 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-09 12:01:43.439 -03:00 [INF] Hosting environment: Development
+2023-10-09 12:01:43.439 -03:00 [INF] Content root path: C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\
+2023-10-09 12:01:43.739 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/index.html - -
+2023-10-09 12:01:44.042 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/index.html - - - 200 - text/html;charset=utf-8 306.7609ms
+2023-10-09 12:01:44.046 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - -
+2023-10-09 12:01:44.046 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_vs/browserLink - -
+2023-10-09 12:01:44.048 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 2.2423ms
+2023-10-09 12:01:44.057 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 10.6188ms
+2023-10-09 12:01:44.217 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - -
+2023-10-09 12:01:44.398 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 181.3203ms

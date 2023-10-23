@@ -1,0 +1,45 @@
+2023-10-09 11:45:39.661 -03:00 [INF] Inicialização da WEB API...
+2023-10-09 11:45:41.270 -03:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='e-commerce(api)' AND TABLE_NAME='__EFMigrationsHistory';
+2023-10-09 11:45:41.288 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='e-commerce(api)' AND TABLE_NAME='__EFMigrationsHistory';
+2023-10-09 11:45:41.311 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2023-10-09 11:45:41.328 -03:00 [INF] Applying migration '20231009144527_atualizaçãoCuponsStatus'.
+2023-10-09 11:45:41.395 -03:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CuponsDeDesconto` RENAME COLUMN `Ativo` TO `Status`;
+2023-10-09 11:45:41.398 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20231009144527_atualizaçãoCuponsStatus', '7.0.5');
+2023-10-09 11:55:54.502 -03:00 [INF] Inicialização da WEB API...
+2023-10-09 11:55:54.633 -03:00 [INF] User profile is available. Using 'C:\Users\Cleartech\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-09 11:55:54.737 -03:00 [INF] Now listening on: https://localhost:7296
+2023-10-09 11:55:54.737 -03:00 [INF] Now listening on: http://localhost:5090
+2023-10-09 11:55:54.740 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-09 11:55:54.740 -03:00 [INF] Hosting environment: Development
+2023-10-09 11:55:54.740 -03:00 [INF] Content root path: C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\
+2023-10-09 11:55:55.082 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/index.html - -
+2023-10-09 11:55:55.311 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/index.html - - - 200 - text/html;charset=utf-8 232.1663ms
+2023-10-09 11:55:55.319 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_vs/browserLink - -
+2023-10-09 11:55:55.319 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - -
+2023-10-09 11:55:55.321 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 2.1702ms
+2023-10-09 11:55:55.332 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 13.4350ms
+2023-10-09 11:55:55.611 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - -
+2023-10-09 11:55:55.813 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 201.6557ms
+2023-10-09 11:57:03.094 -03:00 [INF] Inicialização da WEB API...
+2023-10-09 11:57:03.252 -03:00 [INF] User profile is available. Using 'C:\Users\Cleartech\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-09 11:57:03.373 -03:00 [INF] Now listening on: https://localhost:7296
+2023-10-09 11:57:03.373 -03:00 [INF] Now listening on: http://localhost:5090
+2023-10-09 11:57:03.376 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-09 11:57:03.376 -03:00 [INF] Hosting environment: Development
+2023-10-09 11:57:03.376 -03:00 [INF] Content root path: C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\
+2023-10-09 11:57:03.631 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/index.html - -
+2023-10-09 11:57:03.920 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/index.html - - - 200 - text/html;charset=utf-8 290.4616ms
+2023-10-09 11:57:03.926 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - -
+2023-10-09 11:57:03.926 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_vs/browserLink - -
+2023-10-09 11:57:03.929 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 2.8048ms
+2023-10-09 11:57:03.947 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 20.7876ms
+2023-10-09 11:57:04.252 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - -
+2023-10-09 11:57:04.425 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 172.7760ms

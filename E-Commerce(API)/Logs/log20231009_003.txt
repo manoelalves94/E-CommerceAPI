@@ -1,0 +1,16 @@
+2023-10-09 11:57:03.189 -03:00 [INF] Inicialização da WEB API...
+2023-10-09 11:57:41.531 -03:00 [INF] Inicialização da WEB API...
+2023-10-09 11:57:41.682 -03:00 [INF] User profile is available. Using 'C:\Users\Cleartech\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-09 11:57:41.808 -03:00 [INF] Now listening on: https://localhost:7296
+2023-10-09 11:57:41.808 -03:00 [INF] Now listening on: http://localhost:5090
+2023-10-09 11:57:41.824 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-09 11:57:41.824 -03:00 [INF] Hosting environment: Development
+2023-10-09 11:57:41.824 -03:00 [INF] Content root path: C:\Users\Cleartech\AzureDevOps\T4-ManoelAlves\E-Commerce(API)\E-Commerce(API)\
+2023-10-09 11:57:42.064 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/index.html - -
+2023-10-09 11:57:42.360 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/index.html - - - 200 - text/html;charset=utf-8 299.3264ms
+2023-10-09 11:57:42.371 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_vs/browserLink - -
+2023-10-09 11:57:42.371 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - -
+2023-10-09 11:57:42.376 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 4.7723ms
+2023-10-09 11:57:42.430 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 59.2944ms
+2023-10-09 11:57:42.545 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - -
+2023-10-09 11:57:42.682 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 137.3604ms
