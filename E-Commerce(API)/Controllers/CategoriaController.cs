@@ -20,12 +20,12 @@ public class CategoriaController : ControllerBase
     }
 
     [HttpPost]
-    //[Authorize(Roles = "admin, lojista")]
+    [Authorize(Roles = "admin, lojista")]
     public IActionResult CadastrarCategoria([FromBody] CreateCategoriaDto categoriaDto)
     {
-        //var userClaims = HttpContext.User.Claims.ToList();
+        var userClaims = HttpContext.User.Claims.ToList();
 
-        //Log.Information($"Foi requisitado um cadastro de categoria pelo usuário: '{userClaims[1].Value}'.");
+        Log.Information($"Foi requisitado um cadastro de categoria pelo usuário: '{userClaims[1].Value}'.");
 
         var categoria = _iCategoriaService.AdicionarCategoria(categoriaDto);
 
@@ -61,12 +61,12 @@ public class CategoriaController : ControllerBase
     }
 
     [HttpPut("{id}", Name = "UpdateCategoria")]
-    //[Authorize(Roles = "admin, lojista")]
+    [Authorize(Roles = "admin, lojista")]
     public IActionResult EditarCategoria(Guid id, [FromBody] UpdateCategoriaDto categoriaDto)
     {
-        //var userClaims = HttpContext.User.Claims.ToList();
+        var userClaims = HttpContext.User.Claims.ToList();
 
-        //Log.Information($"Foi requisitado uma edição de categoria pelo usuário: '{userClaims[1].Value}'.");
+        Log.Information($"Foi requisitado uma edição de categoria pelo usuário: '{userClaims[1].Value}'.");
 
         _iCategoriaService.AtualizarCategoria(id, categoriaDto);
 
@@ -74,12 +74,12 @@ public class CategoriaController : ControllerBase
     }
 
     [HttpDelete("{id}", Name = "DeleteCategoria")]
-    //[Authorize(Roles = "admin, lojista")]
+    [Authorize(Roles = "admin, lojista")]
     public IActionResult RemoverCategoria(Guid id)
     {
-        //var userClaims = HttpContext.User.Claims.ToList();
+        var userClaims = HttpContext.User.Claims.ToList();
 
-        //Log.Information($"Foi requisitado uma remoção de categoria pelo usuário: '{userClaims[1].Value}'.");
+        Log.Information($"Foi requisitado uma remoção de categoria pelo usuário: '{userClaims[1].Value}'.");
 
         _iCategoriaService.RemoverCategoria(id);
 

@@ -22,12 +22,12 @@ public class CentroDeDistribuicaoController : ControllerBase
     }
 
     [HttpPost]
-    //[Authorize(Roles = "admin, lojista")]
+    [Authorize(Roles = "admin, lojista")]
     public async Task<IActionResult> CadastrarCD([FromBody] CreateCentroDeDistribuicaoDto centroDeDistribuicaoDto)
     {
-        //var userClaims = HttpContext.User.Claims.ToList();
+        var userClaims = HttpContext.User.Claims.ToList();
 
-        //Log.Information($"Foi requisitado um cadastro de centro de distribuição pelo usuário: '{userClaims[1].Value}'.");
+        Log.Information($"Foi requisitado um cadastro de centro de distribuição pelo usuário: '{userClaims[1].Value}'.");
 
         var cd = await _iCentroDeDistribuicaoService.AdicionarCD(centroDeDistribuicaoDto);
 
@@ -63,12 +63,12 @@ public class CentroDeDistribuicaoController : ControllerBase
     }
 
     [HttpPut("{id}", Name = "UpdateCentroDeDistribuicao")]
-    //[Authorize(Roles = "admin, lojista")]
+    [Authorize(Roles = "admin, lojista")]
     public async Task<IActionResult> EditarCD(Guid id, [FromBody] UpdateCentroDeDistribuicaoDto centroDeDistribuicaoDto)
     {
-        //var userClaims = HttpContext.User.Claims.ToList();
+        var userClaims = HttpContext.User.Claims.ToList();
 
-        //Log.Information($"Foi requisitado uma edição de centro de distribuição pelo usuário: '{userClaims[1].Value}'.");
+        Log.Information($"Foi requisitado uma edição de centro de distribuição pelo usuário: '{userClaims[1].Value}'.");
 
         await _iCentroDeDistribuicaoService.EditarCD(id, centroDeDistribuicaoDto);
 
@@ -76,12 +76,12 @@ public class CentroDeDistribuicaoController : ControllerBase
     }
 
     [HttpDelete("{id}", Name = "DeleteCentroDeDistribuicao")]
-    //[Authorize(Roles = "admin, lojista")]
+    [Authorize(Roles = "admin, lojista")]
     public IActionResult RemoverCD(Guid id)
     {
-        //var userClaims = HttpContext.User.Claims.ToList();
+        var userClaims = HttpContext.User.Claims.ToList();
 
-        //Log.Information($"Foi requisitado uma remoção de centro de distribuição pelo usuário: '{userClaims[1].Value}'.");
+        Log.Information($"Foi requisitado uma remoção de centro de distribuição pelo usuário: '{userClaims[1].Value}'.");
 
         _iCentroDeDistribuicaoService.DeletarCD(id);
 

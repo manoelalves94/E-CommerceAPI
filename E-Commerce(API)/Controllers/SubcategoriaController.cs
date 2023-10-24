@@ -23,12 +23,12 @@ public class SubcategoriaController : ControllerBase
     }
 
     [HttpPost]
-    //[Authorize(Roles = "admin, lojista")]
+    [Authorize(Roles = "admin, lojista")]
     public IActionResult CadastrarSubcategoria([FromBody] CreateSubcategoriaDto subcategoriaDto)
     {
-        //var userClaims = HttpContext.User.Claims.ToList();
+        var userClaims = HttpContext.User.Claims.ToList();
 
-        //Log.Information($"Foi requisitado um cadastro de subcategoria pelo usuário: '{userClaims[1].Value}'.");
+        Log.Information($"Foi requisitado um cadastro de subcategoria pelo usuário: '{userClaims[1].Value}'.");
 
         var subcategoria = _iSubcategoriaService.AdicionarSubcategoria(subcategoriaDto);
 
@@ -64,12 +64,12 @@ public class SubcategoriaController : ControllerBase
     }
 
     [HttpPut("{id}", Name = "UpdateSubcategoria")]
-    //[Authorize(Roles = "admin, lojista")]
+    [Authorize(Roles = "admin, lojista")]
     public IActionResult EditarSubcategoria(Guid id, [FromBody] UpdateSubcategoriaDto subcategoriaDto)
     {
-        //var userClaims = HttpContext.User.Claims.ToList();
+        var userClaims = HttpContext.User.Claims.ToList();
 
-        //Log.Information($"Foi requisitado uma edição de subcategoria pelo usuário: '{userClaims[1].Value}'.");
+        Log.Information($"Foi requisitado uma edição de subcategoria pelo usuário: '{userClaims[1].Value}'.");
 
         _iSubcategoriaService.AtualizarSubcategoria(id, subcategoriaDto);
 
@@ -77,12 +77,12 @@ public class SubcategoriaController : ControllerBase
     }
 
     [HttpDelete("{id}", Name = "DeleteSubcategoria")]
-    //[Authorize(Roles = "admin, lojista")]
+    [Authorize(Roles = "admin, lojista")]
     public IActionResult RemoverSubcategoria(Guid id)
     {
-        //var userClaims = HttpContext.User.Claims.ToList();
+        var userClaims = HttpContext.User.Claims.ToList();
 
-        //Log.Information($"Foi requisitado uma remoção de subcategoria pelo usuário: '{userClaims[1].Value}'.");
+        Log.Information($"Foi requisitado uma remoção de subcategoria pelo usuário: '{userClaims[1].Value}'.");
 
         _iSubcategoriaService.RemoverSubcategoria(id);
 

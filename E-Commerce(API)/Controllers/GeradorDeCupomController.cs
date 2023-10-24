@@ -1,5 +1,6 @@
 ﻿using E_Commerce_API_.Data.DTOs.GeradorDeCupomDto;
 using E_Commerce_API_.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace E_Commerce_API_.Controllers;
@@ -15,6 +16,7 @@ public class GeradorDeCupomController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = "admin, lojista")]
     public IActionResult GerarCupomDeDesconto(CreateCupomDeDescontoDto create)
     {
         var readCupom = _service.GerarCupomDeDesconto(create);
@@ -23,6 +25,7 @@ public class GeradorDeCupomController : ControllerBase
     }
 
     [HttpPut("{cupom}/{status}")]
+    [Authorize(Roles = "admin, lojista")]
     public IActionResult AtivarOuInativarCupom(string cupom, bool status)
     {
         _service.AtivarOuInativarCupom(cupom, status);

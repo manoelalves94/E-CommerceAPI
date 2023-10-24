@@ -25,12 +25,12 @@ public class ProdutoController : ControllerBase
     }
 
     [HttpPost]
-    //[Authorize(Roles = "admin, lojista")]
+    [Authorize(Roles = "admin, lojista")]
     public IActionResult CadastrarProduto([FromBody] CreateProdutoDto produtoDto)
     {
-        //var userClaims = HttpContext.User.Claims.ToList();
+        var userClaims = HttpContext.User.Claims.ToList();
 
-        //Log.Information($"Foi requisitado um cadastro de produto pelo usuário: '{userClaims[1].Value}'.");
+        Log.Information($"Foi requisitado um cadastro de produto pelo usuário: '{userClaims[1].Value}'.");
 
         var produto = _iProdutoService.AdicionarProduto(produtoDto);
 
@@ -66,12 +66,12 @@ public class ProdutoController : ControllerBase
     }
 
     [HttpPut("{id}", Name = "UpdateProduto")]
-    //[Authorize(Roles = "admin, lojista")]
+    [Authorize(Roles = "admin, lojista")]
     public IActionResult EditarProduto(Guid id, [FromBody] UpdateProdutoDto produtoDto)
     {
-        //var userClaims = HttpContext.User.Claims.ToList();
+        var userClaims = HttpContext.User.Claims.ToList();
 
-        //Log.Information($"Foi requisitado uma edição de produto pelo usuário: '{userClaims[1].Value}'.");
+        Log.Information($"Foi requisitado uma edição de produto pelo usuário: '{userClaims[1].Value}'.");
 
         _iProdutoService.AtualizarProduto(id, produtoDto);
 
@@ -79,12 +79,12 @@ public class ProdutoController : ControllerBase
     }
 
     [HttpDelete("{id}", Name = "DeleteProduto")]
-    //[Authorize(Roles = "admin, lojista")]
+    [Authorize(Roles = "admin, lojista")]
     public IActionResult RemoverProduto(Guid id)
     {
-        //var userClaims = HttpContext.User.Claims.ToList();
+        var userClaims = HttpContext.User.Claims.ToList();
 
-        //Log.Information($"Foi requisitado uma remoção de produto pelo usuário: '{userClaims[1].Value}'.");
+        Log.Information($"Foi requisitado uma remoção de produto pelo usuário: '{userClaims[1].Value}'.");
 
         _iProdutoService.RemoverProduto(id);
 

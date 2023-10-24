@@ -1,0 +1,16 @@
+2023-10-23 16:30:41.294 -03:00 [INF] Inicialização da WEB API...
+2023-10-23 16:51:06.357 -03:00 [INF] Inicialização da WEB API...
+2023-10-23 16:51:06.623 -03:00 [INF] User profile is available. Using 'C:\Users\manoe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-23 16:51:06.873 -03:00 [INF] Now listening on: https://localhost:7296
+2023-10-23 16:51:06.873 -03:00 [INF] Now listening on: http://localhost:5090
+2023-10-23 16:51:06.877 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-23 16:51:06.877 -03:00 [INF] Hosting environment: Development
+2023-10-23 16:51:06.877 -03:00 [INF] Content root path: C:\Users\manoe\OneDrive\Documentos\Projetos Github\E-CommerceAPI\E-Commerce(API)\
+2023-10-23 16:51:07.172 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/index.html - -
+2023-10-23 16:51:07.471 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/index.html - - - 200 - text/html;charset=utf-8 299.0838ms
+2023-10-23 16:51:07.481 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 16:51:07.481 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_vs/browserLink - -
+2023-10-23 16:51:07.483 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - - - 200 12362 application/javascript;+charset=utf-8 2.2654ms
+2023-10-23 16:51:07.514 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 33.0802ms
+2023-10-23 16:51:07.551 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - -
+2023-10-23 16:51:07.716 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 164.9703ms
