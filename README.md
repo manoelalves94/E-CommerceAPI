@@ -21,6 +21,7 @@ Admin.123!
 - Identity Framework
 - AutoMapper
 - MySQL
+- Dapper
 - Serilog
 - HATEOAS
 
