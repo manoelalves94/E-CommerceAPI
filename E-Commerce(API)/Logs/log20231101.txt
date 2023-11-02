@@ -451,3 +451,219 @@ VALUES ('20231009152306_adicionandoCupomNoCarrinho', '7.0.5');
 DROP PROCEDURE `POMELO_BEFORE_DROP_PRIMARY_KEY`;
 2023-11-01 13:12:20.457 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
 DROP PROCEDURE `POMELO_AFTER_ADD_PRIMARY_KEY`;
+2023-11-01 13:39:38.721 -03:00 [INF] Inicialização da WEB API...
+2023-11-01 13:39:38.900 -03:00 [INF] User profile is available. Using 'C:\Users\manoe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-11-01 13:39:39.026 -03:00 [INF] Now listening on: https://localhost:7296
+2023-11-01 13:39:39.026 -03:00 [INF] Now listening on: http://localhost:5090
+2023-11-01 13:39:39.029 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-01 13:39:39.029 -03:00 [INF] Hosting environment: Development
+2023-11-01 13:39:39.029 -03:00 [INF] Content root path: C:\Users\manoe\OneDrive\Documentos\Projetos Github\E-CommerceAPI\E-Commerce(API)\
+2023-11-01 13:39:39.302 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger - -
+2023-11-01 13:39:39.365 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger - - - 301 0 - 66.3169ms
+2023-11-01 13:39:39.369 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/index.html - -
+2023-11-01 13:39:39.547 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/index.html - - - 200 - text/html;charset=utf-8 177.5406ms
+2023-11-01 13:39:39.552 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/swagger-ui.css - -
+2023-11-01 13:39:39.552 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/swagger-ui-bundle.js - -
+2023-11-01 13:39:39.552 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/swagger-ui-standalone-preset.js - -
+2023-11-01 13:39:39.553 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - -
+2023-11-01 13:39:39.557 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/_vs/browserLink - -
+2023-11-01 13:39:39.584 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_framework/aspnetcore-browser-refresh.js - - - 200 12362 application/javascript;+charset=utf-8 30.8736ms
+2023-11-01 13:39:39.597 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 40.6681ms
+2023-11-01 13:39:39.603 -03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-11-01 13:39:39.603 -03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-11-01 13:39:39.603 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 50.7526ms
+2023-11-01 13:39:39.603 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/swagger-ui.css - - - 200 143632 text/css 51.0701ms
+2023-11-01 13:39:39.603 -03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-11-01 13:39:39.603 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 51.0317ms
+2023-11-01 13:39:39.741 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - -
+2023-11-01 13:39:39.904 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7296/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 162.7036ms
+2023-11-01 13:39:41.680 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/Categoria application/json 26
+2023-11-01 13:39:42.022 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin|lojista)
+2023-11-01 13:39:42.023 -03:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2023-11-01 13:39:42.024 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/Categoria application/json 26 - 403 0 - 344.4522ms
+2023-11-01 13:40:06.219 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/Categoria application/json 26
+2023-11-01 13:40:06.230 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CategoriaController.CadastrarCategoria (E-Commerce(API))'
+2023-11-01 13:40:06.254 -03:00 [INF] Route matched with {action = "CadastrarCategoria", controller = "Categoria"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CadastrarCategoria(E_Commerce_API_.Data.DTOs.CategoriaDto.CreateCategoriaDto) on controller E_Commerce_API_.Controllers.CategoriaController (E-Commerce(API)).
+2023-11-01 13:40:06.748 -03:00 [INF] Iniciando verificação do nome: 'Comida'.
+2023-11-01 13:40:06.749 -03:00 [INF] O nome está dentro dos critérios.
+2023-11-01 13:40:06.751 -03:00 [INF] Foi requisitado um cadastro de categoria pelo usuário: 'db82dc95-bb75-47ba-84a6-8547ddb7c948'.
+2023-11-01 13:40:06.751 -03:00 [INF] Iniciada adição de uma nova categoria: 'Comida'.
+2023-11-01 13:40:07.826 -03:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+2023-11-01 13:40:07.854 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+2023-11-01 13:40:07.861 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-11-01 13:40:07.868 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+2023-11-01 13:40:08.049 -03:00 [INF] Executed DbCommand (28ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?' (DbType = DateTime), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `Categorias` (`Id`, `DataEHoraCriacao`, `DataEHoraModificacao`, `Nome`, `Status`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2023-11-01 13:40:08.056 -03:00 [INF] Categoria com Id "44b25bfc-d71b-4cac-b309-a7928e0650d0" incluída no banco de dados.
+2023-11-01 13:40:08.065 -03:00 [INF] Categoria cadastrada com sucesso.
+2023-11-01 13:40:08.087 -03:00 [INF] Criado os links de acesso: [{"Href":"https://localhost:7296/Categoria/44b25bfc-d71b-4cac-b309-a7928e0650d0","Rel":"self","Method":"GET","Arguments":null,"$type":"LinkDto"},{"Href":"https://localhost:7296/Categoria/44b25bfc-d71b-4cac-b309-a7928e0650d0","Rel":"self","Method":"PUT","Arguments":["nome","status"],"$type":"LinkDto"},{"Href":"https://localhost:7296/Categoria/44b25bfc-d71b-4cac-b309-a7928e0650d0","Rel":"self","Method":"DELETE","Arguments":null,"$type":"LinkDto"}].
+2023-11-01 13:40:08.093 -03:00 [INF] Executing CreatedAtActionResult, writing value of type 'E_Commerce_API_.Data.DTOs.Error.ResponseDto`1[[E_Commerce_API_.Data.DTOs.CategoriaDto.ReadCategoriaDto, E-Commerce(API), Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-01 13:40:08.145 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CategoriaController.CadastrarCategoria (E-Commerce(API)) in 1883.218ms
+2023-11-01 13:40:08.145 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CategoriaController.CadastrarCategoria (E-Commerce(API))'
+2023-11-01 13:40:08.150 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/Categoria application/json 26 - 201 530 application/json;+charset=utf-8 1931.4083ms
+2023-11-01 13:40:55.038 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/Subcategoria application/json 87
+2023-11-01 13:40:55.039 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin|lojista)
+2023-11-01 13:40:55.042 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-11-01 13:40:55.042 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/Subcategoria application/json 87 - 401 0 - 4.7360ms
+2023-11-01 13:41:02.175 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/Subcategoria application/json 87
+2023-11-01 13:41:02.176 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.SubcategoriaController.CadastrarSubcategoria (E-Commerce(API))'
+2023-11-01 13:41:02.179 -03:00 [INF] Route matched with {action = "CadastrarSubcategoria", controller = "Subcategoria"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CadastrarSubcategoria(E_Commerce_API_.Data.DTOs.SubcategoriaDto.CreateSubcategoriaDto) on controller E_Commerce_API_.Controllers.SubcategoriaController (E-Commerce(API)).
+2023-11-01 13:41:02.190 -03:00 [INF] Iniciando verificação do nome: 'Bolacha'.
+2023-11-01 13:41:02.190 -03:00 [INF] O nome está dentro dos critérios.
+2023-11-01 13:41:02.192 -03:00 [INF] Foi requisitado um cadastro de subcategoria pelo usuário: 'db82dc95-bb75-47ba-84a6-8547ddb7c948'.
+2023-11-01 13:41:02.192 -03:00 [INF] Iniciada adição de uma nova subcategoria.
+2023-11-01 13:41:02.196 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+2023-11-01 13:41:02.208 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+2023-11-01 13:41:02.209 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+2023-11-01 13:41:02.210 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-11-01 13:41:02.211 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+2023-11-01 13:41:02.256 -03:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = DateTime), @p3='?' (DbType = DateTime), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `Subcategorias` (`Id`, `CategoriaId`, `DataEHoraCriacao`, `DataEHoraModificacao`, `Nome`, `Status`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2023-11-01 13:41:02.257 -03:00 [INF] Subcategoria com Id '"d7d6a282-975c-4ed7-a379-5d90a1686e2e"' incluída no banco de dados.
+2023-11-01 13:41:02.259 -03:00 [INF] Subcategoria cadastrada com sucesso.
+2023-11-01 13:41:02.259 -03:00 [INF] Criado os links de acesso: [{"Href":"https://localhost:7296/Subcategoria/d7d6a282-975c-4ed7-a379-5d90a1686e2e","Rel":"self","Method":"GET","Arguments":null,"$type":"LinkDto"},{"Href":"https://localhost:7296/Subcategoria/d7d6a282-975c-4ed7-a379-5d90a1686e2e","Rel":"self","Method":"PUT","Arguments":["nome","status"],"$type":"LinkDto"},{"Href":"https://localhost:7296/Subcategoria/d7d6a282-975c-4ed7-a379-5d90a1686e2e","Rel":"self","Method":"DELETE","Arguments":null,"$type":"LinkDto"}].
+2023-11-01 13:41:02.259 -03:00 [INF] Executing CreatedAtActionResult, writing value of type 'E_Commerce_API_.Data.DTOs.Error.ResponseDto`1[[E_Commerce_API_.Data.DTOs.SubcategoriaDto.ReadSubcategoriaDto, E-Commerce(API), Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-01 13:41:02.262 -03:00 [INF] Executed action E_Commerce_API_.Controllers.SubcategoriaController.CadastrarSubcategoria (E-Commerce(API)) in 82.5358ms
+2023-11-01 13:41:02.262 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.SubcategoriaController.CadastrarSubcategoria (E-Commerce(API))'
+2023-11-01 13:41:02.262 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/Subcategoria application/json 87 - 201 559 application/json;+charset=utf-8 87.4256ms
+2023-11-01 13:42:43.150 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/CentroDeDistribuicao/ application/json 108
+2023-11-01 13:42:43.151 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin|lojista)
+2023-11-01 13:42:43.151 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-11-01 13:42:43.152 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/CentroDeDistribuicao/ application/json 108 - 401 0 - 1.2025ms
+2023-11-01 13:42:50.579 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/CentroDeDistribuicao/ application/json 108
+2023-11-01 13:42:50.579 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CentroDeDistribuicaoController.CadastrarCD (E-Commerce(API))'
+2023-11-01 13:42:50.582 -03:00 [INF] Route matched with {action = "CadastrarCD", controller = "CentroDeDistribuicao"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CadastrarCD(E_Commerce_API_.Data.DTOs.CentroDeDistribuicaoDto.CreateCentroDeDistribuicaoDto) on controller E_Commerce_API_.Controllers.CentroDeDistribuicaoController (E-Commerce(API)).
+2023-11-01 13:42:50.594 -03:00 [INF] Foi requisitado um cadastro de centro de distribuição pelo usuário: 'db82dc95-bb75-47ba-84a6-8547ddb7c948'.
+2023-11-01 13:42:50.595 -03:00 [INF] Iniciada adição de um novo centro de distribuição.
+2023-11-01 13:42:50.642 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+2023-11-01 13:42:50.643 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+2023-11-01 13:42:50.647 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-11-01 13:42:50.648 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+2023-11-01 13:42:50.649 -03:00 [INF] Iniciada pesquisa do CEP '08598372'.
+2023-11-01 13:42:51.281 -03:00 [INF] Pesquisa do CEP finalizada. Resposta: {
+  "cep": "08598-372",
+  "logradouro": "Rua Cambuci",
+  "complemento": "",
+  "bairro": "Jardim Odete",
+  "localidade": "Itaquaquecetuba",
+  "uf": "SP",
+  "ibge": "3523107",
+  "gia": "3797",
+  "ddd": "11",
+  "siafi": "6563"
+}
+2023-11-01 13:42:51.308 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+2023-11-01 13:42:51.356 -03:00 [INF] Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 128), @p2='?' (Size = 8), @p3='?' (Size = 128), @p4='?' (Size = 128), @p5='?' (DbType = DateTime), @p6='?' (DbType = DateTime), @p7='?' (Size = 128), @p8='?' (Size = 128), @p9='?' (DbType = UInt32), @p10='?' (DbType = Boolean), @p11='?' (Size = 2)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `CentrosDeDistribuicao` (`Id`, `Bairro`, `CEP`, `Cidade`, `Complemento`, `DataEHoraCriacao`, `DataEHoraModificacao`, `Logradouro`, `Nome`, `Numero`, `Status`, `UF`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+2023-11-01 13:42:51.357 -03:00 [INF] Centro de distribuição com Id '"505548e0-5bab-46a4-8229-bc715e324d91"' incluído no banco de dados.
+2023-11-01 13:42:51.357 -03:00 [INF] Centro de distribuição cadastrado com sucesso.
+2023-11-01 13:42:51.365 -03:00 [INF] Criado os links de acesso: [{"Href":"https://localhost:7296/CentroDeDistribuicao/505548e0-5bab-46a4-8229-bc715e324d91","Rel":"self","Method":"GET","Arguments":null,"$type":"LinkDto"},{"Href":"https://localhost:7296/CentroDeDistribuicao/505548e0-5bab-46a4-8229-bc715e324d91","Rel":"self","Method":"PUT","Arguments":["nome","cep","numero","complemento","status"],"$type":"LinkDto"},{"Href":"https://localhost:7296/CentroDeDistribuicao/505548e0-5bab-46a4-8229-bc715e324d91","Rel":"self","Method":"DELETE","Arguments":null,"$type":"LinkDto"}].
+2023-11-01 13:42:51.367 -03:00 [INF] Executing CreatedAtActionResult, writing value of type 'E_Commerce_API_.Data.DTOs.Error.ResponseDto`1[[E_Commerce_API_.Data.DTOs.CentroDeDistribuicaoDto.ReadCentroDeDistribuicaoDto, E-Commerce(API), Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-01 13:42:51.373 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CentroDeDistribuicaoController.CadastrarCD (E-Commerce(API)) in 791.0523ms
+2023-11-01 13:42:51.374 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CentroDeDistribuicaoController.CadastrarCD (E-Commerce(API))'
+2023-11-01 13:42:51.375 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/CentroDeDistribuicao/ application/json 108 - 201 744 application/json;+charset=utf-8 796.3126ms
+2023-11-01 13:43:02.921 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/Produto application/json 328
+2023-11-01 13:43:02.922 -03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin|lojista)
+2023-11-01 13:43:02.922 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-11-01 13:43:02.922 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/Produto application/json 328 - 401 0 - 0.6477ms
+2023-11-01 13:43:07.933 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/Produto application/json 328
+2023-11-01 13:43:07.934 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.ProdutoController.CadastrarProduto (E-Commerce(API))'
+2023-11-01 13:43:07.935 -03:00 [INF] Route matched with {action = "CadastrarProduto", controller = "Produto"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CadastrarProduto(E_Commerce_API_.Data.DTOs.ProdutoDto.CreateProdutoDto) on controller E_Commerce_API_.Controllers.ProdutoController (E-Commerce(API)).
+2023-11-01 13:43:07.953 -03:00 [INF] Foi requisitado um cadastro de produto pelo usuário: 'db82dc95-bb75-47ba-84a6-8547ddb7c948'.
+2023-11-01 13:43:07.953 -03:00 [INF] Iniciada adição de um novo produto.
+2023-11-01 13:43:07.955 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+2023-11-01 13:43:07.956 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+2023-11-01 13:43:07.960 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+2023-11-01 13:43:07.960 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-11-01 13:43:07.961 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+2023-11-01 13:43:08.002 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Double), @p2='?' (DbType = Guid), @p3='?' (DbType = Double), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?' (Size = 512), @p7='?' (DbType = Double), @p8='?' (Size = 128), @p9='?' (DbType = Double), @p10='?' (DbType = Int32), @p11='?' (DbType = Boolean), @p12='?' (DbType = Guid), @p13='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `Produtos` (`Id`, `Altura`, `CentroDeDistribuicaoId`, `Comprimento`, `DataEHoraCriacao`, `DataEHoraModificacao`, `Descricao`, `Largura`, `Nome`, `Peso`, `QuantidadeEmEstoque`, `Status`, `SubcategoriaId`, `Valor`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13);
+2023-11-01 13:43:08.002 -03:00 [INF] Produto com Id '"71ad16a6-7f43-4467-bd14-d72bb0c74cb7"' incluído no banco de dados.
+2023-11-01 13:43:08.002 -03:00 [INF] Produto cadastrado com sucesso.
+2023-11-01 13:43:08.007 -03:00 [INF] Criado os links de acesso: [{"Href":"https://localhost:7296/Produto/71ad16a6-7f43-4467-bd14-d72bb0c74cb7","Rel":"self","Method":"GET","Arguments":null,"$type":"LinkDto"},{"Href":"https://localhost:7296/Produto/71ad16a6-7f43-4467-bd14-d72bb0c74cb7","Rel":"self","Method":"PUT","Arguments":["nome","descricao","peso","altura","largura","comprimento","valor","quantidadeEmEstoque","status","subcategoriaId","centroDeDistribuicaoId"],"$type":"LinkDto"},{"Href":"https://localhost:7296/Produto/71ad16a6-7f43-4467-bd14-d72bb0c74cb7","Rel":"self","Method":"DELETE","Arguments":null,"$type":"LinkDto"}].
+2023-11-01 13:43:08.007 -03:00 [INF] Executing CreatedAtActionResult, writing value of type 'E_Commerce_API_.Data.DTOs.Error.ResponseDto`1[[E_Commerce_API_.Data.DTOs.ProdutoDto.ReadProdutoDto, E-Commerce(API), Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-01 13:43:08.010 -03:00 [INF] Executed action E_Commerce_API_.Controllers.ProdutoController.CadastrarProduto (E-Commerce(API)) in 75.4977ms
+2023-11-01 13:43:08.010 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.ProdutoController.CadastrarProduto (E-Commerce(API))'
+2023-11-01 13:43:08.010 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/Produto application/json 328 - 201 873 application/json;+charset=utf-8 77.4800ms
+2023-11-01 13:44:01.068 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7296/CarrinhoDeCompras application/json 84
+2023-11-01 13:44:01.069 -03:00 [INF] Executing endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.CriarCarrinho (E-Commerce(API))'
+2023-11-01 13:44:01.071 -03:00 [INF] Route matched with {action = "CriarCarrinho", controller = "CarrinhoDeCompras"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CriarCarrinho(E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.CreateCarrinhoDeComprasDto) on controller E_Commerce_API_.Controllers.CarrinhoDeComprasController (E-Commerce(API)).
+2023-11-01 13:44:01.076 -03:00 [INF] Iniciada pesquisa do produto "71ad16a6-7f43-4467-bd14-d72bb0c74cb7".
+2023-11-01 13:44:01.078 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Altura`, `p`.`CentroDeDistribuicaoId`, `p`.`Comprimento`, `p`.`DataEHoraCriacao`, `p`.`DataEHoraModificacao`, `p`.`Descricao`, `p`.`Largura`, `p`.`Nome`, `p`.`Peso`, `p`.`QuantidadeEmEstoque`, `p`.`Status`, `p`.`SubcategoriaId`, `p`.`Valor`
+FROM `Produtos` AS `p`
+2023-11-01 13:44:01.173 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Bairro`, `c`.`CEP`, `c`.`Cidade`, `c`.`Complemento`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Logradouro`, `c`.`Nome`, `c`.`Numero`, `c`.`Status`, `c`.`UF`
+FROM `CentrosDeDistribuicao` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-11-01 13:44:01.183 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CategoriaId`, `s`.`DataEHoraCriacao`, `s`.`DataEHoraModificacao`, `s`.`Nome`, `s`.`Status`
+FROM `Subcategorias` AS `s`
+WHERE `s`.`Id` = @__get_Item_0
+2023-11-01 13:44:01.191 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`DataEHoraCriacao`, `c`.`DataEHoraModificacao`, `c`.`Nome`, `c`.`Status`
+FROM `Categorias` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+2023-11-01 13:44:01.268 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Guid), @p6='?' (Size = 4000), @p7='?' (DbType = UInt32), @p8='?' (Size = 4000), @p9='?' (DbType = Guid), @p10='?' (DbType = Guid), @p11='?' (DbType = UInt32), @p12='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `CarrinhosDeCompras` (`Id`, `Bairro`, `CEP`, `Cidade`, `Complemento`, `CupomDeDescontoId`, `Logradouro`, `Numero`, `UF`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+INSERT INTO `ProdutosNoCarrinho` (`CarrinhoDeComprasId`, `ProdutoId`, `Quantidade`, `ValorNoCarrinho`)
+VALUES (@p9, @p10, @p11, @p12);
+2023-11-01 13:44:01.346 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carrinhoId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`CarrinhoDeComprasId`, `p`.`ProdutoId`, `p`.`Quantidade`, `p`.`ValorNoCarrinho`
+FROM `ProdutosNoCarrinho` AS `p`
+WHERE `p`.`CarrinhoDeComprasId` = @__carrinhoId_0
+2023-11-01 13:44:01.356 -03:00 [INF] Executing CreatedAtActionResult, writing value of type 'E_Commerce_API_.Data.DTOs.CarrinhoDeComprasDto.ReadCarrinhoDeComprasDto'.
+2023-11-01 13:44:01.361 -03:00 [INF] Executed action E_Commerce_API_.Controllers.CarrinhoDeComprasController.CriarCarrinho (E-Commerce(API)) in 289.6446ms
+2023-11-01 13:44:01.361 -03:00 [INF] Executed endpoint 'E_Commerce_API_.Controllers.CarrinhoDeComprasController.CriarCarrinho (E-Commerce(API))'
+2023-11-01 13:44:01.361 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7296/CarrinhoDeCompras application/json 84 - 201 191 application/json;+charset=utf-8 292.8841ms
