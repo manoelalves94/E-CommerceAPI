@@ -21,11 +21,12 @@ Admin.123!
 - Identity Framework
 - AutoMapper
 - MySQL
+- Dapper
 - Serilog
 - HATEOAS
 
 # Build e Testes
-Após clonar o respositório na pasta desejada, execute os comandos no terminal Console do Gerenciador de Pacotes:
+Após clonar o respositório na pasta desejada, execute o comando no terminal Console do Gerenciador de Pacotes:
 
 ```csharp
 update-database
