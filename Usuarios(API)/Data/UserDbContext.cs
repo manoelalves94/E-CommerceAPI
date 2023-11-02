@@ -42,7 +42,7 @@ public class UserDbContext : IdentityDbContext<CustomIdentityUser, IdentityRole<
 
         var hasher = new PasswordHasher<CustomIdentityUser>();
 
-        admin.PasswordHash = hasher.HashPassword(admin, _configuration.GetValue<string>("admininfo:password"));
+        admin.PasswordHash = hasher.HashPassword(admin, "Admin.123!");
 
         builder.Entity<CustomIdentityUser>().HasData(admin);
 

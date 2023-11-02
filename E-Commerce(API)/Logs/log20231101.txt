@@ -1,0 +1,453 @@
+2023-11-01 13:12:16.653 -03:00 [INF] Inicialização da WEB API...
+2023-11-01 13:12:19.456 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE DATABASE `e-commerce(api)`;
+2023-11-01 13:12:19.584 -03:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `__EFMigrationsHistory` (
+    `MigrationId` varchar(150) CHARACTER SET utf8mb4 NOT NULL,
+    `ProductVersion` varchar(32) CHARACTER SET utf8mb4 NOT NULL,
+    CONSTRAINT `PK___EFMigrationsHistory` PRIMARY KEY (`MigrationId`)
+) CHARACTER SET=utf8mb4;
+2023-11-01 13:12:19.607 -03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='e-commerce(api)' AND TABLE_NAME='__EFMigrationsHistory';
+2023-11-01 13:12:19.614 -03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2023-11-01 13:12:19.629 -03:00 [INF] Applying migration '20230519133132_CriandoTabelaDeCategoria'.
+2023-11-01 13:12:19.645 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER DATABASE CHARACTER SET utf8mb4;
+2023-11-01 13:12:19.653 -03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `Categorias` (
+    `Id` char(36) COLLATE ascii_general_ci NOT NULL,
+    `Nome` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `Status` tinyint(1) NOT NULL,
+    `DataEHoraCriacao` datetime(6) NOT NULL,
+    `DataEHoraModificacao` datetime(6) NOT NULL,
+    CONSTRAINT `PK_Categorias` PRIMARY KEY (`Id`)
+) CHARACTER SET=utf8mb4;
+2023-11-01 13:12:19.654 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20230519133132_CriandoTabelaDeCategoria', '7.0.5');
+2023-11-01 13:12:19.655 -03:00 [INF] Applying migration '20230602194742_CriandoTabelaDeSubcategoria'.
+2023-11-01 13:12:19.677 -03:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `Subcategorias` (
+    `Id` char(36) COLLATE ascii_general_ci NOT NULL,
+    `Nome` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `Status` tinyint(1) NOT NULL,
+    `DataEHoraCriacao` datetime(6) NOT NULL,
+    `DataEHoraModificacao` datetime(6) NOT NULL,
+    `CategoriaId` char(36) COLLATE ascii_general_ci NOT NULL,
+    CONSTRAINT `PK_Subcategorias` PRIMARY KEY (`Id`),
+    CONSTRAINT `FK_Subcategorias_Categorias_CategoriaId` FOREIGN KEY (`CategoriaId`) REFERENCES `Categorias` (`Id`) ON DELETE CASCADE
+) CHARACTER SET=utf8mb4;
+2023-11-01 13:12:19.686 -03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_Subcategorias_CategoriaId` ON `Subcategorias` (`CategoriaId`);
+2023-11-01 13:12:19.687 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20230602194742_CriandoTabelaDeSubcategoria', '7.0.5');
+2023-11-01 13:12:19.687 -03:00 [INF] Applying migration '20230616144547_CriandoTabelaDeProduto'.
+2023-11-01 13:12:19.708 -03:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `Produtos` (
+    `Id` char(36) COLLATE ascii_general_ci NOT NULL,
+    `Nome` varchar(128) CHARACTER SET utf8mb4 NOT NULL,
+    `Descricao` varchar(512) CHARACTER SET utf8mb4 NOT NULL,
+    `Peso` double NOT NULL,
+    `Altura` double NOT NULL,
+    `Largura` double NOT NULL,
+    `Comprimento` double NOT NULL,
+    `Valor` double NOT NULL,
+    `QuantidadeEmEstoque` int NOT NULL,
+    `Status` tinyint(1) NOT NULL,
+    `DataEHoraCriacao` datetime(6) NOT NULL,
+    `DataEHoraModificacao` datetime(6) NOT NULL,
+    `SubcategoriaId` char(36) COLLATE ascii_general_ci NOT NULL,
+    `CentroDeDistribuicao` longtext CHARACTER SET utf8mb4 NOT NULL,
+    CONSTRAINT `PK_Produtos` PRIMARY KEY (`Id`),
+    CONSTRAINT `FK_Produtos_Subcategorias_SubcategoriaId` FOREIGN KEY (`SubcategoriaId`) REFERENCES `Subcategorias` (`Id`) ON DELETE CASCADE
+) CHARACTER SET=utf8mb4;
+2023-11-01 13:12:19.729 -03:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_Produtos_SubcategoriaId` ON `Produtos` (`SubcategoriaId`);
+2023-11-01 13:12:19.730 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20230616144547_CriandoTabelaDeProduto', '7.0.5');
+2023-11-01 13:12:19.730 -03:00 [INF] Applying migration '20230704143118_CriandoTabelaDeCD'.
+2023-11-01 13:12:19.748 -03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Produtos` DROP COLUMN `CentroDeDistribuicao`;
+2023-11-01 13:12:19.756 -03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Produtos` ADD `CentroDeDistribuicaoId` char(36) COLLATE ascii_general_ci NOT NULL DEFAULT '00000000-0000-0000-0000-000000000000';
+2023-11-01 13:12:19.765 -03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `CentrosDeDistribuicao` (
+    `Id` char(36) COLLATE ascii_general_ci NOT NULL,
+    `Nome` varchar(128) CHARACTER SET utf8mb4 NOT NULL,
+    `Logradouro` varchar(128) CHARACTER SET utf8mb4 NOT NULL,
+    `Numero` int NOT NULL,
+    `Complemento` varchar(128) CHARACTER SET utf8mb4 NOT NULL,
+    `Bairro` varchar(128) CHARACTER SET utf8mb4 NOT NULL,
+    `Cidade` varchar(128) CHARACTER SET utf8mb4 NOT NULL,
+    `UF` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `CEP` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `Status` tinyint(1) NOT NULL,
+    `DataEHoraCriacao` datetime(6) NOT NULL,
+    `DataEHoraModificacao` datetime(6) NOT NULL,
+    CONSTRAINT `PK_CentrosDeDistribuicao` PRIMARY KEY (`Id`)
+) CHARACTER SET=utf8mb4;
+2023-11-01 13:12:19.773 -03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_Produtos_CentroDeDistribuicaoId` ON `Produtos` (`CentroDeDistribuicaoId`);
+2023-11-01 13:12:19.798 -03:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Produtos` ADD CONSTRAINT `FK_Produtos_CentrosDeDistribuicao_CentroDeDistribuicaoId` FOREIGN KEY (`CentroDeDistribuicaoId`) REFERENCES `CentrosDeDistribuicao` (`Id`) ON DELETE CASCADE;
+2023-11-01 13:12:19.799 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20230704143118_CriandoTabelaDeCD', '7.0.5');
+2023-11-01 13:12:19.800 -03:00 [INF] Applying migration '20230922150346_CriandoTabelasCarrinhoDeComprasEProdutoNoCarrinho'.
+2023-11-01 13:12:19.836 -03:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CentrosDeDistribuicao` MODIFY COLUMN `UF` varchar(2) CHARACTER SET utf8mb4 NOT NULL;
+2023-11-01 13:12:19.857 -03:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CentrosDeDistribuicao` MODIFY COLUMN `Numero` int unsigned NOT NULL;
+2023-11-01 13:12:19.899 -03:00 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CentrosDeDistribuicao` MODIFY COLUMN `CEP` varchar(8) CHARACTER SET utf8mb4 NOT NULL;
+2023-11-01 13:12:19.908 -03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `CarrinhosDeCompras` (
+    `Id` char(36) COLLATE ascii_general_ci NOT NULL,
+    `ValorTotal` double NOT NULL,
+    `Logradouro` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `Numero` int unsigned NOT NULL,
+    `Complemento` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `Bairro` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `Cidade` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `UF` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `CEP` longtext CHARACTER SET utf8mb4 NOT NULL,
+    CONSTRAINT `PK_CarrinhosDeCompras` PRIMARY KEY (`Id`)
+) CHARACTER SET=utf8mb4;
+2023-11-01 13:12:19.915 -03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `ProdutosNoCarrinho` (
+    `CarrinhoDeComprasId` char(36) COLLATE ascii_general_ci NOT NULL,
+    `ProdutoId` char(36) COLLATE ascii_general_ci NOT NULL,
+    `Quantidade` int unsigned NOT NULL
+) CHARACTER SET=utf8mb4;
+2023-11-01 13:12:19.916 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20230922150346_CriandoTabelasCarrinhoDeComprasEProdutoNoCarrinho', '7.0.5');
+2023-11-01 13:12:19.917 -03:00 [INF] Applying migration '20230922153614_UpdateTabelaProdutosNoCarrinhoId'.
+2023-11-01 13:12:19.931 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP PROCEDURE IF EXISTS `POMELO_AFTER_ADD_PRIMARY_KEY`;
+CREATE PROCEDURE `POMELO_AFTER_ADD_PRIMARY_KEY`(IN `SCHEMA_NAME_ARGUMENT` VARCHAR(255), IN `TABLE_NAME_ARGUMENT` VARCHAR(255), IN `COLUMN_NAME_ARGUMENT` VARCHAR(255))
+BEGIN
+	DECLARE HAS_AUTO_INCREMENT_ID INT(11);
+	DECLARE PRIMARY_KEY_COLUMN_NAME VARCHAR(255);
+	DECLARE PRIMARY_KEY_TYPE VARCHAR(255);
+	DECLARE SQL_EXP VARCHAR(1000);
+	SELECT COUNT(*)
+		INTO HAS_AUTO_INCREMENT_ID
+		FROM `information_schema`.`COLUMNS`
+		WHERE `TABLE_SCHEMA` = (SELECT IFNULL(SCHEMA_NAME_ARGUMENT, SCHEMA()))
+			AND `TABLE_NAME` = TABLE_NAME_ARGUMENT
+			AND `COLUMN_NAME` = COLUMN_NAME_ARGUMENT
+			AND `COLUMN_TYPE` LIKE '%int%'
+			AND `COLUMN_KEY` = 'PRI';
+	IF HAS_AUTO_INCREMENT_ID THEN
+		SELECT `COLUMN_TYPE`
+			INTO PRIMARY_KEY_TYPE
+			FROM `information_schema`.`COLUMNS`
+			WHERE `TABLE_SCHEMA` = (SELECT IFNULL(SCHEMA_NAME_ARGUMENT, SCHEMA()))
+				AND `TABLE_NAME` = TABLE_NAME_ARGUMENT
+				AND `COLUMN_NAME` = COLUMN_NAME_ARGUMENT
+				AND `COLUMN_TYPE` LIKE '%int%'
+				AND `COLUMN_KEY` = 'PRI';
+		SELECT `COLUMN_NAME`
+			INTO PRIMARY_KEY_COLUMN_NAME
+			FROM `information_schema`.`COLUMNS`
+			WHERE `TABLE_SCHEMA` = (SELECT IFNULL(SCHEMA_NAME_ARGUMENT, SCHEMA()))
+				AND `TABLE_NAME` = TABLE_NAME_ARGUMENT
+				AND `COLUMN_NAME` = COLUMN_NAME_ARGUMENT
+				AND `COLUMN_TYPE` LIKE '%int%'
+				AND `COLUMN_KEY` = 'PRI';
+		SET SQL_EXP = CONCAT('ALTER TABLE `', (SELECT IFNULL(SCHEMA_NAME_ARGUMENT, SCHEMA())), '`.`', TABLE_NAME_ARGUMENT, '` MODIFY COLUMN `', PRIMARY_KEY_COLUMN_NAME, '` ', PRIMARY_KEY_TYPE, ' NOT NULL AUTO_INCREMENT;');
+		SET @SQL_EXP = SQL_EXP;
+		PREPARE SQL_EXP_EXECUTE FROM @SQL_EXP;
+		EXECUTE SQL_EXP_EXECUTE;
+		DEALLOCATE PREPARE SQL_EXP_EXECUTE;
+	END IF;
+END;
+2023-11-01 13:12:19.936 -03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `ProdutosNoCarrinho` ADD `Id` char(36) COLLATE ascii_general_ci NOT NULL DEFAULT '00000000-0000-0000-0000-000000000000';
+2023-11-01 13:12:19.951 -03:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `ProdutosNoCarrinho` ADD CONSTRAINT `PK_ProdutosNoCarrinho` PRIMARY KEY (`Id`);
+CALL POMELO_AFTER_ADD_PRIMARY_KEY(NULL, 'ProdutosNoCarrinho', 'Id');
+2023-11-01 13:12:19.952 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20230922153614_UpdateTabelaProdutosNoCarrinhoId', '7.0.5');
+2023-11-01 13:12:19.954 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP PROCEDURE `POMELO_AFTER_ADD_PRIMARY_KEY`;
+2023-11-01 13:12:19.954 -03:00 [INF] Applying migration '20230922190548_CarrinhoDeComprasEProdutos'.
+2023-11-01 13:12:19.965 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP PROCEDURE IF EXISTS `POMELO_BEFORE_DROP_PRIMARY_KEY`;
+CREATE PROCEDURE `POMELO_BEFORE_DROP_PRIMARY_KEY`(IN `SCHEMA_NAME_ARGUMENT` VARCHAR(255), IN `TABLE_NAME_ARGUMENT` VARCHAR(255))
+BEGIN
+	DECLARE HAS_AUTO_INCREMENT_ID TINYINT(1);
+	DECLARE PRIMARY_KEY_COLUMN_NAME VARCHAR(255);
+	DECLARE PRIMARY_KEY_TYPE VARCHAR(255);
+	DECLARE SQL_EXP VARCHAR(1000);
+	SELECT COUNT(*)
+		INTO HAS_AUTO_INCREMENT_ID
+		FROM `information_schema`.`COLUMNS`
+		WHERE `TABLE_SCHEMA` = (SELECT IFNULL(SCHEMA_NAME_ARGUMENT, SCHEMA()))
+			AND `TABLE_NAME` = TABLE_NAME_ARGUMENT
+			AND `Extra` = 'auto_increment'
+			AND `COLUMN_KEY` = 'PRI'
+			LIMIT 1;
+	IF HAS_AUTO_INCREMENT_ID THEN
+		SELECT `COLUMN_TYPE`
+			INTO PRIMARY_KEY_TYPE
+			FROM `information_schema`.`COLUMNS`
+			WHERE `TABLE_SCHEMA` = (SELECT IFNULL(SCHEMA_NAME_ARGUMENT, SCHEMA()))
+				AND `TABLE_NAME` = TABLE_NAME_ARGUMENT
+				AND `COLUMN_KEY` = 'PRI'
+			LIMIT 1;
+		SELECT `COLUMN_NAME`
+			INTO PRIMARY_KEY_COLUMN_NAME
+			FROM `information_schema`.`COLUMNS`
+			WHERE `TABLE_SCHEMA` = (SELECT IFNULL(SCHEMA_NAME_ARGUMENT, SCHEMA()))
+				AND `TABLE_NAME` = TABLE_NAME_ARGUMENT
+				AND `COLUMN_KEY` = 'PRI'
+			LIMIT 1;
+		SET SQL_EXP = CONCAT('ALTER TABLE `', (SELECT IFNULL(SCHEMA_NAME_ARGUMENT, SCHEMA())), '`.`', TABLE_NAME_ARGUMENT, '` MODIFY COLUMN `', PRIMARY_KEY_COLUMN_NAME, '` ', PRIMARY_KEY_TYPE, ' NOT NULL;');
+		SET @SQL_EXP = SQL_EXP;
+		PREPARE SQL_EXP_EXECUTE FROM @SQL_EXP;
+		EXECUTE SQL_EXP_EXECUTE;
+		DEALLOCATE PREPARE SQL_EXP_EXECUTE;
+	END IF;
+END;
+2023-11-01 13:12:19.967 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP PROCEDURE IF EXISTS `POMELO_AFTER_ADD_PRIMARY_KEY`;
+CREATE PROCEDURE `POMELO_AFTER_ADD_PRIMARY_KEY`(IN `SCHEMA_NAME_ARGUMENT` VARCHAR(255), IN `TABLE_NAME_ARGUMENT` VARCHAR(255), IN `COLUMN_NAME_ARGUMENT` VARCHAR(255))
+BEGIN
+	DECLARE HAS_AUTO_INCREMENT_ID INT(11);
+	DECLARE PRIMARY_KEY_COLUMN_NAME VARCHAR(255);
+	DECLARE PRIMARY_KEY_TYPE VARCHAR(255);
+	DECLARE SQL_EXP VARCHAR(1000);
+	SELECT COUNT(*)
+		INTO HAS_AUTO_INCREMENT_ID
+		FROM `information_schema`.`COLUMNS`
+		WHERE `TABLE_SCHEMA` = (SELECT IFNULL(SCHEMA_NAME_ARGUMENT, SCHEMA()))
+			AND `TABLE_NAME` = TABLE_NAME_ARGUMENT
+			AND `COLUMN_NAME` = COLUMN_NAME_ARGUMENT
+			AND `COLUMN_TYPE` LIKE '%int%'
+			AND `COLUMN_KEY` = 'PRI';
+	IF HAS_AUTO_INCREMENT_ID THEN
+		SELECT `COLUMN_TYPE`
+			INTO PRIMARY_KEY_TYPE
+			FROM `information_schema`.`COLUMNS`
+			WHERE `TABLE_SCHEMA` = (SELECT IFNULL(SCHEMA_NAME_ARGUMENT, SCHEMA()))
+				AND `TABLE_NAME` = TABLE_NAME_ARGUMENT
+				AND `COLUMN_NAME` = COLUMN_NAME_ARGUMENT
+				AND `COLUMN_TYPE` LIKE '%int%'
+				AND `COLUMN_KEY` = 'PRI';
+		SELECT `COLUMN_NAME`
+			INTO PRIMARY_KEY_COLUMN_NAME
+			FROM `information_schema`.`COLUMNS`
+			WHERE `TABLE_SCHEMA` = (SELECT IFNULL(SCHEMA_NAME_ARGUMENT, SCHEMA()))
+				AND `TABLE_NAME` = TABLE_NAME_ARGUMENT
+				AND `COLUMN_NAME` = COLUMN_NAME_ARGUMENT
+				AND `COLUMN_TYPE` LIKE '%int%'
+				AND `COLUMN_KEY` = 'PRI';
+		SET SQL_EXP = CONCAT('ALTER TABLE `', (SELECT IFNULL(SCHEMA_NAME_ARGUMENT, SCHEMA())), '`.`', TABLE_NAME_ARGUMENT, '` MODIFY COLUMN `', PRIMARY_KEY_COLUMN_NAME, '` ', PRIMARY_KEY_TYPE, ' NOT NULL AUTO_INCREMENT;');
+		SET @SQL_EXP = SQL_EXP;
+		PREPARE SQL_EXP_EXECUTE FROM @SQL_EXP;
+		EXECUTE SQL_EXP_EXECUTE;
+		DEALLOCATE PREPARE SQL_EXP_EXECUTE;
+	END IF;
+END;
+2023-11-01 13:12:19.984 -03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CALL POMELO_BEFORE_DROP_PRIMARY_KEY(NULL, 'ProdutosNoCarrinho');
+ALTER TABLE `ProdutosNoCarrinho` DROP PRIMARY KEY;
+2023-11-01 13:12:19.989 -03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `ProdutosNoCarrinho` DROP COLUMN `Id`;
+2023-11-01 13:12:20.002 -03:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `ProdutosNoCarrinho` ADD CONSTRAINT `PK_ProdutosNoCarrinho` PRIMARY KEY (`CarrinhoDeComprasId`, `ProdutoId`);
+2023-11-01 13:12:20.008 -03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_ProdutosNoCarrinho_ProdutoId` ON `ProdutosNoCarrinho` (`ProdutoId`);
+2023-11-01 13:12:20.030 -03:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `ProdutosNoCarrinho` ADD CONSTRAINT `FK_ProdutosNoCarrinho_CarrinhosDeCompras_CarrinhoDeComprasId` FOREIGN KEY (`CarrinhoDeComprasId`) REFERENCES `CarrinhosDeCompras` (`Id`) ON DELETE CASCADE;
+2023-11-01 13:12:20.050 -03:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `ProdutosNoCarrinho` ADD CONSTRAINT `FK_ProdutosNoCarrinho_Produtos_ProdutoId` FOREIGN KEY (`ProdutoId`) REFERENCES `Produtos` (`Id`) ON DELETE CASCADE;
+2023-11-01 13:12:20.051 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20230922190548_CarrinhoDeComprasEProdutos', '7.0.5');
+2023-11-01 13:12:20.052 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP PROCEDURE `POMELO_BEFORE_DROP_PRIMARY_KEY`;
+2023-11-01 13:12:20.053 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP PROCEDURE `POMELO_AFTER_ADD_PRIMARY_KEY`;
+2023-11-01 13:12:20.053 -03:00 [INF] Applying migration '20230926195150_AdicionandoColunaDeValorUnitarioEmProdutoNoCarrinho'.
+2023-11-01 13:12:20.072 -03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `ProdutosNoCarrinho` ADD `ValorUnitario` double NOT NULL DEFAULT 0.0;
+2023-11-01 13:12:20.073 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20230926195150_AdicionandoColunaDeValorUnitarioEmProdutoNoCarrinho', '7.0.5');
+2023-11-01 13:12:20.074 -03:00 [INF] Applying migration '20230927144739_AlterandoNomeAtributoEmProdutosNoCarrinho'.
+2023-11-01 13:12:20.091 -03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `ProdutosNoCarrinho` RENAME COLUMN `ValorUnitario` TO `ValorNoCarrinho`;
+2023-11-01 13:12:20.092 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20230927144739_AlterandoNomeAtributoEmProdutosNoCarrinho', '7.0.5');
+2023-11-01 13:12:20.092 -03:00 [INF] Applying migration '20230929153706_ValorTotal'.
+2023-11-01 13:12:20.108 -03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CarrinhosDeCompras` DROP COLUMN `ValorTotal`;
+2023-11-01 13:12:20.109 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20230929153706_ValorTotal', '7.0.5');
+2023-11-01 13:12:20.109 -03:00 [INF] Applying migration '20231005200630_Deixando Colunas de Endereco Anulaveis'.
+2023-11-01 13:12:20.137 -03:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CarrinhosDeCompras` MODIFY COLUMN `UF` longtext CHARACTER SET utf8mb4 NULL;
+2023-11-01 13:12:20.155 -03:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CarrinhosDeCompras` MODIFY COLUMN `Numero` int unsigned NULL;
+2023-11-01 13:12:20.172 -03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CarrinhosDeCompras` MODIFY COLUMN `Logradouro` longtext CHARACTER SET utf8mb4 NULL;
+2023-11-01 13:12:20.188 -03:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CarrinhosDeCompras` MODIFY COLUMN `Complemento` longtext CHARACTER SET utf8mb4 NULL;
+2023-11-01 13:12:20.207 -03:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CarrinhosDeCompras` MODIFY COLUMN `Cidade` longtext CHARACTER SET utf8mb4 NULL;
+2023-11-01 13:12:20.227 -03:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CarrinhosDeCompras` MODIFY COLUMN `CEP` longtext CHARACTER SET utf8mb4 NULL;
+2023-11-01 13:12:20.248 -03:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CarrinhosDeCompras` MODIFY COLUMN `Bairro` longtext CHARACTER SET utf8mb4 NULL;
+2023-11-01 13:12:20.249 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20231005200630_Deixando Colunas de Endereco Anulaveis', '7.0.5');
+2023-11-01 13:12:20.249 -03:00 [INF] Applying migration '20231008010400_CriandoTabelaCupomDeDesconto'.
+2023-11-01 13:12:20.266 -03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `CuponsDeDesconto` (
+    `Cupom` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+    `TipoDeDesconto` int NOT NULL,
+    `ValorDoDesconto` double NOT NULL,
+    `Uso` int NOT NULL,
+    `Ativo` tinyint(1) NOT NULL,
+    `SetorDeDesconto` char(36) COLLATE ascii_general_ci NOT NULL,
+    CONSTRAINT `PK_CuponsDeDesconto` PRIMARY KEY (`Cupom`)
+) CHARACTER SET=utf8mb4;
+2023-11-01 13:12:20.267 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20231008010400_CriandoTabelaCupomDeDesconto', '7.0.5');
+2023-11-01 13:12:20.267 -03:00 [INF] Applying migration '20231008011721_UpdateCupons'.
+2023-11-01 13:12:20.293 -03:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CuponsDeDesconto` MODIFY COLUMN `Uso` longtext CHARACTER SET utf8mb4 NOT NULL;
+2023-11-01 13:12:20.311 -03:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CuponsDeDesconto` MODIFY COLUMN `TipoDeDesconto` longtext CHARACTER SET utf8mb4 NOT NULL;
+2023-11-01 13:12:20.312 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20231008011721_UpdateCupons', '7.0.5');
+2023-11-01 13:12:20.313 -03:00 [INF] Applying migration '20231009144527_atualizaçãoCuponsStatus'.
+2023-11-01 13:12:20.325 -03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CuponsDeDesconto` RENAME COLUMN `Ativo` TO `Status`;
+2023-11-01 13:12:20.326 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20231009144527_atualizaçãoCuponsStatus', '7.0.5');
+2023-11-01 13:12:20.326 -03:00 [INF] Applying migration '20231009150615_adicionandoCupomAoCarrinho'.
+2023-11-01 13:12:20.340 -03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CarrinhosDeCompras` ADD `Cupom` longtext CHARACTER SET utf8mb4 NULL;
+2023-11-01 13:12:20.341 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20231009150615_adicionandoCupomAoCarrinho', '7.0.5');
+2023-11-01 13:12:20.342 -03:00 [INF] Applying migration '20231009152306_adicionandoCupomNoCarrinho'.
+2023-11-01 13:12:20.352 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP PROCEDURE IF EXISTS `POMELO_BEFORE_DROP_PRIMARY_KEY`;
+CREATE PROCEDURE `POMELO_BEFORE_DROP_PRIMARY_KEY`(IN `SCHEMA_NAME_ARGUMENT` VARCHAR(255), IN `TABLE_NAME_ARGUMENT` VARCHAR(255))
+BEGIN
+	DECLARE HAS_AUTO_INCREMENT_ID TINYINT(1);
+	DECLARE PRIMARY_KEY_COLUMN_NAME VARCHAR(255);
+	DECLARE PRIMARY_KEY_TYPE VARCHAR(255);
+	DECLARE SQL_EXP VARCHAR(1000);
+	SELECT COUNT(*)
+		INTO HAS_AUTO_INCREMENT_ID
+		FROM `information_schema`.`COLUMNS`
+		WHERE `TABLE_SCHEMA` = (SELECT IFNULL(SCHEMA_NAME_ARGUMENT, SCHEMA()))
+			AND `TABLE_NAME` = TABLE_NAME_ARGUMENT
+			AND `Extra` = 'auto_increment'
+			AND `COLUMN_KEY` = 'PRI'
+			LIMIT 1;
+	IF HAS_AUTO_INCREMENT_ID THEN
+		SELECT `COLUMN_TYPE`
+			INTO PRIMARY_KEY_TYPE
+			FROM `information_schema`.`COLUMNS`
+			WHERE `TABLE_SCHEMA` = (SELECT IFNULL(SCHEMA_NAME_ARGUMENT, SCHEMA()))
+				AND `TABLE_NAME` = TABLE_NAME_ARGUMENT
+				AND `COLUMN_KEY` = 'PRI'
+			LIMIT 1;
+		SELECT `COLUMN_NAME`
+			INTO PRIMARY_KEY_COLUMN_NAME
+			FROM `information_schema`.`COLUMNS`
+			WHERE `TABLE_SCHEMA` = (SELECT IFNULL(SCHEMA_NAME_ARGUMENT, SCHEMA()))
+				AND `TABLE_NAME` = TABLE_NAME_ARGUMENT
+				AND `COLUMN_KEY` = 'PRI'
+			LIMIT 1;
+		SET SQL_EXP = CONCAT('ALTER TABLE `', (SELECT IFNULL(SCHEMA_NAME_ARGUMENT, SCHEMA())), '`.`', TABLE_NAME_ARGUMENT, '` MODIFY COLUMN `', PRIMARY_KEY_COLUMN_NAME, '` ', PRIMARY_KEY_TYPE, ' NOT NULL;');
+		SET @SQL_EXP = SQL_EXP;
+		PREPARE SQL_EXP_EXECUTE FROM @SQL_EXP;
+		EXECUTE SQL_EXP_EXECUTE;
+		DEALLOCATE PREPARE SQL_EXP_EXECUTE;
+	END IF;
+END;
+2023-11-01 13:12:20.353 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP PROCEDURE IF EXISTS `POMELO_AFTER_ADD_PRIMARY_KEY`;
+CREATE PROCEDURE `POMELO_AFTER_ADD_PRIMARY_KEY`(IN `SCHEMA_NAME_ARGUMENT` VARCHAR(255), IN `TABLE_NAME_ARGUMENT` VARCHAR(255), IN `COLUMN_NAME_ARGUMENT` VARCHAR(255))
+BEGIN
+	DECLARE HAS_AUTO_INCREMENT_ID INT(11);
+	DECLARE PRIMARY_KEY_COLUMN_NAME VARCHAR(255);
+	DECLARE PRIMARY_KEY_TYPE VARCHAR(255);
+	DECLARE SQL_EXP VARCHAR(1000);
+	SELECT COUNT(*)
+		INTO HAS_AUTO_INCREMENT_ID
+		FROM `information_schema`.`COLUMNS`
+		WHERE `TABLE_SCHEMA` = (SELECT IFNULL(SCHEMA_NAME_ARGUMENT, SCHEMA()))
+			AND `TABLE_NAME` = TABLE_NAME_ARGUMENT
+			AND `COLUMN_NAME` = COLUMN_NAME_ARGUMENT
+			AND `COLUMN_TYPE` LIKE '%int%'
+			AND `COLUMN_KEY` = 'PRI';
+	IF HAS_AUTO_INCREMENT_ID THEN
+		SELECT `COLUMN_TYPE`
+			INTO PRIMARY_KEY_TYPE
+			FROM `information_schema`.`COLUMNS`
+			WHERE `TABLE_SCHEMA` = (SELECT IFNULL(SCHEMA_NAME_ARGUMENT, SCHEMA()))
+				AND `TABLE_NAME` = TABLE_NAME_ARGUMENT
+				AND `COLUMN_NAME` = COLUMN_NAME_ARGUMENT
+				AND `COLUMN_TYPE` LIKE '%int%'
+				AND `COLUMN_KEY` = 'PRI';
+		SELECT `COLUMN_NAME`
+			INTO PRIMARY_KEY_COLUMN_NAME
+			FROM `information_schema`.`COLUMNS`
+			WHERE `TABLE_SCHEMA` = (SELECT IFNULL(SCHEMA_NAME_ARGUMENT, SCHEMA()))
+				AND `TABLE_NAME` = TABLE_NAME_ARGUMENT
+				AND `COLUMN_NAME` = COLUMN_NAME_ARGUMENT
+				AND `COLUMN_TYPE` LIKE '%int%'
+				AND `COLUMN_KEY` = 'PRI';
+		SET SQL_EXP = CONCAT('ALTER TABLE `', (SELECT IFNULL(SCHEMA_NAME_ARGUMENT, SCHEMA())), '`.`', TABLE_NAME_ARGUMENT, '` MODIFY COLUMN `', PRIMARY_KEY_COLUMN_NAME, '` ', PRIMARY_KEY_TYPE, ' NOT NULL AUTO_INCREMENT;');
+		SET @SQL_EXP = SQL_EXP;
+		PREPARE SQL_EXP_EXECUTE FROM @SQL_EXP;
+		EXECUTE SQL_EXP_EXECUTE;
+		DEALLOCATE PREPARE SQL_EXP_EXECUTE;
+	END IF;
+END;
+2023-11-01 13:12:20.371 -03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CALL POMELO_BEFORE_DROP_PRIMARY_KEY(NULL, 'CuponsDeDesconto');
+ALTER TABLE `CuponsDeDesconto` DROP PRIMARY KEY;
+2023-11-01 13:12:20.378 -03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CarrinhosDeCompras` DROP COLUMN `Cupom`;
+2023-11-01 13:12:20.394 -03:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CuponsDeDesconto` MODIFY COLUMN `Cupom` longtext CHARACTER SET utf8mb4 NOT NULL;
+2023-11-01 13:12:20.402 -03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CuponsDeDesconto` ADD `Id` char(36) COLLATE ascii_general_ci NOT NULL DEFAULT '00000000-0000-0000-0000-000000000000';
+2023-11-01 13:12:20.411 -03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CarrinhosDeCompras` ADD `CupomDeDescontoId` char(36) COLLATE ascii_general_ci NULL;
+2023-11-01 13:12:20.427 -03:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CuponsDeDesconto` ADD CONSTRAINT `PK_CuponsDeDesconto` PRIMARY KEY (`Id`);
+CALL POMELO_AFTER_ADD_PRIMARY_KEY(NULL, 'CuponsDeDesconto', 'Id');
+2023-11-01 13:12:20.435 -03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_CarrinhosDeCompras_CupomDeDescontoId` ON `CarrinhosDeCompras` (`CupomDeDescontoId`);
+2023-11-01 13:12:20.453 -03:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `CarrinhosDeCompras` ADD CONSTRAINT `FK_CarrinhosDeCompras_CuponsDeDesconto_CupomDeDescontoId` FOREIGN KEY (`CupomDeDescontoId`) REFERENCES `CuponsDeDesconto` (`Id`);
+2023-11-01 13:12:20.455 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20231009152306_adicionandoCupomNoCarrinho', '7.0.5');
+2023-11-01 13:12:20.456 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP PROCEDURE `POMELO_BEFORE_DROP_PRIMARY_KEY`;
+2023-11-01 13:12:20.457 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP PROCEDURE `POMELO_AFTER_ADD_PRIMARY_KEY`;

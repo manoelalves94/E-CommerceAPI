@@ -25,7 +25,7 @@ public class TokenService : ITokenService
             new Claim(ClaimTypes.Role, role)
         };
 
-        var chave = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration.GetValue<string>("hash")));
+        var chave = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("akjfuslMJgdhJgduy389jJGdbwl00WJT1989TaylorsVersion"));
 
         var credenciais = new SigningCredentials(chave, SecurityAlgorithms.HmacSha256);
 

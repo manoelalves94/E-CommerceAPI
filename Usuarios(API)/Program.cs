@@ -51,7 +51,7 @@ builder.Services.AddAuthentication(auth =>
         token.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration.GetValue<string>("hash"))),
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("akjfuslMJgdhJgduy389jJGdbwl00WJT1989TaylorsVersion")),
             ValidateIssuer = false,
             ValidateAudience = false,
             ClockSkew = TimeSpan.Zero
